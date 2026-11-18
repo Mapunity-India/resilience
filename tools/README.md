@@ -235,3 +235,16 @@ releases and to go back to any of them.
 
 The manifest in `tools/manifests` is committed with the release, which is what
 lets the next patch be cut against this one.
+
+## What a scheduled run must leave behind
+
+A run that finds no new bulletin must still write something: update
+`last_checked` and its note in `data/observations.json`, commit that, and push.
+Silence is not an acceptable outcome, because a run that leaves no trace is
+indistinguishable from a run that never happened, which is exactly the doubt
+the 19:30 and 20:30 runs on 18 November created.
+
+Two further rules, learned the same evening. A position is recorded only when a
+bulletin states the latitude and longitude: distances from a port are not a
+position, and neither is a forecast position read off a track table. And the
+commit message names the fix it added, or says plainly that none was added.
