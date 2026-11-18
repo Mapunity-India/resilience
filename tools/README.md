@@ -248,3 +248,8 @@ Two further rules, learned the same evening. A position is recorded only when a
 bulletin states the latitude and longitude: distances from a port are not a
 position, and neither is a forecast position read off a track table. And the
 commit message names the fix it added, or says plainly that none was added.
+
+Every scheduled run appends one line to `tools/run-log.jsonl` and commits it,
+whether or not it found anything. The file is the answer to "did the run happen
+and what did it decide", which the chat sessions cannot give us at a glance and
+the record alone cannot distinguish.
