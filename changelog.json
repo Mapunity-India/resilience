@@ -1985,5 +1985,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-frame-2331",
+  "date": "2026-11-18",
+  "change": "A frame at 23:31, the first since the 18:33 one. The 19:30 and 20:30 runs fetched nothing at all, so the page had been showing a five-hour-old picture, which is the clearest sign yet that those two runs did nothing rather than finding nothing",
+  "scope": "data/satellite/",
+  "check": {
+   "type": "contains",
+   "pattern": "23:31",
+   "paths": [
+    "data/satellite/latest.json"
+   ],
+   "min": 1
+  }
  }
 ]
