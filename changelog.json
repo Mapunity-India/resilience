@@ -1971,5 +1971,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-2330-manual-check",
+  "date": "2026-11-18",
+  "change": "Manual check at 23:25. The 17:30 and 20:00 bulletins exist but neither states a latitude and longitude in anything reachable, so the record stops at the 14:30 fix rather than carrying an inferred position. The note on the record now says so, and says that the 19:30 and 20:30 scheduled runs left no trace of having looked",
+  "scope": "data/observations.json",
+  "check": {
+   "type": "contains",
+   "pattern": "17:30 and 20:00 bulletins exist",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
  }
 ]

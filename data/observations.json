@@ -214,6 +214,6 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-18T18:33:16+05:30",
- "last_checked_note": "14:30 fix added (13.3N 85.3E, severe, north-north-west at 8 kmph). No 17:30 bulletin published or reachable at 18:33"
+ "last_checked": "2026-11-18T23:25:00+05:30",
+ "last_checked_note": "Checked at 23:25 by hand. The 17:30 and 20:00 bulletins exist: at 17:30 the storm was about 500 km south-east of Narsapur, and the evening bulletin keeps the crossing between Narsapur and Puri. Neither gives a latitude and longitude in anything reachable, so no fix is added: a position is only recorded when the bulletin states it. The scheduled runs at 19:30 and 20:30 left no trace, which is a fault in the job, not in the record"
 }
