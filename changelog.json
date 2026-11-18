@@ -1965,9 +1965,9 @@
   "scope": "events/akvan.html, data/",
   "check": {
    "type": "contains",
-   "pattern": "13.3&deg;N, 85.3&deg;E at 14:30 IST",
+   "pattern": "\"lat\": 13.3,",
    "paths": [
-    "events/akvan.html"
+    "data/observations.json"
    ],
    "min": 1
   }
@@ -1984,7 +1984,8 @@
     "data/observations.json"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-19nov-0200"
  },
  {
   "id": "akvan-frame-2331",
@@ -1992,10 +1993,21 @@
   "change": "A frame at 23:31, the first since the 18:33 one. The 19:30 and 20:30 runs fetched nothing at all, so the page had been showing a five-hour-old picture, which is the clearest sign yet that those two runs did nothing rather than finding nothing",
   "scope": "data/satellite/",
   "check": {
+   "type": "count_files",
+   "glob": "data/satellite/bay-2026-11-18-insat-ir.jpg",
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-19nov-0200",
+  "date": "2026-11-19",
+  "change": "Scheduled 02:00 run. The 17:30 and 20:30 fixes of 18 November both state a latitude and longitude, so both are now in the record: 13.6N 85.3E and 13.8N 85.3E, still a severe cyclonic storm, moving north-north-west at 9 kmph and then north at 10 kmph. Twenty-three fixes, the marker and track redrawn, the Track tab time, the position line and the footnote now reading 20:30 and twenty-three. The 23:30 bulletin of 18 November was not reachable, so the record stops at 20:30 rather than carrying the 14.1N 85.0E from the forecast table. Three fingerprints in the changelog went stale the moment the record moved on: the 14:30 entry pointed at the position line this redraw replaced, so it now tests the record; the 23:31 frame entry pointed at latest.json, which every fetch overwrites, so it now tests that the frame file itself survives; and the 23:25 manual note, which said the 17:30 bulletin gave no coordinates, is marked superseded, because the 17:30 fix has since been found with coordinates",
+  "scope": "events/akvan.html, data/",
+  "check": {
    "type": "contains",
-   "pattern": "23:31",
+   "pattern": "13.8&deg;N, 85.3&deg;E at 20:30 IST",
    "paths": [
-    "data/satellite/latest.json"
+    "events/akvan.html"
    ],
    "min": 1
   }

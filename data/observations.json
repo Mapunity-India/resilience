@@ -195,6 +195,26 @@
    "movement": "north-north-west at 8 kmph",
    "where": "520 km south-east of Narsapur, 560 km east of Chennai, 570 km south-southeast of Kalingapatnam, 660 km south of Gopalpur, 720 km south of Puri",
    "fetched": "2026-11-18T18:33:16+05:30"
+  },
+  {
+   "lat": 13.6,
+   "lon": 85.3,
+   "issue": "2026-11-18T17:30:00+05:30",
+   "intensity": "Severe cyclonic storm Akvan",
+   "source": "IMD bulletin, 17:30 IST (ACWC Chennai coastal bulletin, RSMC New Delhi archive)",
+   "movement": "north-north-west at 9 kmph",
+   "where": "500 km south-east of Narsapur, 540 km south-southeast of Kalingapatnam, 560 km east of Chennai, 630 km south of Gopalpur, 690 km south of Puri",
+   "fetched": "2026-11-19T02:02:00+05:30"
+  },
+  {
+   "lat": 13.8,
+   "lon": 85.3,
+   "issue": "2026-11-18T20:30:00+05:30",
+   "intensity": "Severe cyclonic storm Akvan",
+   "source": "IMD bulletin, 20:30 IST",
+   "movement": "northwards at 10 kmph",
+   "where": "480 km south-east of Narsapur, 520 km south-southeast of Kalingapatnam, 560 km east of Chennai, 610 km south of Gopalpur, 670 km south of Puri",
+   "fetched": "2026-11-19T02:02:00+05:30"
   }
  ],
  "rejected": [
@@ -214,6 +234,6 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-18T23:25:00+05:30",
- "last_checked_note": "Checked at 23:25 by hand. The 17:30 and 20:00 bulletins exist: at 17:30 the storm was about 500 km south-east of Narsapur, and the evening bulletin keeps the crossing between Narsapur and Puri. Neither gives a latitude and longitude in anything reachable, so no fix is added: a position is only recorded when the bulletin states it. The scheduled runs at 19:30 and 20:30 left no trace, which is a fault in the job, not in the record"
+ "last_checked": "2026-11-19T02:05:00+05:30",
+ "last_checked_note": "Scheduled 02:00 run. Added the 17:30 and 20:30 fixes of 18 November, both with coordinates stated in the bulletin (13.6N 85.3E and 13.8N 85.3E, both severe cyclonic storm). The 23:30 bulletin of 18 November had not reached any reachable source by 02:02 IST, and the 02:30 bulletin of 19 November had not been issued yet, so neither is recorded. IMD reissued the same 17:30 position in its 20:30 all-India bulletin, which is the analysis time, not a second fix."
 }
