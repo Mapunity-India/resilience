@@ -1943,5 +1943,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "package-check-resurrection",
+  "date": "2026-11-18",
+  "change": "The packager gains a check: it compares the folder against a release manifest both ways and names files that are new or resurrected and files that are in the release but gone from the folder. It runs quietly before every full or patch, so a file brought back by an older archive is seen before it reaches a commit. Tested by planting a file and watching it appear",
+  "scope": "tools/package.py",
+  "check": {
+   "type": "contains",
+   "pattern": "new or resurrected",
+   "paths": [
+    "tools/package.py"
+   ],
+   "min": 1
+  }
  }
 ]

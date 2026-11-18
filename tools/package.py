@@ -42,7 +42,39 @@ def write_manifest(tag, files):
 def content(files):
     return {k: v for k, v in files.items() if not k.startswith('tools/manifests/')}
 
+def newest_tag():
+    tags = [f[:-5] for f in os.listdir(STORE) if f.endswith('.json') and f.startswith('r')]
+    tags.sort(key=lambda s: int(s[1:]) if s[1:].isdigit() else 0)
+    return tags[-1] if tags else None
+
+def check(tag=None, quiet=False):
+    """Compare the tree with a release manifest, both ways.
+
+    A file in the folder but not in the release is either new and not yet
+    released, or something that came back with an older archive after a reset.
+    A file in the release but not in the folder has been deleted, deliberately
+    or not. Both are worth seeing before a commit."""
+    tag = tag or newest_tag()
+    if not tag:
+        print('check: no manifest to compare against')
+        return []
+    man = json.load(open(os.path.join(STORE, tag + '.json')))['files']
+    man = {k: v for k, v in man.items() if not k.startswith('tools/manifests/')}
+    now = content(scan())
+    extra = sorted(set(now) - set(man))
+    missing = sorted(set(man) - set(now))
+    changed = sorted(r for r in set(now) & set(man) if now[r][0] != man[r][0])
+    if not quiet:
+        print('check against %s: %d changed, %d new, %d gone'
+              % (tag, len(changed), len(extra), len(missing)))
+        for r in extra:
+            print('   new or resurrected:', r)
+        for r in missing:
+            print('   in the release, not in the folder:', r)
+    return extra, missing, changed
+
 def full(tag):
+    check(quiet=True)
     files = scan()
     write_manifest(tag, files)
     files = scan()                                  # so the archive carries its manifest
@@ -54,6 +86,7 @@ def full(tag):
     return out
 
 def patch(base, tag):
+    check(quiet=True)
     mpath = os.path.join(STORE, base + '.json')
     if not os.path.exists(mpath):
         sys.exit('no manifest for base %s; cut a full archive for it first' % base)
@@ -91,11 +124,13 @@ def patch(base, tag):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('mode', choices=['full', 'patch'])
-    ap.add_argument('tags', nargs='+')
+    ap.add_argument('mode', choices=['full', 'patch', 'check'])
+    ap.add_argument('tags', nargs='*')
     ap.add_argument('--full', action='store_true', help='with patch, also cut the full archive for the new tag')
     a = ap.parse_args()
-    if a.mode == 'full':
+    if a.mode == 'check':
+        check(a.tags[0] if a.tags else None)
+    elif a.mode == 'full':
         full(a.tags[0])
     else:
         if len(a.tags) != 2:
