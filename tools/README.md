@@ -217,3 +217,21 @@ project, or it will find nothing to update.
 The jobs created for Akvan were deleted on 18 November 2026, partly because they
 still pointed at the old location inside the District Mocha suite. If they are
 wanted again, create them against `resilience-site` and expect a session per run.
+
+## The repository
+
+The site lives in `Mapunity-India/resilience` on GitHub, at the root of the
+`main` branch, so `index.html` sits at the top of the repository and a hosting
+service can serve it with no build step and no folder to configure.
+
+Each release is a commit on `main` plus a tag named for it: `r004`, `r005` and
+so on. The tag and the zip carry the same name, so a release can be fetched
+either way, and the history makes it possible to see what changed between two
+releases and to go back to any of them.
+
+    python3 tools/package.py full r005            # the archive and its manifest
+    git add -A && git commit -m "Release r005"
+    git tag r005 && git push origin main --tags
+
+The manifest in `tools/manifests` is committed with the release, which is what
+lets the next patch be cut against this one.
