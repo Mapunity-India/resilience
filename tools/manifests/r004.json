@@ -1,0 +1,135 @@
+{
+ "tag": "r004",
+ "root": "resilience.mapunity.com",
+ "built": "18 Nov 2026 15:59 IST",
+ "files": {
+  "index.html": [
+   "65f1cc1b3642dbdd78afca6d137e15f098fdba88f08b6eaf24582ff25cc0857a",
+   904036
+  ],
+  "changelog.json": [
+   "99e94c01d82d0649565d7700e13552300b937019d6b48eaf9ec7f25b686db3b6",
+   71266
+  ],
+  "CHANGELOG.md": [
+   "5200bdafe21e33b72b24ef0db320f4e47fae10e26ab9684564b1d0ef2b73666d",
+   46099
+  ],
+  "events/akvan.html": [
+   "d94f0bf5ac252b4a9e25529ff781cd12788a841a26c3ffc1d95ad8d9a885c290",
+   281185
+  ],
+  "events/murasu.html": [
+   "108eb5c014f62728c6ed702ee35633b0327466895c032521fe62b2f6d6d18096",
+   273263
+  ],
+  "events/arnab.html": [
+   "2d3c3702e0702e99d884c32927ce441057f329aaadfeb5e262f52e7425cb4d95",
+   272961
+  ],
+  "events/el-nino.html": [
+   "49592c8e8d3715b5a6e1ae20d16e8956f37f2a3ff8e9dd470ec5ae0ee666e447",
+   73277
+  ],
+  "tools/fetch_position.py": [
+   "58b1dee14eff7148451d5e2b67a09bef60cd7341313c41a14530781262e36621",
+   15064
+  ],
+  "tools/README.md": [
+   "8221dcd9e2172993cc6bda33d0e12daa2a3664ec4e604c1d3314fbe1feba0bfe",
+   9610
+  ],
+  "tools/export_track.py": [
+   "41b426b5f05bc35dabca9d5a70cca2f2c3e23556abc3ff303340e989f9c6f985",
+   1995
+  ],
+  "tools/fetch_image.py": [
+   "fc4b291f0d190ecacc378aa61dd91804fc88e63dec8d30b81cee1cfc86d82f3d",
+   5151
+  ],
+  "tools/set_event.py": [
+   "f488526a61e20a4faa99647f1fdbd5a057c1c633d947cdd2bf787922b95f057c",
+   3173
+  ],
+  "tools/postevent.py": [
+   "2370c7ae4bbf4460f36be7411bfabc13efd9d7e8765d37a22b1ee57c6a86f091",
+   2720
+  ],
+  "tools/verify_changelog.py": [
+   "246097c683ffbb38f8c964e973043faad4083ba573145a57e9e4e796a0a9de93",
+   4325
+  ],
+  "tools/changelog_archive.py": [
+   "5a0e3f12484ce1c36e68f87bf05a273668db67a47214495784edd70134febc3f",
+   4688
+  ],
+  "tools/package.py": [
+   "fe9e982ba09e4e49f9fea7f32e61e0a5587697ccc03fc698f97f90b41d5b5b19",
+   4458
+  ],
+  "tools/manifests/r001.json": [
+   "6505b25d57b06638d8758ea02782770aa72658ff4b65d6f6cd255bacecc25d13",
+   2736
+  ],
+  "tools/manifests/r002.json": [
+   "08c5469067fa3be2656c7781c8b4d400e2efec0220bfee6b40a2850383ce2708",
+   2971
+  ],
+  "tools/manifests/r003.json": [
+   "2da1cee8dfd9ee70c4785705ddfac4e068cd04302297debf4b4de390567df9b9",
+   3678
+  ],
+  "tools/manifests/r004.json": [
+   "58e1b0e846d6db12b20ee116be1f799a367f8a4d823ec497434f51c6baa763d3",
+   3678
+  ],
+  "data/active.json": [
+   "8c8a6d8a1a73caef00f255f9c93f67aaad7f6c918fa34b1d49b495a78d4f5993",
+   109
+  ],
+  "data/observations.json": [
+   "588aea30f8f246f12ce50c6773fdc9041b9e46330b1a055d3d100207bbcaac41",
+   7767
+  ],
+  "data/akvan-track.csv": [
+   "e43c1c9e63e102d77c9c9dc9ea3ac921abcedb5bad5850757f1b6995018428ed",
+   4192
+  ],
+  "data/event.json": [
+   "488e1b153859f532e8073b01a6b83bbdd8c49b09c3b3728ef8b7ab8efd544d91",
+   402
+  ],
+  "data/akvan-postevent.json": [
+   "c024542c5de282800c0648e97b2573cc9b5185c561196f0cfaa91cbe54916cca",
+   60
+  ],
+  "data/satellite/bay-2026-11-16.jpg": [
+   "e6c4e7fba2fa83d8638c5441847654d93886ba022e0290c38998c94417e78bf0",
+   152450
+  ],
+  "data/satellite/bay-2026-11-16-viirs.jpg": [
+   "f194aaabf44f9471c80a49851ea916b3da93e08586fcfbbfe722eb989f889318",
+   168284
+  ],
+  "data/satellite/bay-2026-11-16-ir.jpg": [
+   "2ba77745f8f3d81782574571f390f40cce7914db84e4e3198e793385e24821ec",
+   116218
+  ],
+  "data/satellite/bay-2026-11-17-insat-ir.jpg": [
+   "06cec599d7f2d25670d41c1d87c31382a6763b12e876f287a2a49b17d50e07bc",
+   162525
+  ],
+  "data/satellite/latest.json": [
+   "02d00376993f227d21bff846c020532614391db036d1386a79f4a9de3a5085e6",
+   206
+  ],
+  "data/satellite/bay-2026-11-18-insat-ir.jpg": [
+   "93fd495cd2df6a64b3f8fc5182f23c3167b5a2eb55651126a11cd4d9a8860a00",
+   155307
+  ],
+  "logos/resilience-mark.png": [
+   "e5830ab6a6662603eef61b7f1f43a58a81361a1d1b691d3330de7dd63d00380c",
+   1765
+  ]
+ }
+}

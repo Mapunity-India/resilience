@@ -184,3 +184,36 @@ again a few hours either side, keep a permanent copy:
 
 That writes `data/satellite/akvan-landfall-<date>.jpg` beside the working frame
 and names it in `latest.json`.
+
+## Labelling a track map
+
+The label layout follows the shape of the track, not a fixed rule.
+
+A **north-south** track, like Akvan's, leaves the sea clear on either side, so
+labels sit beside their points and the landfall label goes to the right of it.
+
+An **east-west** track, like Arnab's, has no room beside the line: a label placed
+to the left or right of a point runs along the track and collides with the dots.
+Put those labels above and below the line in turn, and keep the landfall label
+and its place name on the side away from the busiest stretch of track.
+
+Keep the place line short: "near Yanam", not the crossing window, which belongs
+in the landfall card. Months are mixed case, Oct rather than OCT.
+
+Font sizes are set in the drawing, so a map with a narrower viewBox renders the
+same number larger on the page. Scale the label type by the ratio of the two
+viewBox widths when you copy a layout between events.
+
+## Scheduled updates
+
+While a storm is live the page can be kept current by a scheduled run of this
+agent, hourly, which fetches the frame, appends any new fix and redraws.
+
+Two things to know before switching it on. Every run opens a new chat session
+named after the job, so a long event leaves a trail of them in the account, and
+the run has to be pointed at this site root, not at a folder inside another
+project, or it will find nothing to update.
+
+The jobs created for Akvan were deleted on 18 November 2026, partly because they
+still pointed at the old location inside the District Mocha suite. If they are
+wanted again, create them against `resilience-site` and expect a session per run.

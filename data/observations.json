@@ -165,6 +165,16 @@
    "movement": "north-north-west at 3 kmph",
    "where": "580 km east of Chennai, 610 km south-east of Machilipatnam, 610 km south-southeast of Visakhapatnam, 730 km south of Gopalpur",
    "fetched": "2026-11-18T11:32:00+05:30"
+  },
+  {
+   "lat": 13.1,
+   "lon": 85.4,
+   "issue": "2026-11-18T11:30:00+05:30",
+   "intensity": "Severe cyclonic storm Akvan",
+   "source": "IMD bulletin, 11:30 IST",
+   "movement": "north-north-west at 8 kmph",
+   "where": "540 km south-east of Narsapur, 570 km east of Chennai, 600 km south-southeast of Kalingapatnam, 690 km south of Gopalpur, 750 km south of Puri",
+   "fetched": "2026-11-18T15:58:00+05:30"
   }
  ],
  "rejected": [
@@ -184,6 +194,6 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-18T11:32:00+05:30",
- "last_checked_note": "05:30 fix in, and IMD has called it a severe cyclonic storm; the landfall intensity has been scaled back to 100-110 kmph gusting 120"
+ "last_checked": "2026-11-18T15:58:00+05:30",
+ "last_checked_note": "11:30 fix in. IMD has widened the crossing to Narsapur to Puri and cut the expected wind again, to 90-100 kmph gusting 110. No 08:30 or 14:30 bulletin reachable, so the record has a six-hour gap there"
 }
