@@ -1905,13 +1905,13 @@
  {
   "id": "akvan-18nov-1130",
   "date": "2026-11-18",
-  "change": "Refreshed at 16:00 on the 18th. The 11:30 fix puts Akvan at 13.1N 85.4E, moving north-north-west at 8 kmph where it had been crawling at 3. Two forecast changes: the crossing widens to Narsapur in Andhra Pradesh to Puri in Odisha, and the expected wind at the coast is cut again to 90 to 100 kmph gusting 110, from 100 to 110 this morning and 120 to 130 on the 17th. Red message warning for north Andhra, Yanam and south Odisha. Nineteen fixes; the frame is the 15:56 fetch",
+  "change": "Refreshed at 16:00 on the 18th. The 11:30 fix puts Akvan at 13.1N 85.4E, moving north-north-west at 8 kmph where it had been crawling at 3. Two forecast changes: the crossing widens to Narsapur in Andhra Pradesh to Puri in Odisha, and the expected wind at the coast is cut again to 90 to 100 kmph gusting 110, from 100 to 110 this morning and 120 to 130 on the 17th. Red message warning for north Andhra, Yanam and south Odisha. Nineteen fixes; the frame is the 15:56 fetch. The fingerprint moved from the page, which now carries the 14:30 position, to the record, which keeps the 11:30 fix",
   "scope": "events/akvan.html, data/",
   "check": {
    "type": "contains",
-   "pattern": "13.1&deg;N, 85.4&deg;E",
+   "pattern": "2026-11-18T11:30:00+05:30",
    "paths": [
-    "events/akvan.html"
+    "data/observations.json"
    ],
    "min": 1
   }
@@ -1954,6 +1954,20 @@
    "pattern": "new or resurrected",
    "paths": [
     "tools/package.py"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-18nov-1430",
+  "date": "2026-11-18",
+  "change": "Refreshed at 18:33. The 14:30 fix puts Akvan at 13.3N 85.3E, still a severe cyclonic storm, moving north-north-west at 8 kmph. Nothing in the bulletin changes the cards: no reclassification, and the crossing stays between Narsapur and Puri around noon on the 20th at 90 to 100 kmph gusting 110, so the Intensity and Track cards are left as they were. Twenty-one fixes; the frame is the 18:33 fetch. The footnote under the cards was still reading seventeen fixes and a 09:02 check, so it now reads twenty-one and 18:33. The 11:30 entry's fingerprint pointed at the position line, which this redraw replaced, so it now tests the record instead",
+  "scope": "events/akvan.html, data/",
+  "check": {
+   "type": "contains",
+   "pattern": "13.3&deg;N, 85.3&deg;E at 14:30 IST",
+   "paths": [
+    "events/akvan.html"
    ],
    "min": 1
   }
