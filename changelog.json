@@ -1929,5 +1929,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-18nov-0830-gap",
+  "date": "2026-11-18",
+  "change": "The 08:30 fix is in at 12.9N 85.4E, which closes the gap between the 05:30 and 11:30 positions. Twenty fixes. The Intensity card now carries IMD's own expectation that the storm will not strengthen further, from the director general's briefing, alongside the 90 to 100 kmph coast forecast. Frame refreshed at 16:31",
+  "scope": "events/akvan.html, data/",
+  "check": {
+   "type": "contains",
+   "pattern": "does not expect it to strengthen",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]

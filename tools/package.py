@@ -25,7 +25,7 @@ def now():
 def scan():
     out = {}
     for dp, dn, fn in os.walk(ROOT):
-        dn[:] = [d for d in dn if d != '__pycache__']
+        dn[:] = [d for d in dn if d not in ('__pycache__', '.git')]
         for f in fn:
             if f == '.DS_Store':
                 continue

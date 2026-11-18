@@ -1,0 +1,143 @@
+{
+ "tag": "r005",
+ "root": "resilience.mapunity.com",
+ "built": "18 Nov 2026 16:32 IST",
+ "files": {
+  "index.html": [
+   "65f1cc1b3642dbdd78afca6d137e15f098fdba88f08b6eaf24582ff25cc0857a",
+   904036
+  ],
+  "changelog.json": [
+   "57827c5c7fa61bf8db6b59221d23bb6035eca13287f1faa82524e884563aa585",
+   72435
+  ],
+  "CHANGELOG.md": [
+   "88168d76da2f450056efd7ea8d982466ef8b70011990c50af4b01e0e7c8576f7",
+   46874
+  ],
+  ".gitignore": [
+   "60c9bdd905fcf45ac485c680d32e9773962cf061b6f041dcddd033911558a672",
+   29
+  ],
+  "events/akvan.html": [
+   "be60bbf4ad0933f004cd1789d456d9f40a814d2803d1a091e7e57303b55258b7",
+   281352
+  ],
+  "events/murasu.html": [
+   "108eb5c014f62728c6ed702ee35633b0327466895c032521fe62b2f6d6d18096",
+   273263
+  ],
+  "events/arnab.html": [
+   "2d3c3702e0702e99d884c32927ce441057f329aaadfeb5e262f52e7425cb4d95",
+   272961
+  ],
+  "events/el-nino.html": [
+   "49592c8e8d3715b5a6e1ae20d16e8956f37f2a3ff8e9dd470ec5ae0ee666e447",
+   73277
+  ],
+  "tools/fetch_position.py": [
+   "58b1dee14eff7148451d5e2b67a09bef60cd7341313c41a14530781262e36621",
+   15064
+  ],
+  "tools/README.md": [
+   "35342289ad4d89b60a9de2ddf2733480601575b7945f0a59a7c6cbfbd39b5814",
+   10429
+  ],
+  "tools/export_track.py": [
+   "41b426b5f05bc35dabca9d5a70cca2f2c3e23556abc3ff303340e989f9c6f985",
+   1995
+  ],
+  "tools/fetch_image.py": [
+   "fc4b291f0d190ecacc378aa61dd91804fc88e63dec8d30b81cee1cfc86d82f3d",
+   5151
+  ],
+  "tools/set_event.py": [
+   "f488526a61e20a4faa99647f1fdbd5a057c1c633d947cdd2bf787922b95f057c",
+   3173
+  ],
+  "tools/postevent.py": [
+   "2370c7ae4bbf4460f36be7411bfabc13efd9d7e8765d37a22b1ee57c6a86f091",
+   2720
+  ],
+  "tools/verify_changelog.py": [
+   "246097c683ffbb38f8c964e973043faad4083ba573145a57e9e4e796a0a9de93",
+   4325
+  ],
+  "tools/changelog_archive.py": [
+   "5a0e3f12484ce1c36e68f87bf05a273668db67a47214495784edd70134febc3f",
+   4688
+  ],
+  "tools/package.py": [
+   "087f80c33327aa2fcb5d9442f8c64832425d4f009b5e1689e19ce01c29962667",
+   4472
+  ],
+  "tools/manifests/r001.json": [
+   "6505b25d57b06638d8758ea02782770aa72658ff4b65d6f6cd255bacecc25d13",
+   2736
+  ],
+  "tools/manifests/r002.json": [
+   "08c5469067fa3be2656c7781c8b4d400e2efec0220bfee6b40a2850383ce2708",
+   2971
+  ],
+  "tools/manifests/r003.json": [
+   "2da1cee8dfd9ee70c4785705ddfac4e068cd04302297debf4b4de390567df9b9",
+   3678
+  ],
+  "tools/manifests/r004.json": [
+   "8ac04e4aad1e699dab81d6606cc095e027c156079d0b6525f6af6b602ebcc1c1",
+   3795
+  ],
+  "tools/manifests/r005.json": [
+   "bc97eadca1e2ed8e6d31662ab91a3045b27924800c531884a10debbc1e8e01a4",
+   3896
+  ],
+  "data/active.json": [
+   "8c8a6d8a1a73caef00f255f9c93f67aaad7f6c918fa34b1d49b495a78d4f5993",
+   109
+  ],
+  "data/observations.json": [
+   "00c41485f52c63096a532566c5372a56e95f0f4c551291911001a260e16184fb",
+   8008
+  ],
+  "data/akvan-track.csv": [
+   "f1c9764997f4b7dbcbd2396fcc8c4d7a8b109b3f847a8ea0aca724f9a270eaf4",
+   4412
+  ],
+  "data/event.json": [
+   "488e1b153859f532e8073b01a6b83bbdd8c49b09c3b3728ef8b7ab8efd544d91",
+   402
+  ],
+  "data/akvan-postevent.json": [
+   "c024542c5de282800c0648e97b2573cc9b5185c561196f0cfaa91cbe54916cca",
+   60
+  ],
+  "data/satellite/bay-2026-11-16.jpg": [
+   "e6c4e7fba2fa83d8638c5441847654d93886ba022e0290c38998c94417e78bf0",
+   152450
+  ],
+  "data/satellite/bay-2026-11-16-viirs.jpg": [
+   "f194aaabf44f9471c80a49851ea916b3da93e08586fcfbbfe722eb989f889318",
+   168284
+  ],
+  "data/satellite/bay-2026-11-16-ir.jpg": [
+   "2ba77745f8f3d81782574571f390f40cce7914db84e4e3198e793385e24821ec",
+   116218
+  ],
+  "data/satellite/bay-2026-11-17-insat-ir.jpg": [
+   "06cec599d7f2d25670d41c1d87c31382a6763b12e876f287a2a49b17d50e07bc",
+   162525
+  ],
+  "data/satellite/latest.json": [
+   "435b0451bc49be8608e1d8e61b26b92403ce1e0c2fbced5fc43c14fd79e23d43",
+   206
+  ],
+  "data/satellite/bay-2026-11-18-insat-ir.jpg": [
+   "39f6f3537c87f8946c660fdc9d19ce959ff1dcf042f67a1795b498f681520d11",
+   154147
+  ],
+  "logos/resilience-mark.png": [
+   "e5830ab6a6662603eef61b7f1f43a58a81361a1d1b691d3330de7dd63d00380c",
+   1765
+  ]
+ }
+}
