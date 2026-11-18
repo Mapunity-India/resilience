@@ -2001,13 +2001,27 @@
  {
   "id": "akvan-19nov-0200",
   "date": "2026-11-19",
-  "change": "Scheduled 02:00 run. The 17:30 and 20:30 fixes of 18 November both state a latitude and longitude, so both are now in the record: 13.6N 85.3E and 13.8N 85.3E, still a severe cyclonic storm, moving north-north-west at 9 kmph and then north at 10 kmph. Twenty-three fixes, the marker and track redrawn, the Track tab time, the position line and the footnote now reading 20:30 and twenty-three. The 23:30 bulletin of 18 November was not reachable, so the record stops at 20:30 rather than carrying the 14.1N 85.0E from the forecast table. Three fingerprints in the changelog went stale the moment the record moved on: the 14:30 entry pointed at the position line this redraw replaced, so it now tests the record; the 23:31 frame entry pointed at latest.json, which every fetch overwrites, so it now tests that the frame file itself survives; and the 23:25 manual note, which said the 17:30 bulletin gave no coordinates, is marked superseded, because the 17:30 fix has since been found with coordinates",
+  "change": "Scheduled 02:00 run. The 17:30 and 20:30 fixes of 18 November both state a latitude and longitude, so both are now in the record: 13.6N 85.3E and 13.8N 85.3E, still a severe cyclonic storm, moving north-north-west at 9 kmph and then north at 10 kmph. Twenty-three fixes, the marker and track redrawn, the Track tab time, the position line and the footnote now reading 20:30 and twenty-three. The 23:30 bulletin of 18 November was not reachable, so the record stops at 20:30 rather than carrying the 14.1N 85.0E from the forecast table. Three fingerprints in the changelog went stale the moment the record moved on: the 14:30 entry pointed at the position line this redraw replaced, so it now tests the record; the 23:31 frame entry pointed at latest.json, which every fetch overwrites, so it now tests that the frame file itself survives; and the 23:25 manual note, which said the 17:30 bulletin gave no coordinates, is marked superseded, because the 17:30 fix has since been found with coordinates. Its fingerprint pointed at the position line this later run replaced, so it now tests the record",
   "scope": "events/akvan.html, data/",
   "check": {
    "type": "contains",
-   "pattern": "13.8&deg;N, 85.3&deg;E at 20:30 IST",
+   "pattern": "\"lat\": 13.8,",
    "paths": [
-    "events/akvan.html"
+    "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-19nov-0400",
+  "date": "2026-11-19",
+  "change": "Scheduled 04:00 run. The 23:30 bulletin of 18 November is in, at 13.9N 85.3E, still a severe cyclonic storm and now moving north at 5 kmph: it came from IMD's ACWC Chennai coastal bulletin, whose synoptic situation is the 1800 UTC observation. Twenty-four fixes, the marker and track redrawn, the Track tab time, the position line and the footnote now reading 23:30 and twenty-four. The 02:30 bulletin of 19 November was not reachable at 04:09, and the 15.0N 85.6E in the JTWC and WMO tables and the 13.9N 84.8E in the weather.lk table are forecast positions, so neither is recorded. No reclassification, so the Intensity card and the descriptor are untouched. The 02:00 entry's fingerprint pointed at the position line this redraw replaced, so it now tests the record. The 02:00 entry had also never been written into CHANGELOG.md, which this run puts right alongside its own row",
+  "scope": "events/akvan.html, data/",
+  "check": {
+   "type": "contains",
+   "pattern": "\"lat\": 13.9,",
+   "paths": [
+    "data/observations.json"
    ],
    "min": 1
   }

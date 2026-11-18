@@ -215,6 +215,16 @@
    "movement": "northwards at 10 kmph",
    "where": "480 km south-east of Narsapur, 520 km south-southeast of Kalingapatnam, 560 km east of Chennai, 610 km south of Gopalpur, 670 km south of Puri",
    "fetched": "2026-11-19T02:02:00+05:30"
+  },
+  {
+   "lat": 13.9,
+   "lon": 85.3,
+   "issue": "2026-11-18T23:30:00+05:30",
+   "intensity": "Severe cyclonic storm",
+   "source": "IMD ACWC Chennai coastal bulletin, valid 21 UTC of 18 November (1800 UTC fix)",
+   "movement": "northwards at 5 kmph",
+   "where": "480 km south-east of Narsapur, 510 km south-south-east of Kalingapatnam, 560 km east of Chennai, 600 km south of Gopalpur, 660 km south of Puri",
+   "fetched": "2026-11-19T04:12:00+05:30"
   }
  ],
  "rejected": [
@@ -234,6 +244,6 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-19T02:05:00+05:30",
- "last_checked_note": "Scheduled 02:00 run. Added the 17:30 and 20:30 fixes of 18 November, both with coordinates stated in the bulletin (13.6N 85.3E and 13.8N 85.3E, both severe cyclonic storm). The 23:30 bulletin of 18 November had not reached any reachable source by 02:02 IST, and the 02:30 bulletin of 19 November had not been issued yet, so neither is recorded. IMD reissued the same 17:30 position in its 20:30 all-India bulletin, which is the analysis time, not a second fix."
+ "last_checked": "2026-11-19T04:12:00+05:30",
+ "last_checked_note": "Scheduled 04:00 run. Added the 23:30 fix of 18 November (13.9N 85.3E, severe cyclonic storm, northwards at 5 kmph), taken from IMD's ACWC Chennai coastal bulletin, whose synoptic situation is the 1800 UTC observation. The 02:30 bulletin of 19 November had not been published to any reachable source by 04:09, so it is not recorded; the JTWC and WMO track tables carry 19 November 00:00 UTC at 15.0N 85.6E, which is a forecast position and is not recorded."
 }
