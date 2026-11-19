@@ -235,7 +235,18 @@ a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(3
     if(line){
       var r=o[o.length-1];
       var s=r.lat.toFixed(1)+'&deg;N, '+r.lon.toFixed(1)+'&deg;E at '+stamp(r.issue)+'.';
-      if(r.where) s+=' About '+r.where+'.';
+      if(r.where){ s+=' About '+r.where+'.'; }
+      else {
+        /* a satellite fix gives a position and nothing else: borrow the last bulletin that
+           carried distances, and say which one, rather than leave the sentence short */
+        for(var q=o.length-2;q>=0;q--){
+          if(o[q].where){
+            var mw=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(o[q].issue);
+            s+=' The nearest bulletin, at '+(mw?mw[4]+':'+mw[5]:'')+', put it about '+o[q].where+'.';
+            break;
+          }
+        }
+      }
       line.innerHTML=s;
     }
     var src=document.getElementById('posSrc');
