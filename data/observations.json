@@ -274,5 +274,22 @@
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
  "last_checked": "2026-11-19T12:05:00+05:30",
- "last_checked_note": "Scheduled 12:00 run. Added two fixes: 02:30 IST 19 November (14.1N 85.3E, northwards at 5 kmph) and 08:30 IST 19 November (14.9N 85.3E, northwards at 15 kmph, severe cyclonic storm), both with latitude and longitude stated in the bulletin text. No 11:30 bulletin with a stated position had reached any source I could read by 12:05 IST. Landfall is still forecast for noon of 20 November between Narsapur and Puri, close to east of Gopalpur, so no landfall frame was kept."
+ "last_checked_note": "Scheduled 12:00 run. Added two fixes: 02:30 IST 19 November (14.1N 85.3E, northwards at 5 kmph) and 08:30 IST 19 November (14.9N 85.3E, northwards at 15 kmph, severe cyclonic storm), both with latitude and longitude stated in the bulletin text. No 11:30 bulletin with a stated position had reached any source I could read by 12:05 IST. Landfall is still forecast for noon of 20 November between Narsapur and Puri, close to east of Gopalpur, so no landfall frame was kept.",
+ "forecast": {
+  "corridor": [
+   {
+    "name": "Narsapur",
+    "lat": 16.43,
+    "lon": 81.7
+   },
+   {
+    "name": "Puri",
+    "lat": 19.81,
+    "lon": 85.83
+   }
+  ],
+  "when": "around noon on 20 November",
+  "as": "a severe cyclonic storm",
+  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha"
+ }
 }

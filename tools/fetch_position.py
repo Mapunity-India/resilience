@@ -157,7 +157,19 @@ def redraw(data, page_path):
     xy = [project(p['lon'], p['lat']) for p in pts]
     last = pts[-1]
     lx, ly = xy[-1]
-    fx, fy = 302.0, 576.0                      # the forecast anchor near the Andhra coast
+    # The forecast comes from the record, not from a constant: IMD moves the crossing
+    # corridor as the storm goes on, and a fixed anchor left the dashed line pointing at
+    # a coast the storm was no longer expected to reach.
+    fc = data.get('forecast') or {}
+    corr = fc.get('corridor') or []
+    if len(corr) == 2:
+        a = project(corr[0]['lon'], corr[0]['lat'])
+        b = project(corr[1]['lon'], corr[1]['lat'])
+        fx, fy = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2
+        corr_xy = (a, b)
+    else:
+        fx, fy = 302.0, 576.0                  # fall back to the old anchor if none is recorded
+        corr_xy = None
 
     track = 'M' + ' L'.join('%.1f %.1f' % p for p in xy)
     dots = ''.join('<circle cx="%.1f" cy="%.1f" r="4.2" fill="#8f2318" fill-opacity="0.6" '
@@ -167,17 +179,27 @@ def redraw(data, page_path):
     except Exception:
         stamp = (last['issue'] or '')[:16].replace('T', ' ')
 
+    corridor_svg = ''
+    if corr_xy:
+        (ax, ay), (bx, by) = corr_xy
+        corridor_svg = (
+            '<path d="M%.1f %.1f L%.1f %.1f" fill="none" stroke="#8f2318" stroke-width="5" '
+            'stroke-linecap="round" opacity="0.45"/>'
+            '<path d="M%.1f %.1f l0 -7 M%.1f %.1f l0 7 M%.1f %.1f l0 -7 M%.1f %.1f l0 7" '
+            'stroke="#8f2318" stroke-width="1.6" opacity="0.7"/>'
+        ) % (ax, ay, bx, by, ax, ay, ax, ay, bx, by, bx, by)
     block = (
         '<path d="%s" fill="none" stroke="#8f2318" stroke-width="1.3" stroke-opacity="0.45" '
         'stroke-linecap="round"/>%s'
         '<path d="M%.1f %.1f Q%.1f %.1f %.1f %.1f" fill="none" stroke="#8f2318" stroke-width="2.4" '
         'stroke-dasharray="8 6" stroke-linecap="round" opacity="0.9"/>'
+        '%s'
         '<circle cx="%.1f" cy="%.1f" r="15" fill="none" stroke="#8f2318" stroke-width="1.6" opacity="0.4"/>'
         '<circle cx="%.1f" cy="%.1f" r="8" fill="#8f2318"/>'
         '<text x="%.1f" y="%.1f" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" '
         'fill="#8f2318" letter-spacing="1">AKVAN &middot; %s</text>'
         '<text x="%.1f" y="%.1f" font-family="JetBrains Mono, monospace" font-size="10" fill="#6b635a">%s</text>'
-    ) % (track, dots, lx, ly, (lx + fx) / 2, (ly + fy) / 2 - 22, fx, fy,
+    ) % (track, dots, lx, ly, (lx + fx) / 2, (ly + fy) / 2 - 22, fx, fy, corridor_svg,
          lx, ly, lx, ly, lx + 18, ly - 8, stamp, lx + 18, ly + 6, last['intensity'].lower())
 
     page = re.sub(r'<!-- akvan:start -->.*?<!-- akvan:end -->',

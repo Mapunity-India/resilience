@@ -2160,5 +2160,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-forecast-from-record",
+  "date": "2026-11-19",
+  "change": "The dashed forecast line no longer ends at a fixed point near the central Andhra coast, which is where it had been anchored since the first day and why it kept pointing at a landfall IMD had already moved away from. The crossing corridor now lives in the record, Narsapur to Puri, and the map draws it as a bar along the coast with the dashed line running to its middle. Move the corridor in data/observations.json and the map follows",
+  "scope": "tools/fetch_position.py, events/akvan.html, data/observations.json",
+  "check": {
+   "type": "contains",
+   "pattern": "corridor",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
  }
 ]
