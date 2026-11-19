@@ -2118,5 +2118,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "index-crumb-mapunity",
+  "date": "2026-11-19",
+  "change": "The landing page crumb reads Mapunity rather than Public A.I. The site now stands on its own address, so the name above it is the organisation, not the project it grew out of",
+  "scope": "index.html",
+  "check": {
+   "type": "contains",
+   "pattern": ">Mapunity</div>",
+   "paths": [
+    "index.html"
+   ],
+   "min": 1
+  }
  }
 ]
