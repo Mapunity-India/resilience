@@ -485,7 +485,8 @@
    ],
    "min": 1
   },
-  "date": "2026-11-16"
+  "date": "2026-11-16",
+  "superseded_by": "event-crumb-resilience"
  },
  {
   "id": "akvan-live-page",
