@@ -218,11 +218,25 @@ def redraw(data, page_path):
     except Exception:
         when = last['issue']
     where = last.get('where') or ''
+    # a satellite fix gives a position and no distances: borrow the last bulletin that had
+    # them, and say which bulletin it was, rather than leaving the sentence short
+    borrow = None
+    if not where:
+        for q in reversed(pts[:-1]):
+            if q.get('where'):
+                try:
+                    borrow = datetime.fromisoformat(q['issue']).strftime('%H:%M')
+                except Exception:
+                    borrow = ''
+                where = q['where']
+                break
     line = '%.1f&deg;N, %.1f&deg;E at %s' % (last['lat'], last['lon'], when)
     if last.get('movement'):
         line += ', moving ' + last['movement']
     line += '.'
-    if where:
+    if where and borrow is not None:
+        line += ' The nearest bulletin, at %s, put it about %s.' % (borrow, where)
+    elif where:
         line += ' ' + where[0].upper() + where[1:] + '.'
     page = re.sub(r'<p id="posLine">.*?</p>', '<p id="posLine">%s</p>' % line, page, count=1, flags=re.S)
     page = re.sub(r'<p class="src" id="posSrc"[^>]*>.*?</p>',
