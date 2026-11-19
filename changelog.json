@@ -2258,5 +2258,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "track-tab-time-from-record",
+  "date": "2026-11-19",
+  "change": "The time on the Track tab now comes from the newest fix in the record, set by the same script that redraws the marker, rather than from whichever run last redrew the page. After the 20:00 run the tab read 11:30 while the marker said 14:30, because a run that adds no fix does not redraw",
+  "scope": "events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "tb.textContent=mm[4]",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
