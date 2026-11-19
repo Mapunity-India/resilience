@@ -2174,5 +2174,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-runtime-redraw-corridor",
+  "date": "2026-11-19",
+  "change": "The page redraws the marker from data/observations.json when it loads, and that runtime copy of the drawing carried its own hard-coded forecast anchor at 302,576, so even a fresh build put the old line back in the browser. It now takes the corridor from the record it just fetched and draws the bar as well. The event record fetch also pointed at the old nested path and could never have resolved",
+  "scope": "events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "window.__corr",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
