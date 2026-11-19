@@ -2039,5 +2039,16 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-19nov-0600",
+  "date": "2026-11-19",
+  "change": "Scheduled 06:00 run. No new fix: the 02:30 and 05:30 bulletins of 19 November were not reachable at 06:10 from any source, the RSMC coastal page, IMD's mirrored posts, the NOAA raw bulletin and the ACWC Chennai coastal bulletin all still serving the 1730 text of 18 November, and the 19 November press reports quoting only the 1730 and 2330 text. So the record stands at twenty-four fixes ending 13.9N 85.3E at 23:30, nothing was redrawn, and the Intensity and Track cards and the descriptor are untouched. The Bangladesh met service's 19 November bulletin gives only distances from Payra, Chittagong, Cox's Bazar and Mongla and no coordinates, so it carries no fix, and the 15.0N 85.6E in the JTWC and WMO tables is a forecast position. Landfall is forecast for noon on 20 November and has not begun, so no permanent frame was kept. The frame is the 06:03 fetch, with no station codes left in it",
+  "scope": "data/satellite/, tools/run-log.jsonl",
+  "check": {
+   "type": "count_files",
+   "glob": "data/satellite/bay-2026-11-19-insat-ir.jpg",
+   "min": 1
+  }
  }
 ]
