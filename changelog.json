@@ -2237,12 +2237,12 @@
   "change": "The cache rules now cover every path. They were written as /*.html, which does not match an extensionless URL, and Netlify caches /events/akvan separately from the file it rewrites to: that address was serving a build from 12:10 while /events/akvan.html was current",
   "scope": "_headers",
   "check": {
-   "type": "contains",
-   "pattern": "Cache-Control: no-cache",
+   "type": "regex",
+   "pattern": "^/\\*\\n  Cache-Control",
    "paths": [
     "_headers"
    ],
-   "min": 3
+   "min": 1
   }
  }
 ]
