@@ -30,35 +30,85 @@ def ist():
     return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30)))
 
 
-def strip_station_codes(im):
-    """IMD stamps regional station codes across its satellite frames in orange.
-    They sit on land, away from the storm, and they date the product in a way that
-    has nothing to do with the weather, so they come off. The fill is a local
-    median from the surrounding pixels, which holds the land tone underneath."""
+def _components(mask):
+    """Connected components of a boolean mask, 8-connected."""
     import numpy as np
-    a = np.array(im.convert('RGB')).astype(np.int16)
-    def mask_of(x):
-        R,G,B = x[:,:,0].astype(int), x[:,:,1].astype(int), x[:,:,2].astype(int)
-        return ((R-B)>45)&((R-G)>18)&(R>105)&(G<185)&(B<130)
-    def grow(m,n=2):
-        for _ in range(n):
-            g=m.copy(); g[1:,:]|=m[:-1,:]; g[:-1,:]|=m[1:,:]
-            g[:,1:]|=m[:,:-1]; g[:,:-1]|=m[:,1:]; m=g
-        return m
-    def fill(x,m,rad=7):
-        out=x.copy(); h,w=m.shape
-        for y,xx in zip(*np.where(m)):
-            y0,y1=max(0,y-rad),min(h,y+rad+1); x0,x1=max(0,xx-rad),min(w,xx+rad+1)
-            patch=x[y0:y1,x0:x1]; pm=m[y0:y1,x0:x1]; vals=patch[~pm]
-            if len(vals)>=10: out[y,xx]=np.median(vals,axis=0)
-        return out
-    for _ in range(3):
-        m = grow(mask_of(a),2)
-        if not m.any(): break
-        a = fill(a,m)
-    from PIL import Image as _I
-    return _I.fromarray(np.clip(a,0,255).astype(np.uint8))
+    from collections import deque
+    h, w = mask.shape
+    seen = np.zeros_like(mask, bool); out = []
+    ys, xs = np.where(mask)
+    for y0, x0 in zip(ys, xs):
+        if seen[y0, x0]:
+            continue
+        q = deque([(y0, x0)]); seen[y0, x0] = True; pix = []
+        while q:
+            y, x = q.popleft(); pix.append((y, x))
+            for dy in (-1, 0, 1):
+                for dx in (-1, 0, 1):
+                    ny, nx = y + dy, x + dx
+                    if 0 <= ny < h and 0 <= nx < w and mask[ny, nx] and not seen[ny, nx]:
+                        seen[ny, nx] = True; q.append((ny, nx))
+        out.append(pix)
+    return out
 
+
+def marker_mask(im):
+    """IMD marks each named station with a small solid white square. They are not
+    weather and they read as holes once the text beside them is gone, so they come
+    off too. They are found as small blobs much brighter than their surroundings,
+    which is what separates them from cloud."""
+    import numpy as np
+    from PIL import ImageFilter
+    g = im.convert('L')
+    a = np.array(g).astype(int)
+    med = np.array(g.filter(ImageFilter.MedianFilter(size=21))).astype(int)
+    cand = (a > 150) & ((a - med) > 40)
+    out = np.zeros_like(cand)
+    for pix in _components(cand):
+        if not (6 <= len(pix) <= 200):
+            continue
+        ys = [p[0] for p in pix]; xs = [p[1] for p in pix]
+        hh = max(ys) - min(ys) + 1; ww = max(xs) - min(xs) + 1
+        if not (4 <= hh <= 14 and 4 <= ww <= 14):
+            continue
+        if len(pix) / (hh * ww) < 0.55:
+            continue
+        for y, x in pix:
+            out[y, x] = True
+    return out
+
+
+def strip_station_codes(im):
+    """Take off everything IMD draws over the weather: the orange station codes
+    and the white square beside each of them. The fill is a local median of the
+    surrounding pixels, which holds the land or sea tone underneath."""
+    import numpy as np
+    from PIL import Image
+    a = np.array(im.convert('RGB')).astype(np.int16)
+    def codes(x):
+        R, G, B = x[:, :, 0].astype(int), x[:, :, 1].astype(int), x[:, :, 2].astype(int)
+        return ((R - B) > 45) & ((R - G) > 18) & (R > 105) & (G < 185) & (B < 130)
+    def grow(m, n=2):
+        for _ in range(n):
+            g = m.copy(); g[1:, :] |= m[:-1, :]; g[:-1, :] |= m[1:, :]
+            g[:, 1:] |= m[:, :-1]; g[:, :-1] |= m[:, 1:]; m = g
+        return m
+    def fill(x, m, rad=8):
+        out = x.copy(); h, w = m.shape
+        for y, xx in zip(*np.where(m)):
+            y0, y1 = max(0, y - rad), min(h, y + rad + 1)
+            x0, x1 = max(0, xx - rad), min(w, xx + rad + 1)
+            patch = x[y0:y1, x0:x1]; pm = m[y0:y1, x0:x1]; vals = patch[~pm]
+            if len(vals) >= 10:
+                out[y, xx] = np.median(vals, axis=0)
+        return out
+    for _ in range(2):
+        m = grow(codes(a) | marker_mask(im if _ == 0 else Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))), 2)
+        if not m.any():
+            break
+        a = fill(a, m)
+    from PIL import Image as _I
+    return _I.fromarray(np.clip(a, 0, 255).astype(np.uint8))
 
 
 def orange_left(im):

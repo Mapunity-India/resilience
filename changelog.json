@@ -2104,5 +2104,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "image-markers-removed",
+  "date": "2026-11-19",
+  "change": "The white squares were IMD's own station markers, one beside each code, so removing the text left them standing as holes. They are now removed as well: the tool finds small blobs much brighter than their surroundings, which is what separates a marker from cloud, fills them from the local median, and leaves the state boundaries and the graticule alone. Checked on the frame by eye, not just by count",
+  "scope": "tools/fetch_image.py",
+  "check": {
+   "type": "contains",
+   "pattern": "marker_mask",
+   "paths": [
+    "tools/fetch_image.py"
+   ],
+   "min": 1
+  }
  }
 ]
