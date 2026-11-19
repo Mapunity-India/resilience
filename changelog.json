@@ -2064,5 +2064,30 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "satellite-tab-time",
+  "date": "2026-11-19",
+  "change": "The Satellite tab time had stopped following the frame. The pattern that rewrites it expected the radio input with no attributes between value=\"sat\" and the closing bracket, but the satellite view is now the checked one, so the tag reads value=\"sat\" checked and the substitution silently matched nothing. The caption and latest.json moved on with each fetch while the tab stayed at 06:03. The pattern now allows attributes there, and this run set the tab to the 08:05 frame by hand",
+  "scope": "tools/fetch_image.py, events/akvan.html",
+  "check": {
+   "type": "regex",
+   "pattern": "value=\"sat\"\\[\\^>\\]\\*><span>Satellite",
+   "paths": [
+    "tools/fetch_image.py"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-19nov-0800",
+  "date": "2026-11-19",
+  "change": "Scheduled 08:00 run. No new fix. National Bulletin No. 27, issued at 02:30 on 19 November, quotes the 2330 position of 18 November at 13.9N 85.3E and states no latitude and longitude for 02:30 itself, and the 05:30 bulletin was still not reachable at 08:10: IMD's coastal and sea-area pages, the RSMC coastal bulletin and IMD's mirrored posts all serve the 2330 or 1730 text of 18 November. Sakshi's 07:13 report carries APSDMA distances of 470 km to Narsapur, 490 to Kalingapatnam, 570 to Chennai, 580 to Gopalpur and 640 to Puri, shorter than the 2330 distances and so implying a newer centre, but it gives no coordinates and a distance is not a position. The record therefore stands at twenty-four fixes ending 13.9N 85.3E at 23:30, nothing was redrawn, the Intensity and Track cards and the descriptor are untouched, and the 14.0N 83.9E and 15.3N 85.9E in the forecast tables are not recorded. Landfall is forecast for noon on 20 November and has not begun, so no permanent frame was kept. The frame is the 08:05 fetch, with no station codes left in it",
+  "scope": "data/satellite/, tools/run-log.jsonl",
+  "check": {
+   "type": "count_files",
+   "glob": "data/satellite/bay-2026-11-19-insat-ir.jpg",
+   "min": 1
+  }
  }
 ]

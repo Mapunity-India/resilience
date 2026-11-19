@@ -113,7 +113,7 @@ def main():
     t = re.sub(r'src="\.\./data/satellite/bay-[^"]+-insat-ir\.jpg(\?v=[0-9]+)?"',
                'src="../data/satellite/%s?v=%s"' % (meta['file'], stamp_q), t, count=1)
     # keep the time on the Satellite tab current as well
-    t = re.sub(r'(value="sat"><span>Satellite) <b class="vsat__t">[0-9:]*</b>',
+    t = re.sub(r'(value="sat"[^>]*><span>Satellite) <b class="vsat__t">[0-9:]*</b>',
                r'\1 <b class="vsat__t">%s</b>' % stamp.strftime('%H:%M'), t, count=1)
     t = re.sub(r"var S='INSAT-3DS[^']*';",
                "var S='INSAT-3DS, the latest frame, fetched at %s. The white mass over the south-west Bay is the storm. Image: IMD.';" % meta['fetched_label'], t, count=1)
