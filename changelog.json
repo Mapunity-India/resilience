@@ -2244,5 +2244,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-19nov-2015",
+  "date": "2026-11-19",
+  "change": "Scheduled 20:00 run. No fix was added: no bulletin at 17:30 IST or later carried a stated latitude and longitude by 20:08 IST, and the 1430 IST slot in the record is already held by the satellite fix of 15.4N 85.4E, which is not overwritten. The 20:08 satellite frame replaces the 18:04 one and the Satellite tab time moves with it; the record, the map, the track and the cards are unchanged, still a severe cyclonic storm about 410 km south of Gopalpur with landfall expected near Gopalpur around noon on 20 November",
+  "scope": "data/satellite/bay-2026-11-19-insat-ir.jpg, data/satellite/latest.json, events/akvan.html, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-19T20:15:00+05:30",
+   "paths": [
+    "tools/run-log.jsonl"
+   ],
+   "min": 1
+  }
  }
 ]
