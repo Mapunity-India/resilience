@@ -2188,5 +2188,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-19nov-1600",
+  "date": "2026-11-19",
+  "change": "Scheduled 16:00 run. The 11:30 IST fix of 19 November is in, at 15.4N 85.2E, severe cyclonic storm, northwards at 17 kmph, 430 km south of Gopalpur and 390 km east-southeast of Narsapur, with the latitude and longitude stated in the bulletin text. The marker, dots, track, Track tab time, position footer and timeline card moved to 11:30. The Track card now carries the 11:30 crossing line, between Narsapur and Puri close to Gopalpur by noon of 20 November, and the Intensity card notes that both the 08:30 and 11:30 bulletins repeat 90 to 100 kmph gusting 110. The category is unchanged, so set_event was not run, and landfall has not begun, so no permanent frame was kept",
+  "scope": "data/observations.json, events/akvan.html, data/akvan-track.csv",
+  "check": {
+   "type": "contains",
+   "pattern": "15.4",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
  }
 ]
