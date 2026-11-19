@@ -301,13 +301,24 @@
     "lon": 81.7
    },
    {
+    "name": "Kalingapatnam",
+    "lat": 18.33,
+    "lon": 84.13
+   },
+   {
+    "name": "Gopalpur",
+    "lat": 19.28,
+    "lon": 84.9
+   },
+   {
     "name": "Puri",
     "lat": 19.81,
     "lon": 85.83
    }
   ],
+  "target": "Gopalpur",
   "when": "around noon on 20 November",
   "as": "a severe cyclonic storm",
-  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha"
+  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur"
  }
 }

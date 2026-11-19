@@ -162,14 +162,15 @@ def redraw(data, page_path):
     # a coast the storm was no longer expected to reach.
     fc = data.get('forecast') or {}
     corr = fc.get('corridor') or []
-    if len(corr) == 2:
-        a = project(corr[0]['lon'], corr[0]['lat'])
-        b = project(corr[1]['lon'], corr[1]['lat'])
-        fx, fy = (a[0] + b[0]) / 2, (a[1] + b[1]) / 2
-        corr_xy = (a, b)
+    corr_xy = [project(c['lon'], c['lat']) for c in corr] if len(corr) >= 2 else None
+    if corr_xy:
+        # the line ends at the named target, or the middle of the corridor if none is named
+        names = [c.get('name') for c in corr]
+        tgt = fc.get('target')
+        k = names.index(tgt) if tgt in names else len(corr_xy) // 2
+        fx, fy = corr_xy[k]
     else:
         fx, fy = 302.0, 576.0                  # fall back to the old anchor if none is recorded
-        corr_xy = None
 
     track = 'M' + ' L'.join('%.1f %.1f' % p for p in xy)
     dots = ''.join('<circle cx="%.1f" cy="%.1f" r="4.2" fill="#8f2318" fill-opacity="0.6" '
@@ -181,13 +182,15 @@ def redraw(data, page_path):
 
     corridor_svg = ''
     if corr_xy:
-        (ax, ay), (bx, by) = corr_xy
+        # the bar follows the coast through every point in the corridor, with a tick at each end
+        d = 'M' + ' L'.join('%.1f %.1f' % q for q in corr_xy)
+        (ax, ay), (bx, by) = corr_xy[0], corr_xy[-1]
         corridor_svg = (
-            '<path d="M%.1f %.1f L%.1f %.1f" fill="none" stroke="#8f2318" stroke-width="5" '
+            '<path d="%s" fill="none" stroke="#8f2318" stroke-width="5" stroke-linejoin="round" '
             'stroke-linecap="round" opacity="0.45"/>'
             '<path d="M%.1f %.1f l0 -7 M%.1f %.1f l0 7 M%.1f %.1f l0 -7 M%.1f %.1f l0 7" '
             'stroke="#8f2318" stroke-width="1.6" opacity="0.7"/>'
-        ) % (ax, ay, bx, by, ax, ay, ax, ay, bx, by, bx, by)
+        ) % (d, ax, ay, ax, ay, bx, by, bx, by)
     block = (
         '<path d="%s" fill="none" stroke="#8f2318" stroke-width="1.3" stroke-opacity="0.45" '
         'stroke-linecap="round"/>%s'

@@ -2204,6 +2204,20 @@
   }
  },
  {
+  "id": "akvan-corridor-follows-coast",
+  "date": "2026-11-19",
+  "change": "The corridor is now four points along the coast, Narsapur, Kalingapatnam, Gopalpur and Puri, and the bar is drawn through them, so it sits on the shoreline instead of cutting inland on a straight chord between the two ends. The dashed line ends at the named target, Gopalpur, where IMD says the centre passes closest, rather than at the chord's midpoint. Both the build and the runtime redraw do the same",
+  "scope": "tools/fetch_position.py, events/akvan.html, data/observations.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Kalingapatnam",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
   "id": "akvan-19nov-1800",
   "date": "2026-11-19",
   "change": "Scheduled 18:00 run. IMD's 0900 UTC satellite fix bulletin of 19 November (= 14:30 IST) states the low-level centre at 15.4N 85.4E, T3.0 on INSAT-3DS, with the deep convection sheared to the north of the centre; that fix is appended to the record and the marker, dots, track, Track tab time, position line and timeline card moved to 14:30. The 14:30 national bulletin is based on the 1130 IST fix already recorded, so it added no position. Category unchanged (severe cyclonic storm, 90 to 100 kmph gusting 110), crossing still between Narsapur and Puri close to Gopalpur by noon of 20 November, so the Intensity and Track cards stand and set_event was not run. Centre about 430 km south of Gopalpur: no landfall, so no permanent frame was kept",
