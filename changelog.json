@@ -2025,5 +2025,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "image-strip-wired",
+  "date": "2026-11-19",
+  "change": "The station codes were never actually being stripped. The function existed but the save path wrote the crop straight out, and yesterday's frames looked clean only because the daytime product carries no codes at all. The night infrared frame does, which is why they came back at 04:09. The strip is now applied to the cropped frame before it is saved, the same cleaned frame is used for the kept copy, and the tool counts what is left afterwards and prints it",
+  "scope": "tools/fetch_image.py",
+  "check": {
+   "type": "contains",
+   "pattern": "station codes left in the frame",
+   "paths": [
+    "tools/fetch_image.py"
+   ],
+   "min": 1
+  }
  }
 ]

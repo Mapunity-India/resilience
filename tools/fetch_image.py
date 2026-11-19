@@ -60,6 +60,16 @@ def strip_station_codes(im):
     return _I.fromarray(np.clip(a,0,255).astype(np.uint8))
 
 
+
+def orange_left(im):
+    """Count pixels that still look like IMD's station codes, so a frame can be
+    checked after the strip rather than assumed clean."""
+    import numpy as np
+    a = np.array(im.convert('RGB')).astype(int)
+    R, G, B = a[:, :, 0], a[:, :, 1], a[:, :, 2]
+    return int((((R - B) > 45) & ((R - G) > 18) & (R > 105) & (G < 185) & (B < 130)).sum())
+
+
 def main():
     dry = '--dry-run' in sys.argv
     stamp = ist()
@@ -78,12 +88,19 @@ def main():
     out = os.path.join(SATELLITE, 'bay-%s-insat-ir.jpg' % stamp.strftime('%Y-%m-%d'))
     if dry:
         print('would write %s from %d bytes' % (out, len(raw))); return 0
-    im.crop(CROP).resize(SIZE, Image.LANCZOS).save(out, quality=88, optimize=True)
+    frame = strip_station_codes(im.crop(CROP).resize(SIZE, Image.LANCZOS))
+    frame.save(out, quality=88, optimize=True)
+    left = orange_left(Image.open(out))
+    if left:
+        frame = strip_station_codes(Image.open(out))
+        frame.save(out, quality=88, optimize=True)
+        left = orange_left(Image.open(out))
+    print('station codes left in the frame: %d' % left)
     keep = None
     if '--keep' in sys.argv:
         label = sys.argv[sys.argv.index('--keep') + 1]
         keep = os.path.join(SATELLITE, 'akvan-%s-%s.jpg' % (label, stamp.strftime('%Y-%m-%d')))
-        im.crop(CROP).resize(SIZE, Image.LANCZOS).save(keep, quality=90, optimize=True)
+        frame.save(keep, quality=90, optimize=True)
     meta = {'file': os.path.basename(out), 'fetched_ist': stamp.strftime('%Y-%m-%dT%H:%M:%S+05:30'),
             'fetched_label': stamp.strftime('%H:%M IST on %-d %B %Y'), 'source': SOURCE}
     if keep:
