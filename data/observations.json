@@ -282,6 +282,16 @@
    "movement": "northwards at 13 kmph",
    "where": "270 km south-southeast of Kalingapatnam, 350 km south of Gopalpur, 380 km east of Narsapur, 420 km south of Puri, 640 km east-northeast of Chennai",
    "fetched": "2026-11-19T22:12:00+05:30"
+  },
+  {
+   "lat": 16.6,
+   "lon": 85.2,
+   "issue": "2026-11-19T20:30:00+05:30",
+   "intensity": "Severe cyclonic storm",
+   "source": "IMD ACWC Kolkata sea-area bulletin valid 18 UTC of 19 November 2026 to 06 UTC of 20 November (1500 UTC fix, 20:30 IST); states latitude 16.6N and longitude 85.2E",
+   "movement": "northwards at 18 kmph",
+   "where": "220 km south-southeast of Kalingapatnam, 300 km south of Gopalpur, 370 km east of Narsapur, 360 km south of Puri, 670 km northeast of Chennai",
+   "fetched": "2026-11-20T00:10:00+05:30"
   }
  ],
  "rejected": [
@@ -311,8 +321,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-19T22:12:00+05:30",
- "last_checked_note": "Scheduled 22:00 run. Added one fix: 17:30 IST 19 November, 16.1N 85.2E, from IMD's ACWC Chennai coastal bulletin issued 20:30 IST (1200 UTC fix), which states the latitude and longitude; the 17:30 IST evening bulletin quoted by Hindustan Times gives the same port distances. No 20:30 IST fix (1500 UTC) had been issued by 22:12 IST. The 0900 UTC / 1430 IST position IMD published in its national, sea-area and WMO bulletins is 15.6N 85.2E, not the 15.4N 85.4E satellite fix already plotted for that time; the conflict is noted under rejected rather than overwriting the record. Still a severe cyclonic storm, no reclassification. Centre about 350 km south of Gopalpur, crossing forecast between Narsapur and Puri close to Gopalpur by noon of 20 November, so no landfall frame was kept.",
+ "last_checked": "2026-11-20T00:10:00+05:30",
+ "last_checked_note": "Scheduled 00:00 run. Added one fix: 20:30 IST 19 November, 16.6N 85.2E, from IMD's ACWC Kolkata sea-area bulletin valid 18 UTC (1500 UTC fix), which states the latitude and longitude; 18 kmph northwards, 220 km south-southeast of Kalingapatnam and 300 km south of Gopalpur. No later fix had been issued: the ACWC Chennai coastal bulletins and the RSMC page still carry the 1200 UTC position (16.1N 85.2E) at 00:05 IST on the 20th. The bulletin weakens the landfall forecast to a cyclonic storm, 70-80 kmph gusting 90, and IMD now expects the system to weaken to a deep depression over Odisha by the evening of the 20th. Still a severe cyclonic storm at the 20:30 fix, no reclassification, so the descriptor stands. The centre is about 300 km south of Gopalpur with the crossing forecast for forenoon to afternoon of 20 November, so no landfall frame was kept.",
  "forecast": {
   "corridor": [
    {
@@ -338,7 +348,7 @@
   ],
   "target": "Gopalpur",
   "when": "around noon on 20 November",
-  "as": "a severe cyclonic storm",
-  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur"
+  "as": "a cyclonic storm",
+  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur. The 20:30 IST sea-area bulletin of the 19th has it crossing as a cyclonic storm with 70-80 kmph gusting 90, weakened from the 90-100 kmph gusting 110 in the 17:30 bulletin"
  }
 }

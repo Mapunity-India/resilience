@@ -2314,5 +2314,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-19nov-2030",
+  "date": "2026-11-20",
+  "change": "The 20:30 IST fix of 19 November is in the record: 16.6N 85.2E, from IMD's ACWC Kolkata sea-area bulletin valid 18 UTC, which puts the centre 300 km south of Gopalpur and closing at 18 kmph. The Intensity and Track cards now carry that bulletin's weaker landfall: a cyclonic storm with 70 to 80 kmph gusting 90, crossing during the forenoon and afternoon of the 20th. The footer's last-checked time and fix count were brought up to date",
+  "scope": "data/observations.json, events/akvan.html, data/akvan-track.csv, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-19T20:30:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
  }
 ]
