@@ -2230,5 +2230,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "headers-cover-extensionless",
+  "date": "2026-11-19",
+  "change": "The cache rules now cover every path. They were written as /*.html, which does not match an extensionless URL, and Netlify caches /events/akvan separately from the file it rewrites to: that address was serving a build from 12:10 while /events/akvan.html was current",
+  "scope": "_headers",
+  "check": {
+   "type": "contains",
+   "pattern": "Cache-Control: no-cache",
+   "paths": [
+    "_headers"
+   ],
+   "min": 3
+  }
  }
 ]
