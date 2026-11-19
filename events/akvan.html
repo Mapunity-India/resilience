@@ -250,6 +250,14 @@ a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(3
       if(!o.length) return;
       o.sort(function(a,b){return a.issue<b.issue?-1:1;});
       var newest=o[o.length-1].issue;
+      // the corridor and the tab times come from the record, not from the last build
+      if(d.forecast && d.forecast.corridor && d.forecast.corridor.length>=2){
+        window.__corr=d.forecast.corridor.map(function(c){return px(c.lon,c.lat);});
+        var nm=d.forecast.corridor.map(function(c){return c.name;});
+        window.__corrTgt=nm.indexOf(d.forecast.target);
+      }
+      var tl=document.querySelector('input[value=track]');
+      if(tl){var tb=tl.parentNode.querySelector('.vsat__t'); var mm=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(newest); if(mm&&tb) tb.textContent=mm[4]+':'+mm[5];}
       if(document.body.getAttribute('data-issue')===newest) return;
       document.body.setAttribute('data-issue', newest);
       redraw(o);
