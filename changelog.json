@@ -2132,5 +2132,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-19nov-1000",
+  "date": "2026-11-19",
+  "change": "Scheduled 10:00 run. The 05:30 fix of 19 November is in, at 14.5N 85.3E, severe cyclonic storm, northwards at 12 kmph. The 08:00 run had left it out because the bulletin was not reachable then; it is now carried verbatim by IMD's own post and by three outlets, while IMD's own PDF endpoints still serve the 02:30 text. The marker, dots, track, Track tab time, position footer and timeline card moved to 05:30. No 08:30 bulletin with a stated position had appeared by 10:10, and the intensity is unchanged, so no reclassification and no landfall frame",
+  "scope": "data/observations.json, events/akvan.html, data/akvan-track.csv",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-19T05:30:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
  }
 ]
