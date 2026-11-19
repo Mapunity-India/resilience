@@ -264,6 +264,14 @@
    "movement": "northwards at 17 kmph",
    "where": "390 km east-southeast of Narsapur, 350 km south-southeast of Kalingapatnam, 600 km east-northeast of Chennai, 430 km south of Gopalpur, 490 km south of Puri",
    "fetched": "2026-11-19T16:10:00+05:30"
+  },
+  {
+   "lat": 15.4,
+   "lon": 85.4,
+   "issue": "2026-11-19T14:30:00+05:30",
+   "intensity": "Severe cyclonic storm",
+   "source": "IMD RSMC satellite fix bulletin, 0900 UTC 19 November (= 14:30 IST), INSAT-3DS VIS/IR, T3.0, issued 15:55 IST; states latitude 15.4N and longitude 85.4E",
+   "fetched": "2026-11-19T18:10:00+05:30"
   }
  ],
  "rejected": [
@@ -283,8 +291,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-19T16:10:00+05:30",
- "last_checked_note": "Scheduled 16:00 run. Added one fix: 11:30 IST 19 November, 15.4N 85.2E, northwards at 17 kmph, severe cyclonic storm, with latitude and longitude stated in the bulletin text (390 km east-southeast of Narsapur, 430 km south of Gopalpur). No 14:30 bulletin carrying a stated position had reached any source by 16:10 IST. Crossing still forecast between Narsapur and Puri, close to Gopalpur, by noon of 20 November, so no landfall frame was kept.",
+ "last_checked": "2026-11-19T18:10:00+05:30",
+ "last_checked_note": "Scheduled 18:00 run. Added one fix: 14:30 IST 19 November, 15.4N 85.4E, from IMD's 0900 UTC satellite fix bulletin (T3.0, INSAT-3DS), which states the latitude and longitude. The 14:30 IST national bulletin is based on the 1130 IST fix already recorded and adds no new position. No 17:30 IST / 1200 UTC bulletin with a stated position had appeared by 18:10 IST. Still a severe cyclonic storm, no reclassification. Centre about 430 km south of Gopalpur, crossing forecast between Narsapur and Puri close to Gopalpur by noon of 20 November, so no landfall frame was kept.",
  "forecast": {
   "corridor": [
    {
