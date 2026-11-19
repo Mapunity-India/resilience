@@ -546,12 +546,12 @@
  },
  {
   "id": "resilience-chips-centred",
-  "date": "2026-11-16",
-  "change": "The six stress pills are centred in the map card rather than starting at its left edge",
+  "date": "2026-11-17",
+  "change": "The pills sat high in their header row because the chips container still carried the old eight pixels of bottom padding. Cleared, the space above and below the pills is now 13 and 14 pixels, so they read as centred",
   "scope": "resilience/index.html",
   "check": {
    "type": "contains",
-   "pattern": "justify-content:center}",
+   "pattern": ".mapcard__head .chips{margin:0;padding:0",
    "paths": [
     "index.html"
    ],
@@ -1002,20 +1002,6 @@
   "check": {
    "type": "contains",
    "pattern": "min-height:48px",
-   "paths": [
-    "index.html"
-   ],
-   "min": 1
-  }
- },
- {
-  "id": "resilience-chips-centred",
-  "date": "2026-11-17",
-  "change": "The pills sat high in their header row because the chips container still carried the old eight pixels of bottom padding. Cleared, the space above and below the pills is now 13 and 14 pixels, so they read as centred",
-  "scope": "resilience/index.html",
-  "check": {
-   "type": "contains",
-   "pattern": ".mapcard__head .chips{margin:0;padding:0",
    "paths": [
     "index.html"
    ],
@@ -2185,6 +2171,20 @@
    "pattern": "window.__corr",
    "paths": [
     "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "html-cache-headers",
+  "date": "2026-11-19",
+  "change": "A _headers file tells Netlify not to cache the HTML or the record. The page fetches the record with no-store and redraws itself, so a cached page gave the worst of both: a fresh position inside stale drawing code, which is why the marker moved to the 11:30 fix while the forecast line stayed on the old coast",
+  "scope": "_headers",
+  "check": {
+   "type": "contains",
+   "pattern": "no-cache, must-revalidate",
+   "paths": [
+    "_headers"
    ],
    "min": 1
   }

@@ -1,0 +1,9 @@
+# The page redraws itself from the record on every load, so a cached copy of the
+# HTML is worse than useless: the position arrives fresh while the drawing code
+# stays old, which is exactly how the forecast line kept pointing at a coast IMD
+# had already left.
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+/*.json
+  Cache-Control: no-cache, must-revalidate
