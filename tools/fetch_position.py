@@ -211,7 +211,9 @@ def redraw(data, page_path):
     # keep the rest of the page honest too: the time on the Track tab, the position
     # line and its source, so a poller run leaves nothing reading older than the fix
     hhmm = stamp.split(' ')[-1]
-    page = re.sub(r'(value="track" checked><span>Track) <b class="vsat__t">[0-9:]*</b>',
+    # the Track tab is not the checked view once the satellite frame is in, so the
+    # attribute list after value="track" varies: match it loosely or the label stays stale
+    page = re.sub(r'(value="track"[^>]*><span>Track) <b class="vsat__t">[0-9:]*</b>',
                   r'\1 <b class="vsat__t">%s</b>' % hhmm, page, count=1)
     try:
         when = datetime.fromisoformat(last['issue']).strftime('%H:%M IST on %-d %B')

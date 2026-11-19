@@ -2286,5 +2286,33 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-19nov-2200",
+  "date": "2026-11-19",
+  "change": "The 17:30 IST fix of 19 November is in the record: 16.1N 85.2E, from IMD's ACWC Chennai bulletin issued 20:30 IST (1200 UTC). The Track card now carries the 17:30 bulletin's 350 km south of Gopalpur and 13 kmph, and the footer's last-checked time and fix count were brought up to date",
+  "scope": "data/observations.json, events/akvan.html, data/akvan-track.csv, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-19T17:30:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "track-tab-static-label",
+  "date": "2026-11-19",
+  "change": "The static time on the Track tab never moved off 11:30 because the redraw matched value=\"track\" checked, and the satellite frame is the checked view. The pattern now matches the attribute list however it reads, so the published markup agrees with the marker before the script runs",
+  "scope": "tools/fetch_position.py, events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "value=\"track\"[^>]*><span>Track",
+   "paths": [
+    "tools/fetch_position.py"
+   ],
+   "min": 1
+  }
  }
 ]

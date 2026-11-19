@@ -272,6 +272,16 @@
    "intensity": "Severe cyclonic storm",
    "source": "IMD RSMC satellite fix bulletin, 0900 UTC 19 November (= 14:30 IST), INSAT-3DS VIS/IR, T3.0, issued 15:55 IST; states latitude 15.4N and longitude 85.4E",
    "fetched": "2026-11-19T18:10:00+05:30"
+  },
+  {
+   "lat": 16.1,
+   "lon": 85.2,
+   "issue": "2026-11-19T17:30:00+05:30",
+   "intensity": "Severe cyclonic storm",
+   "source": "IMD ACWC Chennai coastal weather bulletin issued 20:30 IST, 19 November 2026 (1200 UTC fix); states latitude 16.1N and longitude 85.2E. Same distances in IMD's 17:30 IST evening bulletin quoted by Hindustan Times",
+   "movement": "northwards at 13 kmph",
+   "where": "270 km south-southeast of Kalingapatnam, 350 km south of Gopalpur, 380 km east of Narsapur, 420 km south of Puri, 640 km east-northeast of Chennai",
+   "fetched": "2026-11-19T22:12:00+05:30"
   }
  ],
  "rejected": [
@@ -284,6 +294,16 @@
    "seen": "2026-11-16T19:45:00+05:30",
    "source": "secondary news report quoting the national bulletin",
    "resolution": "this is the 05:30 fix (11.0N 86.5E) reported against the 11:30 time by one outlet; the 11:30 fix is 11.7N 86.0E"
+  },
+  {
+   "issue": "2026-11-19T14:30:00+05:30",
+   "lat": 15.6,
+   "lon": 85.2,
+   "intensity": "Severe cyclonic storm (analysed)",
+   "why": "same 0900 UTC / 1430 IST time as the satellite fix already plotted (15.4N 85.4E), but IMD's national bulletin, sea-area bulletin and the WMO storm warning all place the centre at 15.6N 85.2E; not plotted because the record keeps one fix per issue time and a fix is never replaced",
+   "seen": "2026-11-19T22:12:00+05:30",
+   "source": "IMD All India Weather Bulletin issued 16:51 IST 19 Nov 2026; IMD sea-area bulletin valid from 12 UTC 19 Nov; WMO bulletin 8N storm warning based on 0900 UTC",
+   "resolution": "open; 15.6N 85.2E is consistent with the 13 kmph six-hour motion from the 08:30 fix (14.9N), so it is probably the better analysed value. To be settled from IMD's post-event track table rather than by editing the record"
   }
  ],
  "named": {
@@ -291,8 +311,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-19T18:10:00+05:30",
- "last_checked_note": "Scheduled 18:00 run. Added one fix: 14:30 IST 19 November, 15.4N 85.4E, from IMD's 0900 UTC satellite fix bulletin (T3.0, INSAT-3DS), which states the latitude and longitude. The 14:30 IST national bulletin is based on the 1130 IST fix already recorded and adds no new position. No 17:30 IST / 1200 UTC bulletin with a stated position had appeared by 18:10 IST. Still a severe cyclonic storm, no reclassification. Centre about 430 km south of Gopalpur, crossing forecast between Narsapur and Puri close to Gopalpur by noon of 20 November, so no landfall frame was kept.",
+ "last_checked": "2026-11-19T22:12:00+05:30",
+ "last_checked_note": "Scheduled 22:00 run. Added one fix: 17:30 IST 19 November, 16.1N 85.2E, from IMD's ACWC Chennai coastal bulletin issued 20:30 IST (1200 UTC fix), which states the latitude and longitude; the 17:30 IST evening bulletin quoted by Hindustan Times gives the same port distances. No 20:30 IST fix (1500 UTC) had been issued by 22:12 IST. The 0900 UTC / 1430 IST position IMD published in its national, sea-area and WMO bulletins is 15.6N 85.2E, not the 15.4N 85.4E satellite fix already plotted for that time; the conflict is noted under rejected rather than overwriting the record. Still a severe cyclonic storm, no reclassification. Centre about 350 km south of Gopalpur, crossing forecast between Narsapur and Puri close to Gopalpur by noon of 20 November, so no landfall frame was kept.",
  "forecast": {
   "corridor": [
    {
