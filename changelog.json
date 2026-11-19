@@ -2050,5 +2050,19 @@
    "glob": "data/satellite/bay-2026-11-19-insat-ir.jpg",
    "min": 1
   }
+ },
+ {
+  "id": "satellite-default-view",
+  "date": "2026-11-19",
+  "change": "A live event page opens on the satellite frame rather than the track, since the frame is usually the more current of the two. The footnote is set from whichever view is checked rather than assuming the track, so the caption cannot contradict the picture",
+  "scope": "events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "value=\"sat\" checked",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
