@@ -2146,5 +2146,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-19nov-1200",
+  "date": "2026-11-19",
+  "change": "Scheduled 12:00 run. Two fixes added: 02:30 IST 19 November at 14.1N 85.3E (northwards at 5 kmph) and 08:30 IST at 14.9N 85.3E (northwards at 15 kmph), both stated with latitude and longitude in the bulletin text. The marker, dots, track, Track tab time and position footer moved to 08:30. The Track card now carries IMD's latest crossing line, between Narsapur and Puri close to the east of Gopalpur by noon of 20 November, and the Intensity card notes that the 08:30 bulletin repeats 90 to 100 kmph gusting 110. The category is unchanged, so set_event was not run, and landfall has not begun, so no permanent frame was kept",
+  "scope": "data/observations.json, events/akvan.html, data/akvan-track.csv",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-19T08:30:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
  }
 ]
