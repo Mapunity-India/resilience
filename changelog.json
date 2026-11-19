@@ -1929,7 +1929,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-19nov-2030"
  },
  {
   "id": "package-check-resurrection",
@@ -2323,6 +2324,20 @@
   "check": {
    "type": "contains",
    "pattern": "2026-11-19T20:30:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-19nov-2330",
+  "date": "2026-11-20",
+  "change": "The 23:30 IST fix of 19 November is in the record: 17.1N 85.1E, from IMD's ACWC Kolkata sea-area bulletin valid 21 UTC (the ACWC Chennai coastal bulletin issued 02:30 IST is based on the same 1800 UTC position), severe cyclonic storm, north-north-west at 19 kmph, 170 km south-east of Kalingapatnam and 240 km south of Gopalpur. The Track card now carries 240 km south of Gopalpur and 19 kmph in place of 300 km and 18; the timeline card gains the 23:30 position; the footer's last-checked time and fix count were brought up to date. Intensity card unchanged: the 23:30 bulletin repeats the 70 to 80 kmph gusting 90 crossing, so it does not move",
+  "scope": "data/observations.json, events/akvan.html, data/akvan-track.csv, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-19T23:30:00+05:30",
    "paths": [
     "data/observations.json"
    ],
