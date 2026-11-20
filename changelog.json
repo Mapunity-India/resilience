@@ -2551,5 +2551,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "favicon-tight-crop",
+  "date": "2026-11-20",
+  "change": "The favicon is the mark cropped tight. In the 130 pixel file the mark occupied only 78 by 66 with the rest empty, so a tab drew it at about half the size it could. The icon is now that mark alone on an 88 pixel square with a 6 per cent margin, and every page points at it. A 64 pixel copy sits beside it for the sizes that need one",
+  "scope": "logos/resilience-icon.png, index.html, events/*.html",
+  "check": {
+   "type": "contains",
+   "pattern": "resilience-icon.png",
+   "paths": [
+    "index.html"
+   ],
+   "min": 1
+  }
  }
 ]
