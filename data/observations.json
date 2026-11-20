@@ -321,6 +321,16 @@
    "movement": "north-north-west at 23 kmph",
    "where": "70 km east of Kalingapatnam, 110 km south of Gopalpur, 170 km east-north-east of Visakhapatnam, 200 km south-south-west of Puri",
    "fetched": "2026-11-20T08:10:00+05:30"
+  },
+  {
+   "lat": 19.2,
+   "lon": 84.8,
+   "issue": "2026-11-20T08:30:00+05:30",
+   "intensity": "Cyclonic storm",
+   "source": "IMD post-landfall outlook for the south Odisha and north Andhra Pradesh coasts (Red Message), issued after the 0830 IST fix of 20 November 2026; states latitude 19.2N and longitude 84.8E, and that the centre crossed the coast near 19.1N 84.8E with 70-80 kmph gusting 90 kmph between 0730 and 0830 IST",
+   "movement": "north-north-west at 26 kmph during the previous six hours; expected to move nearly north-north-east across Odisha",
+   "where": "120 km north-east of Kalingapatnam, 130 km west-south-west of Puri, 230 km north-east of Visakhapatnam",
+   "fetched": "2026-11-20T12:03:50+05:30"
   }
  ],
  "rejected": [
@@ -350,8 +360,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-20T08:10:00+05:30",
- "last_checked_note": "Scheduled 08:00 run. IMD's National Bulletin No. 37, issued 07:30 IST on the 20th for the 0530 IST fix, states the centre at 18.3N 84.8E, 110 km south of Gopalpur, moving north-north-west at 23 kmph, still a cyclonic storm, with the crossing still close to Gopalpur by forenoon at 70-80 kmph gusting 90. The bulletin says the landfall process will commence during the next two hours, so at issue time the centre had not crossed; the fix is therefore recorded as a sea position and no permanent landfall frame was kept.",
+ "last_checked": "2026-11-20T12:03:50+05:30",
+ "last_checked_note": "Scheduled 12:00 run on 20 November. IMD's post-landfall outlook, issued after the 0830 IST fix, states the centre at 19.2N 84.8E over south coastal Odisha close to Gopalpur, having crossed the coast near 19.1N 84.8E between 0730 and 0830 IST with 70-80 kmph gusting 90 kmph; it is expected to move nearly north-north-east across Odisha and weaken into a deep depression within three hours. That fix is recorded as a land position. The 10:30 IST bulletin quoted in the press gives distances from Puri and Kalingapatnam only, no latitude or longitude, so no 10:30 fix is recorded.",
  "forecast": {
   "corridor": [
    {
@@ -377,7 +387,7 @@
   ],
   "target": "Gopalpur",
   "when": "by forenoon of 20 November",
-  "as": "a cyclonic storm",
-  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur. The 0230 IST bulletin of the 20th has it crossing by forenoon of the 20th as a cyclonic storm with 70-80 kmph gusting 90, after weakening from a severe cyclonic storm"
+  "as": "a cyclonic storm at the coast, weakening inland",
+  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur. The crossing is now observed: near 19.1N 84.8E between 0730 and 0830 IST on 20 November, with 70-80 kmph gusting 90 kmph. The system is expected to weaken into a deep depression over Odisha within three hours and into a depression after that."
  }
 }

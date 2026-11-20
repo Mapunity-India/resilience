@@ -2390,14 +2390,11 @@
  {
   "id": "akvan-landfall-frame",
   "date": "2026-11-20",
-  "change": "The landfall frame of Cyclone Akvan is kept: with IMD stating at 10:00 IST on 20 November that the landfall process is under way near Gopalpur and completing between 10:00 and 11:00, fetch_image.py --keep landfall wrote data/satellite/akvan-landfall-2026-11-20.jpg from the 10:02 IST INSAT frame, and data/satellite/latest.json records it as kept. The Murasu and Arnab pages have no such frame because nobody kept one; this is the copy that survives the crossing. No fix was added, because no bulletin since 05:30 IST states a latitude and longitude",
+  "change": "The landfall frame of Cyclone Akvan is kept: with IMD stating at 10:00 IST on 20 November that the landfall process is under way near Gopalpur and completing between 10:00 and 11:00, fetch_image.py --keep landfall wrote data/satellite/akvan-landfall-2026-11-20.jpg from the 10:02 IST INSAT frame, and data/satellite/latest.json records it as kept. The Murasu and Arnab pages have no such frame because nobody kept one; this is the copy that survives the crossing. No fix was added, because no bulletin since 05:30 IST states a latitude and longitude The check now tests the kept file itself rather than latest.json's single kept pointer, which a later run moved on to the cleared copy",
   "scope": "data/satellite/akvan-landfall-2026-11-20.jpg, data/satellite/latest.json, data/satellite/bay-2026-11-20-insat-ir.jpg, tools/run-log.jsonl",
   "check": {
-   "type": "contains",
-   "pattern": "akvan-landfall-2026-11-20.jpg",
-   "paths": [
-    "data/satellite/latest.json"
-   ],
+   "type": "count_files",
+   "glob": "data/satellite/akvan-landfall-2026-11-20.jpg",
    "min": 1
   }
  },
@@ -2411,6 +2408,34 @@
    "pattern": "Akvan 2026, 20 November: near Gopalpur, ",
    "paths": [
     "index.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-20nov-0830",
+  "date": "2026-11-20",
+  "change": "The 08:30 IST fix of 20 November is in the record, the first land position of the storm: 19.2N 84.8E, from IMD's post-landfall outlook (Red Message), which also states the crossing near 19.1N 84.8E with 70-80 kmph gusting 90 between 0730 and 0830 IST and a deep depression within three hours. The marker, dots, track, Track tab time, Position card and footer moved to 08:30 and thirty-five fixes. The Track card now opens on the crossing and the north-north-east turn across Odisha, and the Intensity card carries the crossing wind and the weakening sequence instead of the pre-landfall wording. The category is still a cyclonic storm, so set_event was not run",
+  "scope": "data/observations.json, events/akvan.html, data/akvan-track.csv, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-20T08:30:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-cleared-frame",
+  "date": "2026-11-20",
+  "change": "The cleared frame of Cyclone Akvan is kept: with the centre inland over south coastal Odisha at 19.2N 84.8E and the 12:04 IST INSAT frame showing the overcast inland and the west-central Bay behind it clear, fetch_image.py --keep cleared wrote data/satellite/akvan-cleared-2026-11-20.jpg, and data/satellite/latest.json records it as kept. It sits beside the landfall frame kept at 10:02 IST, so the crossing and its aftermath both survive on the page",
+  "scope": "data/satellite/akvan-cleared-2026-11-20.jpg, data/satellite/latest.json, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "akvan-cleared-2026-11-20.jpg",
+   "paths": [
+    "data/satellite/latest.json"
    ],
    "min": 1
   }
