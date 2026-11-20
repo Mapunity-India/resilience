@@ -2400,5 +2400,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "landfall-akvan",
+  "date": "2026-11-20",
+  "change": "Akvan added to the landfall layer at near Gopalpur, Odisha, 19.10N 84.80E, peak severe cyclonic storm. The dot is drawn at 408.8, 481.6 with a radius of 5.3, and the 2020s count in the legend goes up by one.",
+  "scope": "index.html",
+  "check": {
+   "type": "contains",
+   "pattern": "Akvan 2026, 20 November: near Gopalpur, ",
+   "paths": [
+    "index.html"
+   ],
+   "min": 1
+  }
  }
 ]
