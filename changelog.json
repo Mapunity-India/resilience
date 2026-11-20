@@ -2358,5 +2358,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "landfall-tool",
+  "date": "2026-11-20",
+  "change": "A tool to add a landfall to the map: tools/add_landfall.py takes a name, date, position, coast and peak category, projects it with the map's own Mercator constants, draws the dot in the decade's colour at the size that category gets, and raises the count in the legend. It refuses rather than guesses when a coordinate is missing. Fitted against Alibag, Marakkanam and the Chennai coast, and checked against the Paradip dot already on the map",
+  "scope": "tools/add_landfall.py",
+  "check": {
+   "type": "contains",
+   "pattern": "X0, XK = -1605.23",
+   "paths": [
+    "tools/add_landfall.py"
+   ],
+   "min": 1
+  }
  }
 ]
