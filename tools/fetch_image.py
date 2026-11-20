@@ -170,8 +170,11 @@ def main():
     # keep the time on the Satellite tab current as well
     t = re.sub(r'(value="sat"[^>]*><span>Satellite) <b class="vsat__t">[0-9:]*</b>',
                r'\1 <b class="vsat__t">%s</b>' % stamp.strftime('%H:%M'), t, count=1)
-    t = re.sub(r"var S='INSAT-3DS[^']*';",
-               "var S='INSAT-3DS, the latest frame, fetched at %s. The white mass over the south-west Bay is the storm. Image: IMD.';" % meta['fetched_label'], t, count=1)
+    # Only the fetch time is restated. The sentence after it describes where the
+    # storm is in the frame, and that has to follow the storm inland rather than be
+    # reset to the Bay on every run.
+    t = re.sub(r"(var S='INSAT-3DS, the latest frame, fetched at )[^.]*\.",
+               lambda m: m.group(1) + meta['fetched_label'] + '.', t, count=1)
     open(PAGE, 'w', encoding='utf-8').write(t)
     print('wrote %s (%d KB), fetched %s' % (meta['file'], os.path.getsize(out)//1024, meta['fetched_label']))
     if keep:

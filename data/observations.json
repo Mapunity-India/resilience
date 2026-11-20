@@ -341,6 +341,26 @@
    "movement": "north-north-east at 24 kmph",
    "where": "40 km north of Gopalpur, 100 km west-south-west of Puri, 160 km north-north-east of Kalingapatnam",
    "fetched": "2026-11-20T15:05:00+05:30"
+  },
+  {
+   "lat": 20.0,
+   "lon": 84.9,
+   "issue": "2026-11-20T14:30:00+05:30",
+   "intensity": "Deep depression",
+   "source": "IMD All India Weather Summary and Forecast Bulletin issued 17:16 IST on 20 November 2026: the deep depression (remnant of severe cyclonic storm Akvan) over south coastal Odisha moved northwards at 15 kmph during the past six hours and lay centred at 14:30 IST near latitude 20.0N and longitude 84.9E",
+   "movement": "north at 15 kmph",
+   "where": "80 km north of Gopalpur, 90 km south-south-west of Angul, 100 km west-north-west of Puri",
+   "fetched": "2026-11-20T21:10:00+05:30"
+  },
+  {
+   "lat": 20.2,
+   "lon": 84.9,
+   "issue": "2026-11-20T17:30:00+05:30",
+   "intensity": "Depression",
+   "source": "IMD bulletin for the 17:30 IST fix of 20 November 2026, reported by OMMCOM News: the remnant of severe cyclonic storm Akvan weakened into a depression on the evening of 20 November, moved northwards at 12 kmph during the preceding six hours and lay centred over south Odisha near latitude 20.2N and longitude 84.9E",
+   "movement": "north at 12 kmph",
+   "where": "70 km south-south-west of Angul, 100 km north of Gopalpur, 110 km west-north-west of Puri",
+   "fetched": "2026-11-20T21:10:00+05:30"
   }
  ],
  "rejected": [
@@ -370,8 +390,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-20T12:03:50+05:30",
- "last_checked_note": "Scheduled 12:00 run on 20 November. IMD's post-landfall outlook, issued after the 0830 IST fix, states the centre at 19.2N 84.8E over south coastal Odisha close to Gopalpur, having crossed the coast near 19.1N 84.8E between 0730 and 0830 IST with 70-80 kmph gusting 90 kmph; it is expected to move nearly north-north-east across Odisha and weaken into a deep depression within three hours. That fix is recorded as a land position. The 10:30 IST bulletin quoted in the press gives distances from Puri and Kalingapatnam only, no latitude or longitude, so no 10:30 fix is recorded.",
+ "last_checked": "2026-11-20T21:10:00+05:30",
+ "last_checked_note": "Scheduled 21:00 run on 20 November. Two fixes added. IMD's evening All India bulletin (issued 17:16 IST) puts the deep depression at 14:30 IST at 20.0N 84.9E, 80 km north of Gopalpur, moving north at 15 kmph. The bulletin based on 17:30 IST reports it weakened into a depression at 20.2N 84.9E, 100 km north of Gopalpur, moving north at 12 kmph, and expects a well marked low pressure area within six hours. No 20:30 fix was available at the time of this run.",
  "forecast": {
   "corridor": [
    {

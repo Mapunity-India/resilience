@@ -2579,5 +2579,33 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-1430-1730-fixes",
+  "date": "2026-11-20",
+  "change": "Akvan's two evening fixes on 20 November and the weakening to a depression. IMD's evening All India bulletin gives 20.0N 84.9E at 1430 IST, moving north at 15 kmph, and the bulletin based on 1730 IST puts the system, now a depression, at 20.2N 84.9E, 100 km north of Gopalpur, with a well marked low expected within six hours. Both are appended to the observation record in time order, the track is redrawn, the Position, Intensity and Track cards carry the 17:30 fix, and the descriptor moves from deep depression to depression so the page and its index row read Depression Akvan",
+  "scope": "data/observations.json, data/akvan-track.csv, data/event.json, events/akvan.html, index.html, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "20.2&deg;N, 84.9&deg;E at 17:30 IST",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-caption-keeps-its-sentence",
+  "date": "2026-11-20",
+  "change": "fetch_image.py no longer resets the satellite caption on every run. It restated the whole line, including the sentence that places the storm in the frame, so each run put back the claim that the white mass over the south-west Bay is the storm, and the inland caption written at 18:04 was gone by the 21:08 run. The script now rewrites only the fetch time and leaves the descriptive sentence alone, and the caption is back to placing the bright cloud over south coastal Odisha and the adjoining north-west Bay",
+  "scope": "tools/fetch_image.py, events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "The bright cloud mass sits over south coastal Odisha and the adjoining north-west Bay",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
