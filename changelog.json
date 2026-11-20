@@ -2466,7 +2466,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-1430-1730-fixes"
  },
  {
   "id": "satellite-kept-frames-list",
@@ -2604,6 +2605,20 @@
    "pattern": "The bright cloud mass sits over south coastal Odisha and the adjoining north-west Bay",
    "paths": [
     "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-1130-entry-superseded",
+  "date": "2026-11-21",
+  "change": "The changelog entry for the 11:30 IST fix of 20 November is marked superseded. Its fingerprint was the sentence A deep depression at the 11:30 fix in the Intensity card, and the 14:30 and 17:30 rewrites of that card took the sentence away, so verify_changelog.py had been reporting that change as gone since the evening commit although the fix is still in the record and on the page. The entry now names akvan-1430-1730-fixes as the change that replaced it, and the 11:30 fix stays in data/observations.json",
+  "scope": "changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "akvan-1130-entry-superseded",
+   "paths": [
+    "changelog.json"
    ],
    "min": 1
   }
