@@ -2495,5 +2495,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-card-lengths",
+  "date": "2026-11-20",
+  "change": "The cards beside the map are held to similar lengths, because the grid takes its height from the longest and one long paragraph stretched the map with it. Intensity went from 113 words to 56 and Track from 119 to 45, against Position at 28 and Rainfall at 29. tools/check_html.py now measures the four cards in that grid and fails a run that takes any of them past 70 words; the timeline cards below are not counted, since their length does not move the map",
+  "scope": "events/akvan.html, tools/check_html.py",
+  "check": {
+   "type": "contains",
+   "pattern": "CARD_WORDS = 70",
+   "paths": [
+    "tools/check_html.py"
+   ],
+   "min": 1
+  }
  }
 ]
