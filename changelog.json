@@ -2511,6 +2511,20 @@
   }
  },
  {
+  "id": "retire-names-by-peak",
+  "date": "2026-11-20",
+  "change": "Retirement now names the storm by the highest category it reached, the way IMD does in its own reports: the Vardah report is titled a very severe cyclonic storm although Vardah crossed near Chennai as a severe one. On the 22nd the Akvan page will read Severe Cyclonic Storm Akvan, with a note saying it held that strength from 05:30 on the 18th to 02:30 on the 20th and crossed near Gopalpur as a cyclonic storm. The peak and the crossing category both come from data/event.json, and the tool refuses to run if the peak is missing",
+  "scope": "tools/retire_event.py, data/event.json",
+  "check": {
+   "type": "contains",
+   "pattern": "peak_from",
+   "paths": [
+    "data/event.json"
+   ],
+   "min": 1
+  }
+ },
+ {
   "id": "akvan-satellite-caption-inland",
   "date": "2026-11-20",
   "change": "The satellite caption is no longer the fixed line fetch_image.py writes on every run. That line says the white mass over the south-west Bay is the storm, which was true while Akvan was still at sea but is wrong now that the centre is inland over south coastal Odisha; the caption on the 18:04 IST frame instead places the bright cloud over south coastal Odisha and the adjoining north-west Bay, where the deep depression is weakening inland",
