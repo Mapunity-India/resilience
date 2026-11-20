@@ -301,6 +301,16 @@
    "fetched": "2026-11-20T04:15:00+05:30",
    "where": "170 km south-east of Kalingapatnam, 200 km east-south-east of Visakhapatnam, 240 km south of Gopalpur, 310 km south-south-west of Puri, 370 km east-north-east of Narsapur",
    "movement": "north-north-west at 19 kmph"
+  },
+  {
+   "lat": 17.7,
+   "lon": 84.9,
+   "issue": "2026-11-20T02:30:00+05:30",
+   "intensity": "Cyclonic storm",
+   "source": "IMD National Bulletin No. 36 (BOB/10/2026), time of issue 05:30 IST, 20 November 2026, for the 0230 IST fix; states latitude 17.7N and longitude 84.9E and that the system weakened into a cyclonic storm. The CWC Visakhapatnam special coastal bulletin issued 05:57 IST, based on 2100 UTC of 19 November, carries the same 17.7N 84.9E",
+   "movement": "north-north-west at 21 kmph",
+   "where": "110 km south-east of Kalingapatnam, 170 km east of Visakhapatnam, 170 km south of Gopalpur, 250 km south-south-west of Puri, 370 km east-north-east of Narsapur",
+   "fetched": "2026-11-20T06:15:00+05:30"
   }
  ],
  "rejected": [
@@ -330,8 +340,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-20T04:08:00+05:30",
- "last_checked_note": "Scheduled 04:00 run. The 23:30 IST bulletin of 19 November (1800 UTC) is in the record at 17.1N 85.1E, severe cyclonic storm, north-north-west at 19 kmph, 240 km south of Gopalpur. Read from IMD's own products at 04:08 IST on the 20th: the ACWC Kolkata sea-area bulletin valid 21 UTC 19 Nov to 09 UTC 20 Nov states the centre at 2330 IST of the 19th near 17.1N 85.1E, and the ACWC Chennai coastal bulletin issued 2100 UTC (02:30 IST) is based on the same 1800 UTC position. The All India Weather Bulletin PDF linked from IMD's page is still the 20:30 IST issue of the 19th. No 21:00 UTC (02:30 IST) fix had been issued by 04:08 IST. No reclassification: still a severe cyclonic storm at the fix, so the descriptor stands, and the crossing forecast is unchanged at 70-80 kmph gusting 90 close to Gopalpur by noon of the 20th.",
+ "last_checked": "2026-11-20T06:15:00+05:30",
+ "last_checked_note": "Scheduled 06:00 run. IMD's National Bulletin No. 36, issued 05:30 IST on the 20th for the 0230 IST fix, states the centre at 17.7N 84.9E and records that the system weakened into a cyclonic storm; that fix is now in the record. It moved north-north-west at 21 kmph to 170 km south of Gopalpur and is forecast to cross close to Gopalpur by forenoon of the 20th with 70-80 kmph gusting 90. The bulletin also says land interaction commenced as the sheared cloud mass entered the north Andhra and south Odisha coasts, but the centre itself was still 170 km offshore, so landfall has not begun and no permanent frame was kept. Descriptor changed from severe cyclonic storm to cyclonic storm.",
  "forecast": {
   "corridor": [
    {
@@ -356,8 +366,8 @@
    }
   ],
   "target": "Gopalpur",
-  "when": "around noon on 20 November",
+  "when": "by forenoon of 20 November",
   "as": "a cyclonic storm",
-  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur. The 20:30 IST sea-area bulletin of the 19th has it crossing as a cyclonic storm with 70-80 kmph gusting 90, weakened from the 90-100 kmph gusting 110 in the 17:30 bulletin"
+  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur. The 0230 IST bulletin of the 20th has it crossing by forenoon of the 20th as a cyclonic storm with 70-80 kmph gusting 90, after weakening from a severe cyclonic storm"
  }
 }

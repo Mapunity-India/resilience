@@ -1690,7 +1690,8 @@
     "index.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-20nov-0230"
  },
  {
   "id": "resilience-mark-links-home",
@@ -2338,6 +2339,20 @@
   "check": {
    "type": "contains",
    "pattern": "2026-11-19T23:30:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-20nov-0230",
+  "date": "2026-11-20",
+  "change": "The 02:30 IST fix of 20 November is in the record: 17.7N 84.9E, from IMD's National Bulletin No. 36 issued 05:30 IST (the CWC Visakhapatnam special bulletin based on 2100 UTC of the 19th carries the same position), and IMD records that the system weakened into a cyclonic storm there. set_event.py was run with the new descriptor, so the event page and the index live row read Cyclone Akvan and the header note dates the severe phase 05:30 on 18 November to 02:30 on 20 November. The Intensity card now gives 80 to 90 kmph gusting 100 at the fix and 70 to 80 gusting 90 at the coast; the Track card has the centre 170 km south of Gopalpur closing at 21 kmph, the crossing brought forward to the forenoon, and land interaction begun with the centre still at sea. Footer to 06:15 and thirty-three fixes",
+  "scope": "data/observations.json, data/event.json, events/akvan.html, index.html, data/akvan-track.csv, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-20T02:30:00+05:30",
    "paths": [
     "data/observations.json"
    ],
