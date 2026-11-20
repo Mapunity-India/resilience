@@ -2481,5 +2481,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-card-grid-repair",
+  "date": "2026-11-20",
+  "change": "The 15:00 run edited the Intensity card by text replacement and left a paragraph and its closing div outside the card, which closed the card grid early: the Track and Rainfall cards fell out of the grid and the paragraphs sat loose on the page. The orphan is removed, the page is balanced again at 44 divs, and tools/check_html.py now records the shape of every page and fails when an edit moves it, so a run can refuse to commit that",
+  "scope": "events/akvan.html, tools/check_html.py",
+  "check": {
+   "type": "contains",
+   "pattern": "html-shape.json",
+   "paths": [
+    "tools/check_html.py"
+   ],
+   "min": 1
+  }
  }
 ]
