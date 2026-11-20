@@ -311,6 +311,16 @@
    "movement": "north-north-west at 21 kmph",
    "where": "110 km south-east of Kalingapatnam, 170 km east of Visakhapatnam, 170 km south of Gopalpur, 250 km south-south-west of Puri, 370 km east-north-east of Narsapur",
    "fetched": "2026-11-20T06:15:00+05:30"
+  },
+  {
+   "lat": 18.3,
+   "lon": 84.8,
+   "issue": "2026-11-20T05:30:00+05:30",
+   "intensity": "Cyclonic storm",
+   "source": "IMD National Bulletin No. 37 (BOB/10/2026), time of issue 07:30 IST, 20 November 2026, for the 0530 IST fix; states latitude 18.3N and longitude 84.8E",
+   "movement": "north-north-west at 23 kmph",
+   "where": "70 km east of Kalingapatnam, 110 km south of Gopalpur, 170 km east-north-east of Visakhapatnam, 200 km south-south-west of Puri",
+   "fetched": "2026-11-20T08:10:00+05:30"
   }
  ],
  "rejected": [
@@ -340,8 +350,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-20T06:15:00+05:30",
- "last_checked_note": "Scheduled 06:00 run. IMD's National Bulletin No. 36, issued 05:30 IST on the 20th for the 0230 IST fix, states the centre at 17.7N 84.9E and records that the system weakened into a cyclonic storm; that fix is now in the record. It moved north-north-west at 21 kmph to 170 km south of Gopalpur and is forecast to cross close to Gopalpur by forenoon of the 20th with 70-80 kmph gusting 90. The bulletin also says land interaction commenced as the sheared cloud mass entered the north Andhra and south Odisha coasts, but the centre itself was still 170 km offshore, so landfall has not begun and no permanent frame was kept. Descriptor changed from severe cyclonic storm to cyclonic storm.",
+ "last_checked": "2026-11-20T08:10:00+05:30",
+ "last_checked_note": "Scheduled 08:00 run. IMD's National Bulletin No. 37, issued 07:30 IST on the 20th for the 0530 IST fix, states the centre at 18.3N 84.8E, 110 km south of Gopalpur, moving north-north-west at 23 kmph, still a cyclonic storm, with the crossing still close to Gopalpur by forenoon at 70-80 kmph gusting 90. The bulletin says the landfall process will commence during the next two hours, so at issue time the centre had not crossed; the fix is therefore recorded as a sea position and no permanent landfall frame was kept.",
  "forecast": {
   "corridor": [
    {
