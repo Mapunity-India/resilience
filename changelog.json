@@ -2509,5 +2509,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-satellite-caption-inland",
+  "date": "2026-11-20",
+  "change": "The satellite caption is no longer the fixed line fetch_image.py writes on every run. That line says the white mass over the south-west Bay is the storm, which was true while Akvan was still at sea but is wrong now that the centre is inland over south coastal Odisha; the caption on the 18:04 IST frame instead places the bright cloud over south coastal Odisha and the adjoining north-west Bay, where the deep depression is weakening inland",
+  "scope": "events/akvan.html, tools/fetch_image.py",
+  "check": {
+   "type": "contains",
+   "pattern": "The bright cloud mass sits over south coastal Odisha and the adjoining north-west Bay",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
