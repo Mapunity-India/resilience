@@ -191,3 +191,5 @@ The archive of this record sits outside the tree, so a rollback that takes the c
 
 Each entry in `changelog.json` carries a `check` tested against the files: `contains`, `absent`, `regex`,
 `band10`, `footers`, `count_files`. Fingerprints are the CSS comments and rules each change introduced.
+| `akvan-1130-deep-depression` | The 1130 IST fix of 20 November: Akvan weakens into a deep depression inland at 19.6N 84.9E, 40 km north of Gopalpur, thirty-six fixes in the record; Intensity and Track cards rewritten and the descriptor changed to Deep depression | events/akvan.html |
+| `satellite-kept-frames-list` | fetch_image.py keeps a kept_frames list of every akvan frame on disk in data/satellite/latest.json, so a run without --keep no longer makes the kept frames read as gone | tools/fetch_image.py, data/satellite/latest.json |

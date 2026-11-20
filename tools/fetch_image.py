@@ -155,6 +155,11 @@ def main():
             'fetched_label': stamp.strftime('%H:%M IST on %-d %B %Y'), 'source': SOURCE}
     if keep:
         meta['kept'] = os.path.basename(keep)
+    # the kept frames are the record: a run without --keep must not drop the pointer
+    # to the ones kept earlier, so carry every akvan-*.jpg that is still on disk
+    kept_frames = sorted(f for f in os.listdir(SATELLITE)
+                         if f.startswith('akvan-') and f.endswith('.jpg'))
+    meta['kept_frames'] = kept_frames
     json.dump(meta, open(os.path.join(SATELLITE, 'latest.json'), 'w'), indent=1)
     # point the page at it and restate the caption
     t = open(PAGE, encoding='utf-8').read()

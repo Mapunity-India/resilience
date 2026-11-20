@@ -2,7 +2,7 @@
   "event": "akvan",
   "designation": "BOB/10/2026",
   "name": "Akvan",
-  "descriptor": "Cyclonic Storm",
+  "descriptor": "Deep depression",
   "status": "live",
   "since": "2026-11-15",
   "since_label": "since 15 November 2026",
@@ -10,5 +10,5 @@
   "page": "events/akvan.html",
   "title": "Cyclone Akvan",
   "note": "severe from 05:30 on 18 November to 02:30 on 20 November",
-  "updated": "2026-11-20T06:08:50+05:30"
+  "updated": "2026-11-20T15:02:02+05:30"
 }

@@ -331,6 +331,16 @@
    "movement": "north-north-west at 26 kmph during the previous six hours; expected to move nearly north-north-east across Odisha",
    "where": "120 km north-east of Kalingapatnam, 130 km west-south-west of Puri, 230 km north-east of Visakhapatnam",
    "fetched": "2026-11-20T12:03:50+05:30"
+  },
+  {
+   "lat": 19.6,
+   "lon": 84.9,
+   "issue": "2026-11-20T11:30:00+05:30",
+   "intensity": "Deep depression",
+   "source": "IMD bulletin for the 1130 IST fix of 20 November 2026, quoted in full by OdishaBytes, OMMCOM News and The Hindu: the system moved nearly north-north-eastwards at 24 kmph during the past six hours and weakened into a deep depression at 1130 IST over south coastal Odisha, centred near latitude 19.6N and longitude 84.9E",
+   "movement": "north-north-east at 24 kmph",
+   "where": "40 km north of Gopalpur, 100 km west-south-west of Puri, 160 km north-north-east of Kalingapatnam",
+   "fetched": "2026-11-20T15:05:00+05:30"
   }
  ],
  "rejected": [
@@ -388,6 +398,6 @@
   "target": "Gopalpur",
   "when": "by forenoon of 20 November",
   "as": "a cyclonic storm at the coast, weakening inland",
-  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur. The crossing is now observed: near 19.1N 84.8E between 0730 and 0830 IST on 20 November, with 70-80 kmph gusting 90 kmph. The system is expected to weaken into a deep depression over Odisha within three hours and into a depression after that."
+  "note": "IMD's corridor, north Andhra Pradesh and Yanam to south Odisha, the centre closest to Gopalpur. The crossing is now observed: near 19.1N 84.8E between 0730 and 0830 IST on 20 November, with 70-80 kmph gusting 90 kmph. The system weakened into a deep depression over south coastal Odisha at 1130 IST, at 19.6N 84.9E, and is expected to weaken further into a depression and then a well marked low over Odisha."
  }
 }
