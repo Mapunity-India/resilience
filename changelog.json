@@ -2399,20 +2399,6 @@
   }
  },
  {
-  "id": "landfall-akvan",
-  "date": "2026-11-20",
-  "change": "Akvan added to the landfall layer at near Gopalpur, Odisha, 19.10N 84.80E, peak severe cyclonic storm. The dot is drawn at 408.8, 481.6 with a radius of 5.3, and the 2020s count in the legend goes up by one.",
-  "scope": "index.html",
-  "check": {
-   "type": "contains",
-   "pattern": "Akvan 2026, 20 November: near Gopalpur, ",
-   "paths": [
-    "index.html"
-   ],
-   "min": 1
-  }
- },
- {
   "id": "akvan-20nov-0830",
   "date": "2026-11-20",
   "change": "The 08:30 IST fix of 20 November is in the record, the first land position of the storm: 19.2N 84.8E, from IMD's post-landfall outlook (Red Message), which also states the crossing near 19.1N 84.8E with 70-80 kmph gusting 90 between 0730 and 0830 IST and a deep depression within three hours. The marker, dots, track, Track tab time, Position card and footer moved to 08:30 and thirty-five fixes. The Track card now opens on the crossing and the north-north-east turn across Odisha, and the Intensity card carries the crossing wind and the weakening sequence instead of the pre-landfall wording. The category is still a cyclonic storm, so set_event was not run",
@@ -2436,6 +2422,20 @@
    "pattern": "akvan-cleared-2026-11-20.jpg",
    "paths": [
     "data/satellite/latest.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "landfall-akvan",
+  "date": "2026-11-20",
+  "change": "Akvan is on the landfall layer. It crossed the south Odisha and north Andhra coast close to Gopalpur between 07:30 and 08:30 IST on 20 November 2026, as a cyclonic storm with winds of 70 to 80 kmph gusting 90, having weakened from severe the night before. The dot sits 10 km south-west of Gopalpur, at 19.21N 84.85E, sized by the severe category it reached on the 18th, and the 2020s count in the legend goes from 30 to 31. The coordinate is derived from Gopalpur's own position (19.27N 84.92E) and IMD's stated distance and bearing, because the bulletin gave the place rather than a lat and lon at crossing",
+  "scope": "index.html",
+  "check": {
+   "type": "contains",
+   "pattern": "Akvan 2026, 20 November: close to Gopalp",
+   "paths": [
+    "index.html"
    ],
    "min": 1
   }
