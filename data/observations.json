@@ -390,8 +390,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-20T21:10:00+05:30",
- "last_checked_note": "Scheduled 21:00 run on 20 November. Two fixes added. IMD's evening All India bulletin (issued 17:16 IST) puts the deep depression at 14:30 IST at 20.0N 84.9E, 80 km north of Gopalpur, moving north at 15 kmph. The bulletin based on 17:30 IST reports it weakened into a depression at 20.2N 84.9E, 100 km north of Gopalpur, moving north at 12 kmph, and expects a well marked low pressure area within six hours. No 20:30 fix was available at the time of this run.",
+ "last_checked": "2026-11-21T03:07:00+05:30",
+ "last_checked_note": "Scheduled 03:00 run on 21 November, checked at 03:07 IST. No fix added. IMD's National Bulletin No. 42 (BOB/10/2026), time of issue 01:15 IST on 21 November, reports that the depression (remnant of severe cyclonic storm Akvan) over south coastal Odisha moved northwards and weakened into a well marked low pressure area over central Odisha at 23:30 IST on 20 November, likely to become a low pressure area within six hours, and states that it is the last update in association with the system. It gives no latitude or longitude, so no position is recorded. The 20:30 IST custom bulletin (airports, cities, districts, refineries) and the ACWC Kolkata sea-area and coastal bulletins are still based on the 1730 IST fix of 20.2N 84.9E, already in the record. The descriptor moved to well marked low pressure area; the record still holds 38 fixes, the last at 20.2N 84.9E at 17:30 on 20 November.",
  "forecast": {
   "corridor": [
    {

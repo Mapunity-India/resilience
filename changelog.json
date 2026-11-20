@@ -2622,5 +2622,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-wmlpa-reclassification",
+  "date": "2026-11-21",
+  "change": "Akvan is reclassified as a well marked low pressure area. IMD's National Bulletin No. 42 (BOB/10/2026), issued 01:15 IST on 21 November, reports the depression over south coastal Odisha weakened into a well marked low pressure area over central Odisha at 23:30 IST on 20 November and calls that its last update in association with the system. The bulletin states no latitude or longitude, so no fix is appended and the record stays at thirty-eight, the last at 20.2N 84.9E at 17:30 on 20 November; nothing is redrawn and the track csv is unchanged. The descriptor moves to well marked low pressure area, so the page and its title read Well Marked Low Pressure Area Akvan and the index row keeps its LIVE marker. The Intensity card carries the 23:30 weakening and the closed bulletin series, the timeline card for 17 to 20 November ends on it, and the footnote under the cards says IMD's last bulletin gave no new position",
+  "scope": "data/event.json, data/observations.json, events/akvan.html, index.html, tools/run-log.jsonl",
+  "check": {
+   "type": "contains",
+   "pattern": "A well marked low pressure area over central Odisha",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
