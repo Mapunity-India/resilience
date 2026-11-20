@@ -1,5 +1,9 @@
 {
   "event": "akvan",
-  "landfall": null,
+  "landfall": {
+    "at": "2026-11-20T08:00+05:30",
+    "where": "close to Gopalpur, on the south Odisha and north Andhra Pradesh coast; the centre crossed between 07:30 and 08:30 IST as a cyclonic storm, 70 to 80 kmph gusting 90",
+    "logged": "2026-11-20T13:54:58+05:30"
+  },
   "entries": []
 }

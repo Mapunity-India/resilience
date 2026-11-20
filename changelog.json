@@ -2439,5 +2439,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "schedule-3hourly-to-22nov",
+  "date": "2026-11-20",
+  "change": "The two-hourly job and the six spent one-offs from the 18th and 19th are deleted. In their place one job runs every three hours from now until noon on 22 November, and its last run retires Akvan: it calls tools/retire_event.py, which drops the LIVE marker from the Akvan row on the index, turns that row's date into a range ending on the day it crossed, and leaves it among the past cyclones with Murasu and Arnab. That run then deletes the job, so nothing is left to fire again next year",
+  "scope": "tools/retire_event.py",
+  "check": {
+   "type": "contains",
+   "pattern": "evline--live",
+   "paths": [
+    "tools/retire_event.py"
+   ],
+   "min": 1
+  }
  }
 ]
