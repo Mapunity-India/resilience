@@ -2537,5 +2537,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "favicon-all-pages",
+  "date": "2026-11-20",
+  "change": "Every page on the site now declares the resilience mark as its icon: the index, the four event pages and the El Nino page. None of them declared one before, so a tab showed whatever the browser fell back to. The path is relative, so events/ points at ../logos/ and the root at logos/",
+  "scope": "index.html, events/*.html",
+  "check": {
+   "type": "contains",
+   "pattern": "rel=\"icon\"",
+   "paths": [
+    "events/murasu.html"
+   ],
+   "min": 1
+  }
  }
 ]
