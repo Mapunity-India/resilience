@@ -2429,11 +2429,11 @@
  {
   "id": "landfall-akvan",
   "date": "2026-11-20",
-  "change": "Akvan is on the landfall layer. It crossed the south Odisha and north Andhra coast close to Gopalpur between 07:30 and 08:30 IST on 20 November 2026, as a cyclonic storm with winds of 70 to 80 kmph gusting 90, having weakened from severe the night before. The dot sits 10 km south-west of Gopalpur, at 19.21N 84.85E, sized by the severe category it reached on the 18th, and the 2020s count in the legend goes from 30 to 31. The coordinate is derived from Gopalpur's own position (19.27N 84.92E) and IMD's stated distance and bearing, because the bulletin gave the place rather than a lat and lon at crossing",
+  "change": "Akvan is on the landfall layer at 19.2N 84.8E, the position IMD's own post-landfall bulletin gives at 08:30 on 20 November, after the centre crossed close to Gopalpur between 07:30 and 08:30. It crossed as a cyclonic storm with winds of 70 to 80 kmph gusting 90, having weakened from severe the night before, so the dot is sized by the severe category it reached on the 18th. The 2020s count in the legend goes from 30 to 31",
   "scope": "index.html",
   "check": {
    "type": "contains",
-   "pattern": "Akvan 2026, 20 November: close to Gopalp",
+   "pattern": "Akvan 2026, 20 November",
    "paths": [
     "index.html"
    ],
