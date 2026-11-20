@@ -2565,5 +2565,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "handoff-note",
+  "date": "2026-11-20",
+  "change": "A HANDOFF.md at the site root, so the Resilience work can move to its own working thread without carrying the District Mocha history with it. It records what the site is, where the repository and the releases live, the two checks to run before a commit, the rules that came out of mistakes rather than theory, what each tool does, where Akvan stands, and what is still open",
+  "scope": "HANDOFF.md",
+  "check": {
+   "type": "contains",
+   "pattern": "Never invent a coordinate",
+   "paths": [
+    "HANDOFF.md"
+   ],
+   "min": 1
+  }
  }
 ]
