@@ -2678,6 +2678,35 @@
     "events/akvan.html"
    ],
    "min": 1
+  },
+  "superseded_by": "akvan-chhattisgarh-1430"
+ },
+ {
+  "id": "akvan-chhattisgarh-1430",
+  "date": "2026-11-21",
+  "change": "The low by Akvan is still over north Chhattisgarh at the 14:30 analysis. IMD's evening All India Weather Summary and Forecast Bulletin, issued 16:32 IST on 21 November and analysed on 14:30 IST observations, reports that the low pressure area over north Chhattisgarh & neighbourhood at 14:30 IST persists, with the cyclonic circulation extending to 4.5 km above mean sea level tilting south-westwards with height. It states no latitude or longitude, so no fix is appended and the record stays at thirty-eight, the last at 20.2N 84.9E at 17:30 on 20 November; nothing is redrawn. The Intensity card now carries the 14:30 persistence with the 16:32 bulletin as its source, the Track card notes the low persisted there at 14:30, and the footnote moves to 18:11 IST",
+  "scope": "events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "persisted at 14:30",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-chhattisgarh-0830-entry-superseded",
+  "date": "2026-11-21",
+  "change": "The changelog entry for the 08:30 analysis over north Chhattisgarh is marked superseded. Its fingerprint was the phrase over north Chhattisgarh by 08:30 in the Intensity card, and the 18:09 IST rewrite of that card for the 14:30 persistence took the phrase away, so verify_changelog.py reported the change as gone. The entry now names akvan-chhattisgarh-1430 as the change that replaced it; the 08:30 position it recorded is still described in the same card and in the Track card",
+  "scope": "changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "akvan-chhattisgarh-0830-entry-superseded",
+   "paths": [
+    "changelog.json"
+   ],
+   "min": 1
   }
  }
 ]
