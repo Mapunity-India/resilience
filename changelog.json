@@ -2737,5 +2737,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cyclone-month-histogram",
+  "date": "2026-11-21",
+  "change": "The Cyclones tab carries a histogram under the map: every dated landfall in the layer counted by the month it crossed. October leads with 26 and November follows at 24, May and June form the smaller pre-monsoon season at 12 and 10, and January to April are empty. 98 of the 124 entries carry a month; the other 26 hold only a year and are left out rather than spread across the bars, which the caption states. The decade panel moved up so it sits over the map and not the chart",
+  "scope": "index.html",
+  "check": {
+   "type": "contains",
+   "pattern": "lfhist",
+   "paths": [
+    "index.html"
+   ],
+   "min": 1
+  }
  }
 ]
