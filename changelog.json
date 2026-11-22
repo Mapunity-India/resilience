@@ -2594,7 +2594,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-postevent-cards"
  },
  {
   "id": "akvan-caption-keeps-its-sentence",
@@ -2651,7 +2652,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-postevent-cards"
  },
  {
   "id": "akvan-wmlpa-entry-superseded",
@@ -2723,7 +2725,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-postevent-cards"
  },
  {
   "id": "akvan-chhattisgarh-1430-entry-superseded",
@@ -2921,6 +2924,20 @@
    "pattern": "\"cleared\": {",
    "paths": [
     "data/akvan-postevent.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-postevent-cards",
+  "date": "2026-11-22",
+  "change": "Akvan's cards beside the map take the post-event set the other retired cyclones wear. Position becomes Landfall, Intensity becomes Strength at landfall, and Track is rewritten from the record as a finished track rather than a running one, so the page answers what the storm did instead of where it is. The Position card was the one card the browser rewrote from the record on load, so its ids are gone: with no posLine the runtime update returns early and the card keeps what was published, which is what a retired page needs. The Rainfall card stays as it is until district figures are found; Murasu's carries named station totals and nothing of that kind exists for Akvan yet. Three fingerprints were tied to the live cards and to nothing else, the 17:30 position line, the low over north interior Odisha and the low persisting at 17:30, so they are marked superseded by this entry rather than left to fail; the facts they recorded survive in the record and in the timeline card below the map",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "card__title\">Landfall",
+   "paths": [
+    "events/akvan.html"
    ],
    "min": 1
   }
