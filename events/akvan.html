@@ -83,8 +83,6 @@ a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(3
 .card--tint h3{color:#8f2318}
 .card--empty{border:1px dashed var(--line);color:var(--muted)}
 
-.vsat__t{font-weight:400;color:#6b635a;font-size:9px;letter-spacing:.2px}
-.vsat__o input:checked + span .vsat__t{color:#8f3d18}
 .crumbhome{color:inherit;text-decoration:none}
 .crumbhome:hover{text-decoration:underline}
 .markhome{display:block;line-height:0}
@@ -102,7 +100,7 @@ a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(3
   </header>
 
   <div class="toprow">
-<div class="mapcard"><div class="mviews"><div class="vsat" role="radiogroup" aria-label="View"><label class="vsat__o"><input type="radio" name="aview" value="track"><span>Track <b class="vsat__t">17:30</b></span></label><label class="vsat__o"><input type="radio" name="aview" value="sat" checked><span>Satellite <b class="vsat__t">10:02</b></span></label></div><div class="mview" id="vTrack"><svg id="rmapEvent" class="rmap__svg" viewBox="188.0 368.3 474.6 460.7" preserveAspectRatio="xMidYMid meet" role="img" aria-label="India, with the position and forecast track of the depression in the Bay of Bengal"><style>#rmapEvent path.d{fill:#efe6d8;stroke:none}#rmapEvent path.s{fill:none;stroke:#d9c9b4;stroke-width:.7}
+<div class="mapcard"><div class="mviews"><div class="vsat" role="radiogroup" aria-label="View"><label class="vsat__o"><input type="radio" name="aview" value="track"><span>Track</span></label><label class="vsat__o"><input type="radio" name="aview" value="sat" checked><span>Satellite</span></label></div><div class="mview" id="vTrack"><svg id="rmapEvent" class="rmap__svg" viewBox="188.0 368.3 474.6 460.7" preserveAspectRatio="xMidYMid meet" role="img" aria-label="India, with the position and forecast track of the depression in the Bay of Bengal"><style>#rmapEvent path.d{fill:#efe6d8;stroke:none}#rmapEvent path.s{fill:none;stroke:#d9c9b4;stroke-width:.7}
 .mviews{position:relative}
 .mview{display:none}
 .mview.on{display:block}
@@ -264,14 +262,12 @@ a.inline{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(3
       if(!o.length) return;
       o.sort(function(a,b){return a.issue<b.issue?-1:1;});
       var newest=o[o.length-1].issue;
-      // the corridor and the tab times come from the record, not from the last build
+      // the corridor comes from the record, not from the last build
       if(d.forecast && d.forecast.corridor && d.forecast.corridor.length>=2){
         window.__corr=d.forecast.corridor.map(function(c){return px(c.lon,c.lat);});
         var nm=d.forecast.corridor.map(function(c){return c.name;});
         window.__corrTgt=nm.indexOf(d.forecast.target);
       }
-      var tl=document.querySelector('input[value=track]');
-      if(tl){var tb=tl.parentNode.querySelector('.vsat__t'); var mm=/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(newest); if(mm&&tb) tb.textContent=mm[4]+':'+mm[5];}
       updateLine(o);
       if(document.body.getAttribute('data-issue')!==newest){
         document.body.setAttribute('data-issue', newest);

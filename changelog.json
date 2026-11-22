@@ -1522,7 +1522,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-toggle-without-times"
  },
  {
   "id": "akvan-image-no-codes",
@@ -2274,7 +2275,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-toggle-without-times"
  },
  {
   "id": "position-card-fallback",
@@ -2966,6 +2968,20 @@
   "check": {
    "type": "contains",
    "pattern": "akvan-landfall-2026-11-20.jpg",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-toggle-without-times",
+  "date": "2026-11-22",
+  "change": "The view toggle loses its timestamps and reads Track and Satellite. The times were there to say how fresh each view was, which made sense while a poller was appending fixes and replacing the frame every three hours: the number told a reader whether the map was behind the bulletins. Both views are now records of a storm that is over, the track ends at the last fix and the image is the landfall frame, so a clock on either says nothing a reader needs and invites the wrong reading, that something behind it is still updating. The script that wrote the track time from the record goes with them, since it was the only thing that put a number there, and the two CSS rules for the element it wrote into go too. Murasu and Arnab carry no toggle at all, so this is the only page where the question arose. Two entries are marked superseded: the one that put the times on the views and the one that took the track time from the record. Both describe behaviour this change deliberately removes, and neither has anything left to fingerprint",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "class=\"vsat__t\"",
    "paths": [
     "events/akvan.html"
    ],
