@@ -2177,7 +2177,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-forecast-corridor-removed"
  },
  {
   "id": "html-cache-headers",
@@ -2982,6 +2983,20 @@
   "check": {
    "type": "absent",
    "pattern": "class=\"vsat__t\"",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-forecast-corridor-removed",
+  "date": "2026-11-22",
+  "change": "The forecast comes off Akvan's map. It still drew the corridor IMD expected the centre to cross, as a bar along the coast from Narsapur to Puri with tick ends, and a dashed line from the marker to the middle of it, and the Track caption still explained both. The crossing happened on the 20th, so what the map presented as a forecast was a guess that has since been answered: the line ran to Gopalpur and the storm crossed near Gopalpur, which reads as a prediction being confirmed rather than as a record. The bar, its end ticks and the dashed line go from the drawing, the code that built them from the corridor in the record goes with them so a later redraw cannot put them back, and the caption now describes what is there: one dot per fix, the marker at the last, and a line saying plainly that there is no forecast because the crossing is behind us. Murasu and Arnab carry no corridor either",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "stroke-dasharray",
    "paths": [
     "events/akvan.html"
    ],
