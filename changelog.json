@@ -2779,6 +2779,35 @@
     "events/akvan.html"
    ],
    "min": 1
+  },
+  "superseded_by": "akvan-check-0600"
+ },
+ {
+  "id": "akvan-check-0600",
+  "date": "2026-11-22",
+  "change": "The 06:03 IST check of 22 November found no bulletin newer than the night All India Weather Summary and Forecast Bulletin issued 20:45 IST on 21 November, analysed on 17:30 IST, so nothing on the page moved except the check time, the satellite frame and one alt text. IMD's cyclone bulletin series still ends at National Bulletin No. 42 (BOB/10/2026), 01:15 IST on 21 November, based on the 23:30 observation of the 20th, which declared itself the last update for Akvan; the all-India bulletin archive still shows 20:45 IST of the 21st as its newest issue, the morning issue of the 22nd not being out yet, and the ACWC Kolkata sea-area bulletin for 21 UTC of the 21st to 09 UTC of the 22nd carries No Storm Warning. The low pressure area over north Chhattisgarh & neighbourhood persisted at 17:30 without a latitude or longitude, so no fix is appended and the record stays at thirty-eight, the last at 20.2N 84.9E at 17:30 on 20 November, and nothing is redrawn. The Position, Intensity, Track and Rainfall cards are unchanged; the footnote under the cards now reads Last checked at 06:05 IST on 22 November, the satellite label moved to the 06:03 frame, and the satellite image alt text was corrected from 21 to 22 November",
+  "scope": "events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "Last checked at 06:05 IST on 22 November",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-check-0600-record",
+  "date": "2026-11-22",
+  "change": "The observation record's own last-checked stamp is brought up to the 06:05 IST check of 22 November; the thirty-eight fixes are untouched, the last still 20.2N 84.9E at 17:30 on 20 November, and the note records that the newest bulletin, the night issue of 20:45 IST on 21 November analysed on 17:30, places the low pressure area over north Chhattisgarh & neighbourhood without a latitude or longitude, so no position could be appended",
+  "scope": "data/observations.json",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-22T06:05:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
   }
  }
 ]
