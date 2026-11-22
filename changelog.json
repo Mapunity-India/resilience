@@ -2941,5 +2941,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-rainfall-card-blank",
+  "date": "2026-11-22",
+  "change": "The Rainfall card is emptied rather than left holding the live event's text. What was there described rain expected on the 16th and 17th from the Chennai centre, which was written while the storm was at sea and is now stale twice over: the dates have passed and no district totals stand behind it. It takes the dashed empty style the shelters placeholder uses, with a line saying the figures are not yet on the page and will come from IMD's post-event report, so a reader is told why the card is empty instead of being shown something that reads as a result. The card keeps its place in the grid and its title, so the set stays four and matches the other retired pages. Page shape re-recorded: one paragraph fewer, still balanced",
+  "scope": "events/akvan.html, tools/html-shape.json, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "card card--empty\"><div class=\"card__title\">Rainfall",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
