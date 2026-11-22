@@ -2896,5 +2896,33 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-active-json-retired",
+  "date": "2026-11-22",
+  "change": "data/active.json is brought into line with the retired event. It still named Akvan as live while data/event.json said past, so two files in the same folder disagreed about whether a storm was running. Nothing in the tree reads it, which is why it drifted unnoticed: the auto-switch it served was removed when the landing page became the front door whatever the weather. It is corrected in place rather than deleted because the file is served publicly at /data/active.json and something outside this repository may still poll it; correcting the value is reversible, removing the file is not. Delete it once that is ruled out",
+  "scope": "data/active.json, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "\"status\": \"past\"",
+   "paths": [
+    "data/active.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-cleared-logged",
+  "date": "2026-11-22",
+  "change": "The end of Akvan is logged in the post-event record, which had landfall and nothing after it. Clearance was never separately observed: the rear did not clear the coast while the storm was still a cyclone, it weakened inland instead, which the tools README allows as the alternative to a rear clearing. The moment recorded is National Bulletin No. 42 of 01:15 IST on 21 November, based on the 23:30 observation of the 20th, which declared itself the last update for Akvan and carried no latitude or longitude, with the remnant a low pressure area over north Chhattisgarh by 05:30 on 21 November. The where field says plainly that this was not an observed clearance, so nobody later reads it as one. With clearance logged, post-event figures gathered from now on are recorded settled rather than provisional",
+  "scope": "data/akvan-postevent.json, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "\"cleared\": {",
+   "paths": [
+    "data/akvan-postevent.json"
+   ],
+   "min": 1
+  }
  }
 ]
