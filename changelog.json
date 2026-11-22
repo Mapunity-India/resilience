@@ -978,7 +978,8 @@
     "index.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-retire-index-row"
  },
  {
   "id": "resilience-map-headrow",
@@ -2836,6 +2837,34 @@
    "pattern": "2026-11-22T09:05:00+05:30",
    "paths": [
     "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "retire-akvan",
+  "date": "2026-11-22",
+  "change": "Akvan is retired as a live event. It takes the name of the strongest it got, Severe Cyclonic Storm Akvan, the way IMD names a storm in the record by its peak rather than by what it was at the coast, and the note beneath it says how long it held that strength and what it was when it crossed. The LIVE marker is gone from its row on the index, which now reads as a date range ending on the day it crossed, so it sits among the past cyclones with Murasu and Arnab",
+  "scope": "index.html, events/akvan.html",
+  "check": {
+   "type": "absent",
+   "pattern": "evline--live\" href=\"events/akvan.html\"",
+   "paths": [
+    "index.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-retire-index-row",
+  "date": "2026-11-22",
+  "change": "Akvan's row on the index is brought into line with its page as the event is retired. The page now takes the peak category as its name, Severe Cyclonic Storm Akvan, and the row follows it, the way every earlier reclassification of the system moved the page and the row together, so the two no longer name the same storm differently. The row also loses its live pill and reads as a range from 15 to 20 November 2026, the day it crossed near Gopalpur. The fingerprint that recorded the date-left, pill-right rule was tied to Akvan's live row, which retirement removes, so it is re-anchored to any live row still standing and superseded by this entry; the rule itself is unchanged",
+  "scope": "index.html, changelog.json",
+  "check": {
+   "type": "regex",
+   "pattern": "<span class=\"evline__date\">[^<]+</span><span class=\"evline__live\">",
+   "paths": [
+    "index.html"
    ],
    "min": 1
   }
