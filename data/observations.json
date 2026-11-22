@@ -390,8 +390,8 @@
   "name": "Akvan",
   "note": "IMD named the system a cyclonic storm at the 17:30 bulletin on 16 November"
  },
- "last_checked": "2026-11-22T06:05:00+05:30",
- "last_checked_note": "Scheduled 06:00 run on 22 November, checked at 06:05 IST. No fix added. Nothing newer than the night All India Weather Summary and Forecast Bulletin issued 20:45 IST on 21 November, analysed on 17:30 IST, which keeps the low pressure area over north Chhattisgarh & neighbourhood at 17:30 with the cyclonic circulation to 4.5 km tilting south-westwards, and gives no latitude or longitude. IMD's cyclone bulletin series still ends at National Bulletin No. 42 (BOB/10/2026), 01:15 IST on 21 November, based on the 23:30 observation of the 20th, which declared itself the last update for Akvan. The ACWC Kolkata sea-area bulletin for 21 UTC of the 21st to 09 UTC of the 22nd carries No Storm Warning. The morning issue of the 22nd is not out yet. The record stays at thirty-eight fixes, the last at 20.2N 84.9E at 17:30 on 20 November.",
+ "last_checked": "2026-11-22T09:05:00+05:30",
+ "last_checked_note": "Scheduled 09:00 run on 22 November, checked at 09:05 IST. No fix added. The morning All India Weather Summary and Forecast Bulletin of the 22nd is now out, issued 08:26 IST and analysed on 05:30 IST, and it keeps the low pressure area over north Chhattisgarh & neighbourhood at 05:30 of today, with the associated cyclonic circulation extending to 4.5 km above mean sea level tilting south-westwards; it gives no latitude or longitude, so no position can be appended. IMD's cyclone bulletin series still ends at National Bulletin No. 42 (BOB/10/2026), 01:15 IST on 21 November, based on the 23:30 observation of the 20th, which declared itself the last update for Akvan, and the newest cyclone bulletin the IMD site still serves is the 20 November 2030 issue based on 17:30 IST, already recorded. The record stays at thirty-eight fixes, the last at 20.2N 84.9E at 17:30 on 20 November.",
  "forecast": {
   "corridor": [
    {

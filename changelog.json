@@ -2794,7 +2794,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-check-0900"
  },
  {
   "id": "akvan-check-0600-record",
@@ -2804,6 +2805,35 @@
   "check": {
    "type": "contains",
    "pattern": "2026-11-22T06:05:00+05:30",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  },
+  "superseded_by": "akvan-check-0900-record"
+ },
+ {
+  "id": "akvan-check-0900",
+  "date": "2026-11-22",
+  "change": "The 09:05 IST check of 22 November found the first new bulletin since the night issue of the 21st: the morning All India Weather Summary and Forecast Bulletin of the 22nd, issued 08:26 IST and analysed on 05:30 IST, which keeps the low pressure area over north Chhattisgarh & neighbourhood at 05:30 of today, with the associated cyclonic circulation extending to 4.5 km above mean sea level tilting south-westwards. It gives no latitude or longitude, so no fix is appended, nothing is redrawn and the record stays at thirty-eight, the last at 20.2N 84.9E at 17:30 on 20 November. IMD's cyclone bulletin series still ends at National Bulletin No. 42 (BOB/10/2026), 01:15 IST on 21 November, which declared itself the last update for Akvan, and the newest cyclone bulletin the site still serves is the 20 November 2030 issue based on 17:30 IST, already recorded. The Position, Intensity, Track and Rainfall cards are unchanged, the reclassification to a low pressure area already being on the page; the footnote under the cards now records the morning bulletin of the 22nd and reads Last checked at 09:05 IST on 22 November, and the satellite label moved to the 09:05 frame",
+  "scope": "events/akvan.html",
+  "check": {
+   "type": "contains",
+   "pattern": "Last checked at 09:05 IST on 22 November",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "akvan-check-0900-record",
+  "date": "2026-11-22",
+  "change": "The observation record's own last-checked stamp is brought up to the 09:05 IST check of 22 November; the thirty-eight fixes are untouched, the last still 20.2N 84.9E at 17:30 on 20 November, and the note records that the morning all-India bulletin of the 22nd, issued 08:26 IST and analysed on 05:30 IST, keeps the low pressure area over north Chhattisgarh & neighbourhood without a latitude or longitude, so no position could be appended",
+  "scope": "data/observations.json",
+  "check": {
+   "type": "contains",
+   "pattern": "2026-11-22T09:05:00+05:30",
    "paths": [
     "data/observations.json"
    ],
