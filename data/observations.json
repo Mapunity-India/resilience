@@ -1,6 +1,8 @@
 {
  "event": "akvan",
- "status": "live",
+ "status": "ended",
+ "ended_at": "2026-11-20T23:30:00+05:30",
+ "ended_note": "Closed by hand on 22 November 2026, after the event was retired on the site. National Bulletin No. 42 (BOB/10/2026), 01:15 IST on 21 November, based on the 23:30 observation of the 20th, declared itself the last update for Akvan and gave no latitude or longitude, so no further fix could be recorded and the scheduled runs had nothing to append. The system had weakened to a low pressure area over north Chhattisgarh and has carried no position since. The record holds thirty-eight fixes, the last at 20.2N 84.9E at 17:30 on 20 November.",
  "observations": [
   {
    "lat": 9.0,

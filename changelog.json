@@ -2868,5 +2868,33 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-record-closed",
+  "date": "2026-11-22",
+  "change": "The Akvan record is closed. It still said live, and every scheduled run since the storm weakened kept checking, finding a bulletin with no latitude and no longitude, and adding nothing, so the record contradicted the retired page and would have gone on doing so for ever. Status is now ended, ended_at is the 23:30 observation of 20 November, the last the cyclone bulletin series was based on, and ended_note says why: National Bulletin No. 42 of 01:15 IST on 21 November declared itself the last update for Akvan and gave no position, so no further fix could be appended. The thirty-eight fixes are untouched",
+  "scope": "data/observations.json, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "\"status\": \"ended\"",
+   "paths": [
+    "data/observations.json"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "poller-stale-rule",
+  "date": "2026-11-22",
+  "change": "The poller honours --stale-hours, which it advertised and never implemented. The option was declared and the README described it, but nothing read it: the only way to end an event was a parsed position whose intensity was a low pressure area, and a bulletin that gives no latitude and no longitude parses no position at all, so a storm that simply stopped being reported could never be closed and the timer ran on indefinitely. The check now sits before the fetch, so a record whose last fix is older than the interval is marked ended, with ended_at at that last fix and an ended_note saying it was closed as stale, and the run exits 4. --force still reopens it, and --dry-run reports without writing",
+  "scope": "tools/fetch_position.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "args.stale_hours",
+   "paths": [
+    "tools/fetch_position.py"
+   ],
+   "min": 1
+  }
  }
 ]

@@ -315,6 +315,24 @@ def main():
 
     last = data['observations'][-1] if data['observations'] else None
     age = minutes_since(last.get('issue')) if last else None
+
+    # stale: nothing new for --stale-hours means the event is over, whether or not
+    # a bulletin says so. This is the only rule that catches a storm which simply
+    # stops being reported: a bulletin giving no latitude and no longitude parses
+    # no position, so the intensity test further down never sees it, and without
+    # this the record stays live and the timer runs on for ever.
+    if last and age is not None and age > args.stale_hours * 60 and not args.force:
+        data['status'] = 'ended'
+        data['ended_at'] = last.get('issue')
+        data['ended_note'] = ('closed as stale by the poller: no new position for %.0f hours,'
+                              ' the last at %.1fN %.1fE on %s'
+                              % (age / 60.0, last['lat'], last['lon'], last.get('issue')))
+        if not args.dry_run:
+            save(data, args.data)
+        print('event ended: no new position for %.0f hours, last at %.1fN %.1fE on %s'
+              % (age / 60.0, last['lat'], last['lon'], last.get('issue')))
+        return 4
+
     if last and age is not None and 0 <= age < args.min_interval and not args.force:
         print('not due: last observation is %.0f minutes old, interval is %d'
               % (age, args.min_interval))
