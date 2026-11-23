@@ -3016,5 +3016,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-rainfall-three-per-state",
+  "date": "2026-11-23",
+  "change": "The Rainfall card carries three stations per state, not four, and the Ganjam district sentence comes off it. The card had listed the four heaviest on each side of the border and a line giving the district average of 118 mm and the thirteen coastal blocks over 100 mm. Three per state is enough to show the spread without turning a card into a table, so Gopalpur at 190 mm and MS Pally at 146.25 mm go, and with them the district average, which was there only to stop a single station being read as a district. What remains is the intro line naming the window, six stations, and the source",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "Gopalpur, Ganjam",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
