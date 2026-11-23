@@ -3002,5 +3002,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-rainfall-filled",
+  "date": "2026-11-23",
+  "change": "The Rainfall card is no longer empty. It was left blank on the 22nd because no district figures could be sourced, and the card said so rather than showing something stale. IMD's cyclone bulletin of 20 November 2026 carries observed rainfall for the 24 hours ending 08:30 IST that morning, for both states, so the card now lists the four heaviest stations on each side of the border in millimetres: Patrapur 209, Hinjili 207, Chikiti 199 and Gopalpur 190 in Ganjam, and Ichchapuram 168.75, Arakabadra 162.50, Kanchili 148.50 and MS Pally 146.25 in Srikakulam. A line under them gives the Ganjam district average of 118 mm and the thirteen coastal blocks that crossed 100 mm, so a single station is not mistaken for a district. The source line names the bulletin",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Patrapur",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
