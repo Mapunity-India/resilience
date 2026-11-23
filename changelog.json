@@ -3030,5 +3030,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-uppercase-note-removed",
+  "date": "2026-11-23",
+  "change": "The uppercase note comes off Akvan's title. The heading carried a mono line set in capitals beside it, reading severe cyclonic storm from 05:30 on 18 November to 02:30 on 20 November; crossed near Gopalpur as a cyclonic storm. It repeated what the Strength at landfall and Landfall cards already say, and set in capitals next to a serif title it read as a label on the name rather than a note about the storm. The span, its rule and the line of script that kept it in step with the record all go, so the heading is the storm's name and nothing else",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "header__title-note",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
