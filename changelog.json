@@ -3077,5 +3077,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-timeline-third-card-condensed",
+  "date": "2026-11-26",
+  "change": "The last card in Akvan's timeline row is cut from 1,053 characters to 200. It had followed the system fix by fix, giving a latitude, a longitude, a distance from Gopalpur and a speed for each of eight observations, and it also carried the forecast that IMD expected a crossing near Gopalpur by noon with winds of 90 to 100 kmph, which the crossing has since answered. The two cards beside it run to 129 and 160 characters, so the row read as two short cards and one column of small print. What is left is the shape of those four days: severe from the morning of the 18th, north up the coast and accelerating from 10 to 23 kmph, across near Gopalpur between 07:30 and 08:30 on the 20th, a depression by evening. The fix-by-fix detail stays in the record of observations, which the Track card cites",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "430 km south of Gopalpur",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
