@@ -110,7 +110,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-emergency-blocks-removed"
  },
  {
   "id": "event-is-default",
@@ -182,7 +183,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-emergency-blocks-removed"
  },
  {
   "id": "akvan-sources-only",
@@ -239,7 +241,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-post-event-first-step"
  },
  {
   "id": "akvan-no-footer",
@@ -1508,7 +1511,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-emergency-blocks-removed"
  },
  {
   "id": "akvan-view-times",
@@ -2959,7 +2963,8 @@
     "events/akvan.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "akvan-rainfall-filled"
  },
  {
   "id": "akvan-landfall-frame-shown",
