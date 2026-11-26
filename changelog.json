@@ -3044,5 +3044,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-post-event-first-step",
+  "date": "2026-11-26",
+  "change": "Akvan starts taking the post-event look its sister pages already have. The red strip at the top read Emergency information and advisories and pointed at a help section that no longer had anything live in it; it now reads The record of this storm and points at the timeline, which carries an id of record, exactly as Murasu and Arnab do. The Warnings and advisories section comes off the page: its Sea and fishing card still advised fishermen not to put out, four days after the system was gone, and its second card was an empty placeholder waiting for shelters and relief that will not now appear. What remains is the storm's own record plus the rainfall the bulletin gave. The post-event sections the sister pages carry, on the warnings, the damage and what it left behind, come next and need the district reports first",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "Emergency information and advisories",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
