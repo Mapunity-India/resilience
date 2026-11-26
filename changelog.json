@@ -3058,5 +3058,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "akvan-emergency-blocks-removed",
+  "date": "2026-11-26",
+  "change": "The emergency information comes off Akvan's page. Two blocks carried it: a heading over a list of helpline numbers, 112 and 1070 and the state operations centres, with a source line saying where the numbers were checked, and a Report a problem section of three cards telling a reader to call 112, to call 1070 for water and power and roads, and to report an overdue boat, one of which still warned that fishing was closed until 18 November. Both are live-event scaffolding: they exist so someone in the middle of a storm knows who to ring, and the storm has been gone since Saturday. The helplines section and its source line go, the report cards go with them, and the page is left with the storm's record and where it came from. The heading also carried the id the red strip used to point at; the strip points at the timeline now",
+  "scope": "events/akvan.html, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "Report a problem",
+   "paths": [
+    "events/akvan.html"
+   ],
+   "min": 1
+  }
  }
 ]
