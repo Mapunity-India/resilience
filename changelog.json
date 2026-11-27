@@ -3345,5 +3345,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-logo-as-index",
+  "date": "2026-11-27",
+  "change": "The mark on the Cities page is put back to the rule the index uses, 125px tall and 10px above its own baseline, and the header margin goes back to 30px so the block below starts where it does on the index. The earlier adjustment had shortened the box to 96px and pulled it down 31px to close a gap against the rule; this puts the two pages on the same numbers instead. Measured on both renders, the drawing now occupies rows 55 to 116 in the header of each, so the mark sits in the same place on both pages",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "height:125px;width:auto;flex-shrink:0",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
