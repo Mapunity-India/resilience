@@ -3133,7 +3133,8 @@
     "cities.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "cities-stack-events-only"
  },
  {
   "id": "cities-standfirst-shortened",
