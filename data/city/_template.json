@@ -1,0 +1,29 @@
+{
+  "_readme": "Copy this file, rename it to <slug>.json, fill it in, and run tools/build_city.py. One file per city; no code changes.",
+  "slug": "example-city",
+  "city": "Example City",
+  "authority": "Example City Corporation",
+  "area_km2": 0,
+  "wards": 0,
+  "bounds": [0, 0, 0, 0],
+  "note": "One line on what this instance is and where its numbers come from.",
+  "hazards": [
+    {
+      "id": "rain-heavy",
+      "hazard": "Rain",
+      "trigger": "The threshold, in the units the issuing agency uses",
+      "scale": "Which published scale the threshold comes from",
+      "starts": "What the corporation actually does when the threshold is met",
+      "owner": "The municipal role that acts, not a person",
+      "window": "How soon, and how long it holds",
+      "where": "The geography the action applies to",
+      "source": "Where the threshold comes from"
+    }
+  ],
+  "assets": [
+    { "item": "Asset", "role": "Adaptation or Mitigation", "status": "Its present state" }
+  ],
+  "measured": [
+    { "label": "What was measured for this city", "value": "The figure" }
+  ]
+}

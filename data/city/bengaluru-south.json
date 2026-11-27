@@ -1,0 +1,67 @@
+{
+  "slug": "bengaluru-south",
+  "city": "Bengaluru South",
+  "authority": "Bengaluru South City Corporation",
+  "area_km2": 152.3,
+  "wards": 72,
+  "bounds": [12.8235, 77.4793, 12.9617, 77.7129],
+  "note": "Instance 01. Thresholds are national scales; owners are municipal roles; the geography is measured for this corporation.",
+  "hazards": [
+    {
+      "id": "rain-heavy",
+      "hazard": "Rain",
+      "trigger": "Forecast or observation of 64.5 to 115.5 mm in 24 hours",
+      "scale": "IMD heavy-rain band, orange",
+      "starts": "Desilting crews and pumps moved to the listed flood-prone spots; lake gate watch opened",
+      "owner": "Chief Engineer, Stormwater",
+      "window": "On forecast, and through the monsoon from 15 May",
+      "where": "Flood-prone spots listed by the corporation",
+      "source": "IMD rainfall classification"
+    },
+    {
+      "id": "rain-very-heavy",
+      "hazard": "Rain",
+      "trigger": "Above 115.5 mm in 24 hours, or a nowcast of the same",
+      "scale": "IMD very heavy rain, red",
+      "starts": "Relief centres opened in wards with a flood record; pumps pre-positioned; underpass diversions",
+      "owner": "Zonal Commissioner with the district authority",
+      "window": "Within six hours of the forecast",
+      "where": "Wards with a recorded flood history",
+      "source": "IMD rainfall classification"
+    },
+    {
+      "id": "lake-spill",
+      "hazard": "Lake",
+      "trigger": "A tank at or above 90 per cent of full tank level with rain forecast",
+      "scale": "Local operating rule",
+      "starts": "Pre-emptive drawdown; alert to the ground below the tank; lake path closed",
+      "owner": "Lakes division",
+      "window": "Same day",
+      "where": "Tanks and the ground below them",
+      "source": "Municipal lake operating practice"
+    },
+    {
+      "id": "heat-wave",
+      "hazard": "Heat",
+      "trigger": "Maximum at or above 40 C, or 4.5 C above normal",
+      "scale": "IMD heat-wave criterion for the plains",
+      "starts": "Water kiosks opened; park and lake hours extended; outdoor work rescheduled",
+      "owner": "Health Officer with the Zonal Commissioner",
+      "window": "On declaration, and for the spell",
+      "where": "Wards with the least canopy and the most outdoor work",
+      "source": "IMD heat-wave criteria"
+    }
+  ],
+  "assets": [
+    { "item": "Stormwater drain network", "role": "Adaptation", "status": "Under augmentation" },
+    { "item": "Tanks and lakes", "role": "Adaptation", "status": "Partly restored, partly built over" },
+    { "item": "Street lighting", "role": "Mitigation", "status": "LED conversion in progress" },
+    { "item": "Waste transfer and processing", "role": "Mitigation", "status": "Ward-level centres proposed" }
+  ],
+  "measured": [
+    { "label": "Ground that took water in 2017 and does not now", "value": "28 sites, 0.64 km2" },
+    { "label": "Elevation across the corporation", "value": "786 to 975 m, mean 895 m" },
+    { "label": "Median slope", "value": "3.1 degrees" },
+    { "label": "Green and blue cover, 2017 to 2026", "value": "47.2 per cent to 27.4 per cent" }
+  ]
+}

@@ -3091,5 +3091,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "city-resilience-register",
+  "date": "2026-11-27",
+  "change": "A city resilience register goes into the site. It is a page at city/index.html built from data/city/*.json by tools/build_city.py, and it holds the chain a corporation actually works to: a hazard, the threshold that starts a response, what starts, which municipal role acts, within what window, and the ground it applies to. The first instance is Bengaluru South, 152.3 km2 and 72 wards, with four triggers on national scales: heavy rain at 64.5 to 115.5 mm in 24 hours, very heavy rain above 115.5 mm, a tank at 90 per cent of full tank level with rain forecast, and heat at 40 C or 4.5 C above normal. Assets and measured figures sit below the register. The page is generic by construction: adding a city is a JSON file in data/city and a rebuild, with no code change, and data/city/_template.json is the blank schema for whoever adds the next one",
+  "scope": "city/index.html, data/city/bengaluru-south.json, data/city/_template.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "hazard-trigger register",
+   "paths": [
+    "city/index.html"
+   ],
+   "min": 1
+  }
  }
 ]
