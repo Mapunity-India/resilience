@@ -166,6 +166,7 @@ function cityPage(c){
 
   return '<div class="top">' + map +
       '<div class="stack">' +
+        eventsCard +
         '<div class="card"><div class="card__t">Now &middot; ' + esc(st.as_of || '') + '</div>' +
           '<div class="card__big">' + esc(st.season || '') + '</div>' +
           '<p>What is armed, and what is not, on the day this page was built.</p>' +
@@ -173,7 +174,6 @@ function cityPage(c){
         '<div class="card"><div class="card__t">Water</div>' +
           '<div class="card__big">28 sites, 0.64 km&sup2;</div>' +
           '<p>Took water in February 2017 and no longer do. Each one is a place the corporation no longer has to hold rain in.</p></div>' +
-        eventsCard +
       '</div></div>' +
     '<h2>What changed</h2><div class="measured">' + measured + '</div>' +
     '<h2>The register</h2>' +

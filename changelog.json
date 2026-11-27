@@ -3232,5 +3232,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-events-card-first",
+  "date": "2026-11-27",
+  "change": "The Events card moves to the top of the right-hand stack on the Cities page, above Now and Water. The order now follows the same logic as the national index, where events come before the standing panels: what is running, then what is armed today, then what the ground has lost",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "ev__live",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
