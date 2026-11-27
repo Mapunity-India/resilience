@@ -3162,5 +3162,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-facts-row-removed",
+  "date": "2026-11-27",
+  "change": "The facts row above the map comes off the Cities page. It carried the corporation name, the area and the ward count in display type, which put the city name twice within an inch, once above the map and once on the map label. The name now appears once, on the label; the area and the ward count move to the right-hand end of that same label row, in small mono type, so the two figures survive without a second heading competing with the first",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "class=\"facts\"",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
