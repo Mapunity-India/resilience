@@ -3288,5 +3288,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-type-bumped",
+  "date": "2026-11-27",
+  "change": "Type on the Cities page goes up by about a point throughout: table cells 13.5 to 14.5, table heads and mono labels 9.5 to 10.5, card notes 12.5 to 13.5, event titles 13.5 to 15, plan actions 12 to 13, the map label 11.5 to 12.5, the footer 12.5 to 13.5, section heads 12 to 13. Eighteen sizes in all, each raised once and none of them restyled. The page is taller for it, which is the accepted trade. One consequence: with the right-hand stack now taller, the map card is set to stretch to the same height and its drawing scales up to fill the row rather than leaving a column of white beneath it",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "font-size:14.5px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
