@@ -3148,5 +3148,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-map-label",
+  "date": "2026-11-27",
+  "change": "The map card on the Cities page carries a label row naming the city, set the way the hazard names are set on the index: upper case, letter-spaced, in the accent colour with a green rule beneath. The corporation name was already in the facts row above the map, but the map itself had no heading, so a reader arriving at the card had to look up to know what they were seeing. The label comes from the city file, so a second city gets its own name without a code change",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "maplabel",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

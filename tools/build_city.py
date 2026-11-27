@@ -67,6 +67,9 @@ td.h{font-weight:600;white-space:nowrap}
 .card .row .n{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
 @media (max-width:900px){.top{grid-template-columns:1fr}}
 .mapcard svg{width:100%;max-width:720px;height:auto;display:block;margin:0 auto}
+.maplabel{display:flex;align-items:center;gap:8px;margin:0 0 10px;padding:0 2px}
+.maplabel span{font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;font-weight:700;
+ color:var(--accent);border-bottom:3px solid #60a000;padding-bottom:3px}
 .mapcard .cap{font-size:12.5px;color:var(--muted);margin:8px 0 0}
 .measured{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .measured div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
@@ -131,7 +134,8 @@ function cityPage(c){
       var r = Math.max(2.4, Math.min(9, Math.sqrt(s.ha*10000/Math.PI)/28));
       return '<circle cx="' + s.x + '" cy="' + s.y + '" r="' + r.toFixed(1) + '" fill="#1f4e79" fill-opacity=".55" stroke="#123a5c" stroke-width=".7"><title>' + s.ha.toFixed(1) + ' ha</title></circle>';
     }).join('');
-    map = '<div class="mapcard"><svg viewBox="0 0 ' + c.map.w + ' ' + c.map.h + '" role="img" aria-label="' + esc(c.city) + ' outline and lost-water sites">' +
+    map = '<div class="mapcard"><div class="maplabel"><span>' + esc(c.city) + '</span></div>' +
+      '<svg viewBox="0 0 ' + c.map.w + ' ' + c.map.h + '" role="img" aria-label="' + esc(c.city) + ' outline and lost-water sites">' +
       '<path d="' + c.map.outline + '" fill="#f1ece3" stroke="#8d3f1c" stroke-width="1.6" stroke-linejoin="round"/>' +
       dots + '</svg><p class="cap">' + esc(c.map.caption) + '</p></div>';
   }
