@@ -3317,5 +3317,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-cards-equal-height",
+  "date": "2026-11-27",
+  "change": "The map card and the Events card are set to the same height. They had been sized by their own content, so the map ran on past the events and the row ended raggedly. Both now stretch to the taller of the two, which is the map, and the drawing fills the card rather than sitting in the top of it. The events keep their own spacing at the top and leave the slack at the bottom, which is where slack is least noticed",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "align-items:stretch",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
