@@ -145,7 +145,8 @@ td.h{font-weight:600;white-space:nowrap}
 .wk em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;color:var(--muted);opacity:.8;margin-left:auto;flex:none;padding-top:2px}
 @media (max-width:1000px){.plan{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:700px){.plan{grid-template-columns:1fr}}
-.footrule{margin:36px -24px 34px;height:2px;border-top:4px solid #205800;border-bottom:4px solid #60a000}
+.footrule{margin:36px -24px 34px;height:2px;box-sizing:content-box;
+ border-top:4px solid #205800;border-bottom:4px solid #60a000}
 .measured{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .measured div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .measured b{display:block;font-family:var(--display);font-size:22px;font-weight:400;margin-bottom:2px}

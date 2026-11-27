@@ -3836,5 +3836,19 @@
    ],
    "min": 6
   }
+ },
+ {
+  "id": "cities-footrule-gap",
+  "date": "2026-11-27",
+  "change": "The footer rule gets its white gap back. The two bands had run together as one solid green bar because the page sets box-sizing border-box on every element, so a height of 2px had to contain two 4px borders and they met in the middle. The header rule never showed the fault because it is drawn on a pseudo-element, which the universal rule does not reach. The footer now sets content-box, and the rule reads dark green for four rows, white for two, light green for four, the same as the one at the top",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "box-sizing:content-box",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
