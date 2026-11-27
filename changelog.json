@@ -3359,7 +3359,8 @@
     "cities.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "cities-hero-fixed-height"
  },
  {
   "id": "cities-hero-fixed-height",
