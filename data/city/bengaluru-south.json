@@ -276,6 +276,13 @@
       "to": "2026-09-30",
       "status": "past",
       "note": "Closed at the end of September with no drawdown recorded at any tank."
+    },
+    {
+      "title": "Summer 2026",
+      "from": "2026-03-01",
+      "to": "2026-06-30",
+      "status": "past",
+      "note": "The heat season. The 40 C trigger applies from March to May, inside this window."
     }
   ]
 }

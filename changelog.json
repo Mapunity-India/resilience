@@ -3246,5 +3246,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-events-summer",
+  "date": "2026-11-27",
+  "change": "Summer joins the Events card as a third period, March to June 2026, in the Earlier group below the south-west monsoon. Its note carries the heat trigger's window: 40 C applies from March to May, inside the summer months and outside the monsoon, which is why Heat reads Not in season on the Now card today. The three entries now cover the year in the order the city lives it: the heat season, the south-west monsoon, the north-east monsoon",
+  "scope": "cities.html, data/city/bengaluru-south.json, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Summer 2026",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
