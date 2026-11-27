@@ -3190,5 +3190,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-map-label-band",
+  "date": "2026-11-27",
+  "change": "The label row on the city map gets a tinted band. It had been plain text on the same white as the card, so the row was hard to see as a row at all. The band runs the full width of the card, in a warm shade with a hairline under it and the card's rounded top corners, which reads it as the card's header rather than as a caption floating above the drawing",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "background:#f2eee6",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
