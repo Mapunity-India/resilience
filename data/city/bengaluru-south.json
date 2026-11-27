@@ -81,16 +81,12 @@
   ],
   "measured": [
     {
-      "label": "Ground that took water in 2017 and does not now",
-      "value": "28 sites, 0.64 km2"
-    },
-    {
       "label": "Elevation across the corporation",
       "value": "786 to 975 m, mean 895 m"
     },
     {
       "label": "Median slope",
-      "value": "3.1 degrees"
+      "value": "3.1°"
     },
     {
       "label": "Green and blue cover, 2017 to 2026",
@@ -244,5 +240,26 @@
       }
     ],
     "caption": "The corporation outline, and the 28 places that held water in February 2017 and no longer do."
+  },
+  "status": {
+    "as_of": "2026-11-27",
+    "season": "North-east monsoon",
+    "lines": [
+      {
+        "k": "Rain",
+        "v": "Armed from 15 May",
+        "n": "Crews and pumps go to the listed spots on an orange forecast"
+      },
+      {
+        "k": "Tanks",
+        "v": "No drawdown on record",
+        "n": "A tank at 90 per cent of full level with rain forecast starts one"
+      },
+      {
+        "k": "Heat",
+        "v": "Not in season",
+        "n": "The 40 C trigger is a March to May condition"
+      }
+    ]
   }
 }

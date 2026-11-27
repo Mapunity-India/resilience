@@ -3120,5 +3120,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-page-live-first",
+  "date": "2026-11-27",
+  "change": "The Cities page is reordered so it opens on the city rather than on the reference. The register had been the first thing on the page, which made it read as a guidebook; it now sits below the evidence, under its own heading, as the standing reference it is. What comes first is the instrument: the corporation outline carrying the 28 lost-water sites, and beside it a status card giving the date the page was built, the season, and what is armed and what is not on that day, followed by the water figure. Below them, What changed, then the register, then the assets. The status lines are a new block in the city file, so a scheduled run can update them without touching the page. The duplicate 28-sites figure came off the measured list, which now carries elevation, slope and the green and blue change only",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "What is armed, and what is not",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

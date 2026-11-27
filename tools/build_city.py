@@ -53,7 +53,19 @@ tr:last-child td{border-bottom:none}
 td.h{font-weight:600;white-space:nowrap}
 .src{font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
 .note{font-size:13px;color:var(--muted);margin:10px 0 0}
+.top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}
 .mapcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px}
+.stack{display:grid;gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.card__t{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+.card__big{font-family:var(--display);font-size:26px;line-height:1.15;margin:0 0 3px}
+.card p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
+.card .row{padding:6px 0;border-bottom:1px solid #efe9df}
+.card .row:last-child{border-bottom:none}
+.card .row .k{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:13px}
+.card .row .k b{font-family:var(--mono);font-size:11px;letter-spacing:.5px;white-space:nowrap}
+.card .row .n{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
+@media (max-width:900px){.top{grid-template-columns:1fr}}
 .mapcard svg{width:100%;max-width:720px;height:auto;display:block;margin:0 auto}
 .mapcard .cap{font-size:12.5px;color:var(--muted);margin:8px 0 0}
 .measured{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -119,24 +131,39 @@ function cityPage(c){
       var r = Math.max(2.4, Math.min(9, Math.sqrt(s.ha*10000/Math.PI)/28));
       return '<circle cx="' + s.x + '" cy="' + s.y + '" r="' + r.toFixed(1) + '" fill="#1f4e79" fill-opacity=".55" stroke="#123a5c" stroke-width=".7"><title>' + s.ha.toFixed(1) + ' ha</title></circle>';
     }).join('');
-    map = '<h2>Where it bites</h2>' +
-      '<div class="mapcard"><svg viewBox="0 0 ' + c.map.w + ' ' + c.map.h + '" role="img" aria-label="' + esc(c.city) + ' outline and lost-water sites">' +
+    map = '<div class="mapcard"><svg viewBox="0 0 ' + c.map.w + ' ' + c.map.h + '" role="img" aria-label="' + esc(c.city) + ' outline and lost-water sites">' +
       '<path d="' + c.map.outline + '" fill="#f1ece3" stroke="#8d3f1c" stroke-width="1.6" stroke-linejoin="round"/>' +
       dots + '</svg><p class="cap">' + esc(c.map.caption) + '</p></div>';
   }
+
+  var st = c.status || {lines: []};
+  var statusRows = (st.lines || []).map(function(l){
+    return '<div class="row"><div class="k"><span>' + esc(l.k) + '</span><b>' + esc(l.v) + '</b></div>' +
+           '<span class="n">' + esc(l.n) + '</span></div>';
+  }).join('');
 
   return '<div class="facts">' +
       '<div class="fact"><b>' + esc(c.authority) + '</b>corporation</div>' +
       '<div class="fact"><b>' + c.area_km2 + ' km&sup2;</b>area</div>' +
       '<div class="fact"><b>' + c.wards + '</b>wards</div>' +
     '</div>' +
+    '<div class="top">' + map +
+      '<div class="stack">' +
+        '<div class="card"><div class="card__t">Now &middot; ' + esc(st.as_of || '') + '</div>' +
+          '<div class="card__big">' + esc(st.season || '') + '</div>' +
+          '<p>What is armed, and what is not, on the day this page was built.</p>' +
+          statusRows + '</div>' +
+        '<div class="card"><div class="card__t">Water</div>' +
+          '<div class="card__big">28 sites, 0.64 km&sup2;</div>' +
+          '<p>Took water in February 2017 and no longer do. Each one is a place the corporation no longer has to hold rain in.</p></div>' +
+      '</div></div>' +
+    '<h2>What changed</h2><div class="measured">' + measured + '</div>' +
     '<h2>The register</h2>' +
+    '<p class="note">The standing reference: what threshold starts a response, who acts, and within what window.</p>' +
     '<table><thead><tr><th>Hazard</th><th>Trigger</th><th>What starts</th><th>Who acts</th><th>Where it bites</th></tr></thead><tbody>' + rows + '</tbody></table>' +
     '<p class="note">' + esc(c.note) + '</p>' +
-    map +
     '<h2>Assets the triggers act on</h2>' +
-    '<table><thead><tr><th>Item</th><th>Climate role</th><th>Status</th></tr></thead><tbody>' + assets + '</tbody></table>' +
-    '<h2>What is measured for this city</h2><div class="measured">' + measured + '</div>';
+    '<table><thead><tr><th>Item</th><th>Climate role</th><th>Status</th></tr></thead><tbody>' + assets + '</tbody></table>';
 }
 
 function chooser(){
