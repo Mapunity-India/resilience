@@ -3274,5 +3274,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-logo-seated",
+  "date": "2026-11-27",
+  "change": "The mark on the Cities page is brought down to the rule and the hero loses the height it had gained. The logo box was 125px tall and sat 10px above its own baseline, but the drawing inside the file carries about 30 of its 130 pixels as transparent padding below, so the visible mark floated roughly 40px clear of the green rule and the header grew to hold the empty box. The box is now 96px and pulled down 31px, which puts the drawing 10px above the rule and takes the hero from 155px to 125px. The figure is computed from the transparent margin rather than guessed: 30/130 of the box height",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "height:96px;width:auto;flex-shrink:0",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
