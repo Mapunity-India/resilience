@@ -43,7 +43,7 @@ body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);li
 .header__title{font-family:var(--display) !important;font-size:40px !important;line-height:1.15 !important;
  font-weight:400 !important;margin:2px 0 !important;color:var(--accent) !important;letter-spacing:0 !important}
 .header__sub{font-size:16px !important;line-height:1.55 !important;margin:0 !important}
-.header__logo{position:absolute !important;right:-10px !important;bottom:3px !important;
+.header__logo{position:absolute !important;right:-10px !important;bottom:9px !important;
  height:109px !important;width:auto !important;margin:0 !important;top:auto !important;flex:none !important}
 
 
@@ -109,14 +109,15 @@ td.h{font-weight:600;white-space:nowrap}
 .act b{font-family:var(--mono);font-size:12.5px;letter-spacing:.3px;color:var(--muted);white-space:nowrap;padding-top:2px;flex:none}
 .ttabs{display:flex;gap:6px;margin:2px 0 9px;padding-bottom:8px;border-bottom:1px solid #efe9df}
 .ttab{font-family:var(--mono);font-size:11px;letter-spacing:1.1px;text-transform:uppercase;
- background:#f2eee6;border:1px solid #e6e0d4;border-radius:5px;padding:4px 8px;cursor:pointer;
- color:var(--muted);opacity:.85;font-weight:600}
-.ttab:hover{opacity:1;color:#205800;background:#ece7dc}
-.ttab.on{background:#f2eee6;border-color:#d9d2c4;border-bottom:2px solid #60a000;
- color:var(--accent);opacity:1;font-weight:700;padding-bottom:3px}
-.ttabs--trig .ttab{font-size:12px;letter-spacing:1.2px;padding:5px 9px}
-.ttabs--trig .ttab.on{background:var(--pc,var(--accent));border-color:transparent;border-bottom:1px solid transparent;
- color:#fff;opacity:1;font-weight:700;padding-bottom:4px}
+ background:#e6f0d6;border:1px solid #a8c781;border-radius:5px;padding:4px 9px;cursor:pointer;
+ color:#1d4d00;opacity:1;font-weight:700}
+.ttab:hover{background:#dbeac5;color:#123300}
+.ttab.on{background:var(--accent);border-color:var(--accent);color:#fff;opacity:1;font-weight:700}
+.ttabs--trig .ttab{font-size:12px;letter-spacing:1.2px;padding:5px 10px;background:#e6f0d6;
+ border:1px solid #a8c781;color:#1d4d00;opacity:1;font-weight:700}
+.ttabs--trig .ttab:hover{background:#dbeac5;color:#123300}
+.ttabs--trig .ttab.on{background:var(--pc,var(--accent));border-color:var(--pc,var(--accent));
+ color:#fff;opacity:1;font-weight:700;padding-bottom:5px}
 .pane{display:none;flex:1;min-height:0;overflow-y:auto;padding-right:6px}
 .tabgroup > .pane{padding-top:2px}
 .rule{border:1px solid var(--line);border-radius:10px;background:#fff;margin:0 0 12px;overflow:hidden}
@@ -144,6 +145,7 @@ td.h{font-weight:600;white-space:nowrap}
 .wk em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;color:var(--muted);opacity:.8;margin-left:auto;flex:none;padding-top:2px}
 @media (max-width:1000px){.plan{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:700px){.plan{grid-template-columns:1fr}}
+.footrule{margin:36px -24px 34px;height:2px;border-top:4px solid #205800;border-bottom:4px solid #60a000}
 .measured{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .measured div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .measured b{display:block;font-family:var(--display);font-size:22px;font-weight:400;margin-bottom:2px}
@@ -170,6 +172,7 @@ footer{margin:38px 0 40px;padding-top:16px;border-top:1px solid var(--line);font
   </header>
 
   <div id="view"></div>
+  <div class="footrule" aria-hidden="true"></div>
 
 </div>
 

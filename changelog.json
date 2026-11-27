@@ -3527,7 +3527,8 @@
     "cities.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "cities-plan-tabs-green"
  },
  {
   "id": "cities-title-terracotta",
@@ -3773,6 +3774,67 @@
     "cities.html"
    ],
    "min": 1
+  }
+ },
+ {
+  "id": "cities-tabs-green",
+  "date": "2026-11-27",
+  "change": "The unselected trigger tabs turn green. They had been on the same warm band the rest of the page uses, which on a page of cream and grey left them reading as empty space rather than as something to click. They are now a pale green chip with a green edge and dark green type, while the open tab keeps its hazard colour filled in white, so the row reads as four buttons with one of them current. Measured after: the open tab returns its hazard colour, and the other three return a 230 240 214 background with a 168 199 129 border",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "background:#e6f0d6",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-plan-tabs-green",
+  "date": "2026-11-27",
+  "change": "The tabs inside the plan cards take the same treatment as the trigger row: the unselected one is a pale green chip with a green edge and dark green type, the open one is filled in the accent with white type. They had been on the warm band, which on a page of cream read as empty space rather than as a control. Verified by computed style: Actions opens filled at 119 42 12 with Budgeted works green at 230 240 214, and clicking the works tab swaps the two",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "background:#e6f0d6;border:1px solid #a8c781;border-radius:5px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-footrule-and-mark-up",
+  "date": "2026-11-27",
+  "change": "The page closes on the same double rule it opens with: two green lines with white between them, full width, 36px below the last card. And the mark rises six pixels, from 3px above the header foot to 9px, so the drawing sits a little further from the rule. Measured after: the logo box runs 30 to 139 against 36 to 145 before, exactly six up, and the header still measures 148px, because the mark is positioned absolutely inside a fixed box and cannot stretch it. The footer rule sits at 2339 and the page ends at 2347",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "footrule",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "hero-mark-raised-all",
+  "date": "2026-11-27",
+  "change": "The mark sits six pixels higher on every Resilience page, the position worked out on the Cities page and now carried by the shared block: bottom 3px becomes 9px. Measured on all six after the change, the logo box runs 30 to 139 and the header still 148px on index, cities, akvan, murasu, arnab and el-nino alike, so the hero keeps its height while the drawing clears the rule a little further",
+  "scope": "index.html, cities.html, events/akvan.html, events/murasu.html, events/arnab.html, events/el-nino.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "bottom:9px !important",
+   "paths": [
+    "index.html",
+    "cities.html",
+    "events/akvan.html",
+    "events/murasu.html",
+    "events/arnab.html",
+    "events/el-nino.html"
+   ],
+   "min": 6
   }
  }
 ]
