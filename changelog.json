@@ -3375,5 +3375,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-logo-up-ten",
+  "date": "2026-11-27",
+  "change": "The mark on the Cities page moves up ten pixels, from a box sitting 9px below the header to one sitting 1px above it. Measured before and after, the logo box went from rows 53 to 157 to rows 43 to 147, so the shift is exactly the ten asked for, and the drawing now clears the rule by about twenty pixels rather than ten. The header stays at 148px, so nothing below the hero moves",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "right:-10px;bottom:1px;height:104px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

@@ -38,7 +38,7 @@ body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);li
 .header__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0 0 6px}
 .header__title{font-family:var(--display);font-size:40px;font-weight:400;margin:2px 0;color:var(--accent);line-height:1.15}
 .header__sub{font-size:16px;margin:0;max-width:62ch}
-.header__logo{position:absolute;right:-10px;bottom:-9px;height:104px;width:auto}
+.header__logo{position:absolute;right:-10px;bottom:1px;height:104px;width:auto}
 .facts{display:flex;gap:30px;flex-wrap:wrap;margin:0 0 4px}
 .fact{font-size:13px;color:var(--muted)}
 .fact b{display:block;font-family:var(--display);font-size:24px;color:var(--ink);font-weight:400;line-height:1.2}
