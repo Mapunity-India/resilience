@@ -51,9 +51,8 @@ tr:last-child td{border-bottom:none}
 td.h{font-weight:600;white-space:nowrap}
 .src{font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
 .note{font-size:14px;color:var(--muted);margin:10px 0 0}
-.top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:stretch}
-.mapcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px;
- display:flex;flex-direction:column;min-height:0}
+.top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:start}
+.mapcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px}
 .stack{display:grid;gap:12px}
 .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px}
 .card__t{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
@@ -76,7 +75,7 @@ td.h{font-weight:600;white-space:nowrap}
 .ev__sep{font-family:var(--mono);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;
  color:var(--muted);opacity:.75;padding:10px 0 2px;border-top:1px solid #efe9df;margin-top:6px}
 @media (max-width:900px){.top{grid-template-columns:1fr}}
-.mapcard svg{width:100%;max-width:760px;height:100%;min-height:0;display:block;margin:0 auto;flex:1}
+.mapcard svg{width:100%;max-width:720px;height:auto;display:block;margin:0 auto}
 .maplabel{display:flex;align-items:center;gap:8px;margin:-14px -16px 12px;padding:10px 16px;
  background:#f2eee6;border-bottom:1px solid var(--line);border-radius:12px 12px 0 0}
 .maplabel span{font-size:12.5px;letter-spacing:.7px;text-transform:uppercase;font-weight:600;
@@ -189,16 +188,7 @@ function cityPage(c){
   }).join('');
 
   return '<div class="top">' + map +
-      '<div class="stack">' +
-        eventsCard +
-        '<div class="card"><div class="card__t">Now &middot; ' + esc(st.as_of || '') + '</div>' +
-          '<div class="card__big">' + esc(st.season || '') + '</div>' +
-          '<p>What is armed, and what is not, on the day this page was built.</p>' +
-          statusRows + '</div>' +
-        '<div class="card"><div class="card__t">Water</div>' +
-          '<div class="card__big">28 sites, 0.64 km&sup2;</div>' +
-          '<p>Took water in February 2017 and no longer do. Each one is a place the corporation no longer has to hold rain in.</p></div>' +
-      '</div></div>' +
+      '<div class="stack">' + eventsCard + '</div></div>' +
     planBlock +
     '<h2>What changed</h2><div class="measured">' + measured + '</div>' +
     '<h2>The register</h2>' +

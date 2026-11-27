@@ -3302,5 +3302,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-stack-events-only",
+  "date": "2026-11-27",
+  "change": "The two cards below Events come off the Cities page: Now, which listed what was armed on the day the page was built, and Water, which carried the 28 lost sites. Events is left as the only card beside the map. The Now lines and the water figure stay in the city file, so either can come back without a rebuild; what went is their presentation as two panels competing with the events. With a single short card on the right, the map also goes back to its natural height instead of stretching to match a tall stack",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "card__t\\\">Now",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
