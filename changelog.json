@@ -3104,7 +3104,8 @@
     "city/index.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "cities-page"
  },
  {
   "id": "cities-page",
