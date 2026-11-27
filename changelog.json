@@ -3331,5 +3331,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-events-typography",
+  "date": "2026-11-27",
+  "change": "The event rows on the Cities page take the typography the national EVENTS panel uses: the date in small mono capitals above the name, the name in the display serif at 20px, and the note in body sans beneath it. The live row also takes that panel's treatment, a warm background with a green bar inset down its left edge, instead of a tag alone. The cities list had been set in sans throughout, which made it read as a different kind of list from the one it mirrors",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "ev--live",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

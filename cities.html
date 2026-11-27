@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- cities | built 2026-11-27 11:12 IST -->
+<!-- cities | built 2026-11-27 13:56 IST -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -49,15 +49,15 @@ td.h{font-weight:600;white-space:nowrap}
 .card .row .k{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:14px}
 .card .row .k b{font-family:var(--mono);font-size:11px;letter-spacing:.5px;white-space:nowrap}
 .card .row .n{display:block;font-size:12.5px;color:var(--muted);margin-top:1px}
-.ev{padding:8px 0;border-bottom:1px solid #efe9df}
+.ev{padding:10px 0;border-bottom:1px solid #efe9df}
 .ev:last-child{border-bottom:none}
-.ev__h{display:flex;align-items:baseline;gap:8px}
-.ev__t{font-size:15px;font-weight:600;flex:1}
-.ev__live{font-family:var(--mono);font-size:8px;letter-spacing:1.2px;text-transform:uppercase;
+.ev--live{background:var(--warm);box-shadow:inset 4px 0 0 #60a000;margin:0 -15px;padding:10px 15px}
+.ev__top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:3px}
+.ev__d{font-family:var(--mono);font-size:9.5px;letter-spacing:.4px;color:#14110e;text-transform:uppercase}
+.ev__live{font-family:var(--mono);font-size:8.5px;letter-spacing:1px;text-transform:uppercase;
  background:#8f2318;color:#fff;padding:2px 5px;border-radius:3px;font-weight:700}
-.ev__d{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.8px;color:var(--muted);
- text-transform:uppercase;margin:2px 0 3px}
-.ev__n{display:block;font-size:13px;color:var(--muted);line-height:1.4}
+.ev__t{display:block;font-family:var(--display);font-size:20px;line-height:1.2;color:#0f0d0b;font-weight:400}
+.ev__n{display:block;font-size:13px;color:var(--muted);margin-top:3px;line-height:1.45}
 .ev__sep{font-family:var(--mono);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;
  color:var(--muted);opacity:.75;padding:10px 0 2px;border-top:1px solid #efe9df;margin-top:6px}
 @media (max-width:900px){.top{grid-template-columns:1fr}}
@@ -144,9 +144,10 @@ function cityPage(c){
   function monthName(iso){ var m=['January','February','March','April','May','June','July','August','September','October','November','December'];
     return m[parseInt(iso.slice(5,7),10)-1] + ' ' + iso.slice(0,4); }
   function evRow(e){
-    return '<div class="ev"><div class="ev__h"><span class="ev__t">' + esc(e.title) + '</span>' +
-      (e.status === 'live' ? '<span class="ev__live">Live</span>' : '') + '</div>' +
-      '<span class="ev__d">' + monthName(e['from']) + ' &ndash; ' + monthName(e['to']) + '</span>' +
+    return '<div class="ev' + (e.status === 'live' ? ' ev--live' : '') + '">' +
+      '<div class="ev__top"><span class="ev__d">' + monthName(e['from']) + ' &ndash; ' + monthName(e['to']) + '</span>' +
+      (e.status === 'live' ? '<span class="ev__live">live</span>' : '') + '</div>' +
+      '<span class="ev__t">' + esc(e.title) + '</span>' +
       '<span class="ev__n">' + esc(e.note || '') + '</span></div>';
   }
   var liveEv = evs.filter(function(e){ return e.status === 'live'; }).map(evRow).join('');
