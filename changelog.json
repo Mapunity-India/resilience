@@ -3388,7 +3388,8 @@
     "cities.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "cities-logo-larger-and-higher"
  },
  {
   "id": "cities-logo-larger-and-higher",
