@@ -3105,5 +3105,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-page",
+  "date": "2026-11-27",
+  "change": "The Cities page exists at cities.html, built from data/city by tools/build_city.py. With one city in the folder it opens straight into that city rather than showing a chooser: Bengaluru South, 152.3 km2, 72 wards, with the four-trigger register, a map of the corporation outline carrying the 28 places that held water in February 2017 and no longer do, the assets the triggers act on, and the figures measured for this corporation. With more than one city file the same page renders a chooser instead, so the behaviour scales without a code change. The register moves here from city/index.html, which is removed: one page per city, not two. The page carries the India and Cities links between the two green rules, with Cities marked current",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, tools/check_html.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Where it bites",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

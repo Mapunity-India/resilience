@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
-"""Build city/index.html from data/city/*.json.
+"""Build cities.html from data/city/*.json.
 
-The city register is generic: one JSON file per city, one page that renders any
-number of them. Adding a city means adding a file, not writing code.
+One JSON file per city, one page that renders any number of them. With a single
+city the page opens straight into it; with several it opens a chooser.
 """
-import json, pathlib, sys
+import json, pathlib, sys, datetime
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:
+    ZoneInfo = None
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / 'data' / 'city'
-OUT  = ROOT / 'city' / 'index.html'
+OUT  = ROOT / 'cities.html'
 
 TEMPLATE = r"""<!DOCTYPE html>
-<!-- city | built __BUILT__ -->
+<!-- cities | built __BUILT__ -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>City resilience &mdash; Resilience</title>
-<link rel="icon" type="image/png" href="../logos/resilience-icon.png">
+<title>Cities &mdash; Resilience</title>
+<link rel="icon" type="image/png" href="logos/resilience-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0f0d0b;--muted:#2b2721;--accent:#772a0c;--line:rgba(32,88,0,.26);--warm:#faf9f7;
@@ -25,37 +29,44 @@ TEMPLATE = r"""<!DOCTYPE html>
 *{box-sizing:border-box}
 body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1190px;margin:0 auto;padding:0 24px}
-.header{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding:11px 0 21px;margin:0 0 26px}
+.header{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding:11px 0 21px;margin:0}
 .header__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0 0 6px}
 .header__title{font-family:var(--display);font-size:40px;font-weight:400;margin:2px 0;color:var(--accent);line-height:1.15}
 .header__sub{font-size:16px;margin:0;max-width:62ch}
 .header__logo{height:125px;width:auto;flex-shrink:0;margin-right:-10px;position:relative;top:10px}
-.header::after{content:'';position:absolute;left:-24px;right:-24px;bottom:0;height:2px;
- border-top:4px solid #205800;border-bottom:4px solid #60a000;background:transparent}
-.cities{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}
-.cities button{font-family:var(--mono);font-size:10.5px;letter-spacing:1.1px;text-transform:uppercase;
- border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:7px 14px;cursor:pointer}
-.cities button[aria-pressed="true"]{border-color:#205800;color:#205800;background:#f1f6ec}
-.facts{display:flex;gap:26px;flex-wrap:wrap;margin:0 0 22px}
-.fact{font-size:13.5px;color:var(--muted)}
+.modes{display:flex;align-items:center;gap:34px;margin:0 -24px 26px;padding:0 24px;height:47px;
+ border-top:4px solid #205800;border-bottom:4px solid #60a000}
+.modes a{font-family:var(--mono);font-size:14px;letter-spacing:2.4px;text-transform:uppercase;
+ text-decoration:none;color:#8a8279;padding:4px 2px;line-height:1;transition:color .12s}
+.modes a:hover{color:#205800}
+.modes a[aria-current]{color:#772a0c;font-weight:700}
+.facts{display:flex;gap:30px;flex-wrap:wrap;margin:0 0 4px}
+.fact{font-size:13px;color:var(--muted)}
 .fact b{display:block;font-family:var(--display);font-size:24px;color:var(--ink);font-weight:400;line-height:1.2}
 h2{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
- margin:30px 0 12px;display:flex;align-items:center;gap:10px}
+ margin:32px 0 12px;display:flex;align-items:center;gap:10px}
 h2::before{content:'';width:8px;height:8px;border-radius:50%;background:currentColor;flex-shrink:0}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px}
-th{font-family:var(--mono);font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);
- background:#f7f5f1;font-weight:600}
+th{font-family:var(--mono);font-size:9.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);background:#f7f5f1;font-weight:600}
 tr:last-child td{border-bottom:none}
 td.h{font-weight:600;white-space:nowrap}
-td.trig{font-size:13px}
 .src{font-family:var(--mono);font-size:9.5px;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
 .note{font-size:13px;color:var(--muted);margin:10px 0 0}
+.mapcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px}
+.mapcard svg{width:100%;max-width:720px;height:auto;display:block;margin:0 auto}
+.mapcard .cap{font-size:12.5px;color:var(--muted);margin:8px 0 0}
 .measured{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .measured div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .measured b{display:block;font-family:var(--display);font-size:22px;font-weight:400;margin-bottom:2px}
 .measured span{font-size:12.5px;color:var(--muted)}
-footer{margin:40px 0 40px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.pick{display:grid;gap:10px;margin:10px 0 0}
+.pick a{display:block;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;
+ text-decoration:none;color:var(--ink)}
+.pick a:hover{border-color:#205800}
+.pick b{font-family:var(--display);font-size:22px;font-weight:400;display:block}
+.pick span{font-size:12.5px;color:var(--muted)}
+footer{margin:38px 0 40px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
 @media (max-width:820px){.measured{grid-template-columns:1fr}th,td{padding:9px 10px;font-size:12.5px}}
 </style>
 </head>
@@ -65,69 +76,78 @@ footer{margin:40px 0 40px;padding-top:16px;border-top:1px solid var(--line);font
     <div>
       <div class="header__eyebrow">Resilience</div>
       <h1 class="header__title">City resilience</h1>
-      <p class="header__sub">A hazard-trigger register for a city corporation: what threshold starts a response, who acts, and within what window.</p>
+      <p class="header__sub">What threshold starts a response, who acts, within what window, and the ground it applies to.</p>
     </div>
-    <img class="header__logo" src="../logos/resilience-mark.png" alt="Resilience">
+    <img class="header__logo" src="logos/resilience-mark.png" alt="Resilience">
   </header>
+  <nav class="modes" aria-label="Scale">
+    <a href="index.html">India</a>
+    <a href="cities.html" aria-current="page">Cities</a>
+  </nav>
 
-  <div class="cities" id="cities" role="group" aria-label="City"></div>
   <div id="view"></div>
 
   <footer>
     One JSON file per city in <b>data/city/</b>; <b>tools/build_city.py</b> renders this page from them.
-    Thresholds are national scales; owners are municipal roles; the geography is measured per city.
+    Thresholds are national scales, owners are municipal roles, and the geography is measured per city.
   </footer>
 </div>
 
 <script>
 var CITIES = __DATA__;
 var current = 0;
-
 function esc(s){ return String(s).replace(/[&<>]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
 
-function render(){
-  var c = CITIES[current];
-  var tabs = document.getElementById('cities');
-  tabs.innerHTML = '';
-  CITIES.forEach(function(x, i){
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.textContent = x.city;
-    b.setAttribute('aria-pressed', i === current ? 'true' : 'false');
-    b.onclick = function(){ current = i; render(); };
-    tabs.appendChild(b);
-  });
-
+function cityPage(c){
   var rows = c.hazards.map(function(h){
     return '<tr><td class="h">' + esc(h.hazard) + '</td>' +
-           '<td class="trig">' + esc(h.trigger) + '<div class="src">' + esc(h.scale) + '</div></td>' +
-           '<td>' + esc(h.starts) + '</td>' +
-           '<td>' + esc(h.owner) + '<div class="src">' + esc(h.window) + '</div></td>' +
-           '<td>' + esc(h.where) + '</td></tr>';
+      '<td>' + esc(h.trigger) + '<div class="src">' + esc(h.scale) + '</div></td>' +
+      '<td>' + esc(h.starts) + '</td>' +
+      '<td>' + esc(h.owner) + '<div class="src">' + esc(h.window) + '</div></td>' +
+      '<td>' + esc(h.where) + '</td></tr>';
   }).join('');
-
   var assets = c.assets.map(function(a){
     return '<tr><td class="h">' + esc(a.item) + '</td><td>' + esc(a.role) + '</td><td>' + esc(a.status) + '</td></tr>';
   }).join('');
-
   var measured = c.measured.map(function(m){
     return '<div><b>' + esc(m.value) + '</b><span>' + esc(m.label) + '</span></div>';
   }).join('');
 
-  document.getElementById('view').innerHTML =
-    '<div class="facts">' +
+  var map = '';
+  if (c.map){
+    var dots = c.map.sites.map(function(s){
+      var r = Math.max(2.4, Math.min(9, Math.sqrt(s.ha*10000/Math.PI)/28));
+      return '<circle cx="' + s.x + '" cy="' + s.y + '" r="' + r.toFixed(1) + '" fill="#1f4e79" fill-opacity=".55" stroke="#123a5c" stroke-width=".7"><title>' + s.ha.toFixed(1) + ' ha</title></circle>';
+    }).join('');
+    map = '<h2>Where it bites</h2>' +
+      '<div class="mapcard"><svg viewBox="0 0 ' + c.map.w + ' ' + c.map.h + '" role="img" aria-label="' + esc(c.city) + ' outline and lost-water sites">' +
+      '<path d="' + c.map.outline + '" fill="#f1ece3" stroke="#8d3f1c" stroke-width="1.6" stroke-linejoin="round"/>' +
+      dots + '</svg><p class="cap">' + esc(c.map.caption) + '</p></div>';
+  }
+
+  return '<div class="facts">' +
       '<div class="fact"><b>' + esc(c.authority) + '</b>corporation</div>' +
       '<div class="fact"><b>' + c.area_km2 + ' km&sup2;</b>area</div>' +
       '<div class="fact"><b>' + c.wards + '</b>wards</div>' +
     '</div>' +
     '<h2>The register</h2>' +
-    '<table><thead><tr><th>Hazard</th><th>Trigger</th><th>What starts</th><th>Who acts</th><th>Where it bites</th></tr></thead>' +
-    '<tbody>' + rows + '</tbody></table>' +
+    '<table><thead><tr><th>Hazard</th><th>Trigger</th><th>What starts</th><th>Who acts</th><th>Where it bites</th></tr></thead><tbody>' + rows + '</tbody></table>' +
     '<p class="note">' + esc(c.note) + '</p>' +
+    map +
     '<h2>Assets the triggers act on</h2>' +
     '<table><thead><tr><th>Item</th><th>Climate role</th><th>Status</th></tr></thead><tbody>' + assets + '</tbody></table>' +
-    '<h2>What is measured for this city</h2>' +
-    '<div class="measured">' + measured + '</div>';
+    '<h2>What is measured for this city</h2><div class="measured">' + measured + '</div>';
+}
+
+function chooser(){
+  return '<h2>Cities with a register</h2><div class="pick">' + CITIES.map(function(c, i){
+    return '<a href="#' + c.slug + '" onclick="current=' + i + ';render();return false;"><b>' + esc(c.city) +
+      '</b><span>' + esc(c.authority) + ' &middot; ' + c.area_km2 + ' km&sup2; &middot; ' + c.hazards.length + ' triggers</span></a>';
+  }).join('') + '</div>';
+}
+
+function render(){
+  document.getElementById('view').innerHTML = (CITIES.length === 1) ? cityPage(CITIES[0]) : chooser();
 }
 render();
 </script>
@@ -136,19 +156,15 @@ render();
 """
 
 def main():
-    import datetime, zoneinfo
     files = sorted(p for p in DATA.glob('*.json') if not p.name.startswith('_'))
     if not files:
         sys.exit('no city files in data/city')
     cities = [json.loads(p.read_text(encoding='utf-8')) for p in files]
-    built = datetime.datetime.now(zoneinfo.ZoneInfo('Asia/Kolkata')).strftime('%Y-%m-%d %H:%M IST')
-    html = (TEMPLATE
-            .replace('__DATA__', json.dumps(cities, ensure_ascii=False))
-            .replace('__BUILT__', built))
-    OUT.parent.mkdir(exist_ok=True)
+    built = (datetime.datetime.now(ZoneInfo('Asia/Kolkata')) if ZoneInfo
+             else datetime.datetime.utcnow()).strftime('%Y-%m-%d %H:%M IST')
+    html = TEMPLATE.replace('__DATA__', json.dumps(cities, ensure_ascii=False)).replace('__BUILT__', built)
     OUT.write_text(html, encoding='utf-8')
-    print('wrote %s from %d city file(s): %s' % (OUT.relative_to(ROOT), len(files),
-          ', '.join(c['slug'] for c in cities)))
+    print('wrote %s from %d city file(s): %s' % (OUT.name, len(files), ', '.join(c['slug'] for c in cities)))
 
 if __name__ == '__main__':
     main()

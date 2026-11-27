@@ -77,7 +77,7 @@ def pages():
     out = {'index.html': os.path.join(ROOT, 'index.html')}
     for p in sorted(glob.glob(os.path.join(ROOT, 'events', '*.html'))):
         out[os.path.relpath(p, ROOT)] = p
-    for p in sorted(glob.glob(os.path.join(ROOT, 'city', '*.html'))):
+    for p in sorted(glob.glob(os.path.join(ROOT, 'cities.html'))):
         out[os.path.relpath(p, ROOT)] = p
     return out
 
