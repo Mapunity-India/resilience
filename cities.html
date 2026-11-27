@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- cities | built 2026-11-27 14:03 IST -->
+<!-- cities | built 2026-11-27 14:35 IST -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -13,13 +13,16 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1190px;margin:0 auto;padding:0 24px}
-.header{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding:11px 0 21px;margin:0 0 30px}
+/* one hero, one height: the box is fixed so no title or standfirst can move the rule,
+   and the mark is pinned to the corner rather than to the text block */
+.header{position:relative;display:flex;align-items:flex-end;height:148px;box-sizing:border-box;
+ padding:0 0 23px;margin:0 0 30px}
 .header::after{content:'';position:absolute;left:-24px;right:-24px;bottom:0;height:2px;
  border-top:4px solid #205800;border-bottom:4px solid #60a000;background:transparent}
 .header__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0 0 6px}
 .header__title{font-family:var(--display);font-size:40px;font-weight:400;margin:2px 0;color:var(--accent);line-height:1.15}
 .header__sub{font-size:16px;margin:0;max-width:62ch}
-.header__logo{height:125px;width:auto;flex-shrink:0;margin-right:-10px;position:relative;top:10px}
+.header__logo{position:absolute;right:-10px;bottom:-9px;height:104px;width:auto}
 .facts{display:flex;gap:30px;flex-wrap:wrap;margin:0 0 4px}
 .fact{font-size:13px;color:var(--muted)}
 .fact b{display:block;font-family:var(--display);font-size:24px;color:var(--ink);font-weight:400;line-height:1.2}

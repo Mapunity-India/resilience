@@ -3360,5 +3360,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-hero-fixed-height",
+  "date": "2026-11-27",
+  "change": "The hero on the Cities page is given a fixed height and the mark is pinned to the corner of it, which is what makes a hero the same on every page. Until now the header was sized by its contents, so a longer title or a standfirst that wrapped pushed the green rule down and carried the mark with it, and the mark itself carried about 30 of its 130 pixels as transparent padding, so its height alone never fixed where the drawing sat. The header is now 148px boxed with the rule at its foot, and the logo is absolutely positioned at the right with the drawing landing ten pixels above the rule whatever the text says. The event pages and the index still size their headers from content",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "height:148px;box-sizing:border-box",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
