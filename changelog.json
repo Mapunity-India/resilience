@@ -3204,5 +3204,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-nav-removed",
+  "date": "2026-11-27",
+  "change": "The navigation band comes off the Cities page and the plain double rule goes back in its place: two green lines with white between them and no words. The band was there so a reader could move between India and Cities, but the mark in the corner already goes home, so the choice was being offered twice and the louder of the two was on the page that did not need it. The logo on this page was an image without a link, so it is wrapped in one, to index.html, which makes the mark do what the band was doing",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "class=\"modes\"",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

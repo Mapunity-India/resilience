@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- cities | built 2026-11-27 10:33 IST -->
+<!-- cities | built 2026-11-27 10:35 IST -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -13,17 +13,13 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1190px;margin:0 auto;padding:0 24px}
-.header{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding:11px 0 21px;margin:0}
+.header{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;padding:11px 0 21px;margin:0 0 26px}
+.header::after{content:'';position:absolute;left:-24px;right:-24px;bottom:0;height:2px;
+ border-top:4px solid #205800;border-bottom:4px solid #60a000;background:transparent}
 .header__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0 0 6px}
 .header__title{font-family:var(--display);font-size:40px;font-weight:400;margin:2px 0;color:var(--accent);line-height:1.15}
 .header__sub{font-size:16px;margin:0;max-width:62ch}
 .header__logo{height:125px;width:auto;flex-shrink:0;margin-right:-10px;position:relative;top:10px}
-.modes{display:flex;align-items:center;gap:34px;margin:0 -24px 26px;padding:0 24px;height:47px;
- border-top:4px solid #205800;border-bottom:4px solid #60a000}
-.modes a{font-family:var(--mono);font-size:14px;letter-spacing:2.4px;text-transform:uppercase;
- text-decoration:none;color:#8a8279;padding:4px 2px;line-height:1;transition:color .12s}
-.modes a:hover{color:#205800}
-.modes a[aria-current]{color:#772a0c;font-weight:700}
 .facts{display:flex;gap:30px;flex-wrap:wrap;margin:0 0 4px}
 .fact{font-size:13px;color:var(--muted)}
 .fact b{display:block;font-family:var(--display);font-size:24px;color:var(--ink);font-weight:400;line-height:1.2}
@@ -80,12 +76,8 @@ footer{margin:38px 0 40px;padding-top:16px;border-top:1px solid var(--line);font
       <h1 class="header__title">City resilience</h1>
       <p class="header__sub">What starts a response, who acts, and where.</p>
     </div>
-    <img class="header__logo" src="logos/resilience-mark.png" alt="Resilience">
+    <a href="index.html" aria-label="Resilience home"><img class="header__logo" src="logos/resilience-mark.png" alt="Resilience"></a>
   </header>
-  <nav class="modes" aria-label="Scale">
-    <a href="index.html">India</a>
-    <a href="cities.html" aria-current="page">Cities</a>
-  </nav>
 
   <div id="view"></div>
 
