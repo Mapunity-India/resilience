@@ -3310,7 +3310,7 @@
   "scope": "cities.html, tools/build_city.py, changelog.json",
   "check": {
    "type": "absent",
-   "pattern": "card__t\\\">Now",
+   "pattern": "card__t\">Now",
    "paths": [
     "cities.html"
    ],
