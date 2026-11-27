@@ -3268,7 +3268,7 @@
   "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
   "check": {
    "type": "contains",
-   "pattern": "CLIMATE ACTION PLAN",
+   "pattern": "Climate action plan",
    "paths": [
     "cities.html"
    ],
