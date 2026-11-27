@@ -3176,5 +3176,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-map-stripped",
+  "date": "2026-11-27",
+  "change": "The city map is reduced to the outline. The 28 lost-water marks come off it, with the caption that explained them, so the card is now the corporation's shape and nothing inside it. The marks are the next thing to be designed and the caption described a layer that is no longer drawn, so both go rather than sit there half true; the site coordinates stay in the city file, so putting them back is a redraw, not a rebuild. The name label also stops shouting: no accent colour and no green rule, since Bengaluru South is the only city and there is nothing to distinguish it from",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "class=\"cap\"",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
