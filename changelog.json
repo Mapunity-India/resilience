@@ -3260,5 +3260,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-climate-plan-row",
+  "date": "2026-11-27",
+  "change": "The climate action plan comes into the Cities page as a second row, below the map and the status stack. It is held as thrusts and actions rather than as prose: seven thrusts, energy and buildings, transportation, solid waste, air quality, water and stormwater, urban planning and greening, and disaster management, carrying thirty-three numbered actions between them. Each thrust is a card with its actions under it, code and text, so the plan reads as the register above it does. The plan is data in the city file, copied from the Bengaluru South climate action plan and attributed in a note; the page renders whatever thrusts the file holds",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "CLIMATE ACTION PLAN",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

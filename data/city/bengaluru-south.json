@@ -284,5 +284,178 @@
       "status": "past",
       "note": "The heat season. The 40 C trigger applies from March to May, inside this window."
     }
-  ]
+  ],
+  "plan": {
+    "title": "Climate action plan",
+    "source": "Bengaluru South climate action plan",
+    "thrusts": [
+      {
+        "name": "Energy and buildings",
+        "actions": [
+          {
+            "id": "E&B-1",
+            "text": "Higher penetration of energy-efficient appliances and clean fuel transition in all major sub-sectors: residential, commercial, institutional and industrial."
+          },
+          {
+            "id": "E&B-2",
+            "text": "Green and low-carbon buildings with passive and active design strategies."
+          },
+          {
+            "id": "E&B-3",
+            "text": "Increase the proportion of non-fossil fuel sources in the city’s grid electricity generation to 68% by 2030 and 89% by 2050."
+          },
+          {
+            "id": "E&B-4",
+            "text": "Effective communication for nudging behaviour change, using behavioural science principles through IEC programmes."
+          },
+          {
+            "id": "E&B-5",
+            "text": "A programme for affordable clean cooking fuel transition."
+          }
+        ]
+      },
+      {
+        "name": "Transportation",
+        "actions": [
+          {
+            "id": "T-1",
+            "text": "Reduce travel distances and minimise travel needs through urban planning measures, better transport planning processes and a coherent policy ecosystem."
+          },
+          {
+            "id": "T-2",
+            "text": "Improve public transport ridership through multimodal integration and steer demand away from private vehicles."
+          },
+          {
+            "id": "T-3",
+            "text": "Improve non-motorised access and infrastructure for a healthier and safer city."
+          },
+          {
+            "id": "T-4",
+            "text": "Transition to cleaner and greener vehicles and improve vehicle efficiency through finance, policy enablers, incentives and R&D."
+          },
+          {
+            "id": "T-5",
+            "text": "Transition to cleaner and greener freight services through policies, incentives and fleet management."
+          },
+          {
+            "id": "T-6",
+            "text": "A resilient urban transport system that avoids service disruption and damage to transport infrastructure during extreme weather."
+          }
+        ]
+      },
+      {
+        "name": "Solid waste",
+        "actions": [
+          {
+            "id": "SWM-1",
+            "text": "Divert waste from landfills by better segregation of waste at source."
+          },
+          {
+            "id": "SWM-2",
+            "text": "Increase resource recovery and the circular economy by promoting decentralised waste management systems."
+          },
+          {
+            "id": "SWM-3",
+            "text": "Implement scientific landfills with gas capture systems, and repurpose closed landfills and dump sites."
+          },
+          {
+            "id": "SWM-4",
+            "text": "Create inclusive and hazard-resilient solid waste infrastructure and services."
+          }
+        ]
+      },
+      {
+        "name": "Air quality",
+        "actions": [
+          {
+            "id": "AQ-1",
+            "text": "Prevent air pollution at source through comprehensive strategies across sectors, informed by evidence."
+          },
+          {
+            "id": "AQ-2",
+            "text": "Reduce or maintain ambient air pollution levels to prescribed standards, and minimise impacts through local planning, urban design and greening."
+          },
+          {
+            "id": "AQ-3",
+            "text": "Implement WHO indoor air quality standards in all public buildings by 2030, and all other buildings by 2040."
+          },
+          {
+            "id": "AQ-4",
+            "text": "A city-level health action plan for the risks of short and long term exposure to air pollution."
+          },
+          {
+            "id": "AQ-5",
+            "text": "Build infrastructure and capacity for evidence-based air quality management: monitoring, evaluation, feedback and knowledge dissemination."
+          }
+        ]
+      },
+      {
+        "name": "Water, wastewater and stormwater",
+        "actions": [
+          {
+            "id": "W-WW-SW-1",
+            "text": "Enhance access to safe and reliable water and sanitation services for all."
+          },
+          {
+            "id": "W-WW-SW-2",
+            "text": "Ensure water security by conserving water resources, recycling and safely reusing wastewater, and diversifying the city’s sources of water."
+          },
+          {
+            "id": "W-WW-SW-3",
+            "text": "Restore and enhance sponge spaces to increase groundwater recharge and decrease stormwater runoff through green infrastructure."
+          },
+          {
+            "id": "W-WW-SW-4",
+            "text": "Adopt improved technologies and nature-based solutions for efficient and equitable wastewater treatment, aligned to the city’s mitigation goals."
+          }
+        ]
+      },
+      {
+        "name": "Urban planning, greening and biodiversity",
+        "actions": [
+          {
+            "id": "UPGBD-1",
+            "text": "Promote compact development through mixed use and walkable neighbourhoods."
+          },
+          {
+            "id": "UPGBD-2",
+            "text": "Develop climate-resilient, nature-integrated plans for the city and city region through participatory planning."
+          },
+          {
+            "id": "UPGBD-3",
+            "text": "Adopt nature-based solutions as an urban planning and design tool to improve resilience and livability."
+          },
+          {
+            "id": "UPGBD-4",
+            "text": "Conserve, restore and manage the city’s biodiversity."
+          },
+          {
+            "id": "UPGBD-5",
+            "text": "Improve access to essential services and infrastructure, including safe and affordable housing for all."
+          }
+        ]
+      },
+      {
+        "name": "Disaster management",
+        "actions": [
+          {
+            "id": "DM-1",
+            "text": "Create a comprehensive spatio-temporal database of climate hazards, impacts and vulnerabilities."
+          },
+          {
+            "id": "DM-2",
+            "text": "Create a robust policy framework for disaster management, including policies for addressing loss and damage."
+          },
+          {
+            "id": "DM-3",
+            "text": "Empower citizens, civil society and local platforms to take a decentralised and inclusive approach to disaster risk reduction."
+          },
+          {
+            "id": "DM-4",
+            "text": "Enhance ecosystem capacity to reduce disaster risk through faster and better response."
+          }
+        ]
+      }
+    ]
+  }
 }

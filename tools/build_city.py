@@ -81,6 +81,15 @@ td.h{font-weight:600;white-space:nowrap}
 .maplabel em{font-family:var(--mono);font-style:normal;font-size:10px;letter-spacing:1px;
  text-transform:uppercase;color:var(--muted);margin-left:auto}
 .mapcard .cap{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.plan{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 6px}
+.thrust{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.thrust h3{font-family:var(--mono);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;
+ color:var(--accent);margin:0 0 8px;font-weight:700;line-height:1.35}
+.act{display:flex;gap:8px;font-size:12px;line-height:1.42;padding:5px 0;border-top:1px solid #f1ece3}
+.act:first-of-type{border-top:none;padding-top:0}
+.act b{font-family:var(--mono);font-size:9.5px;letter-spacing:.3px;color:var(--muted);white-space:nowrap;padding-top:2px;flex:none}
+@media (max-width:1000px){.plan{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:700px){.plan{grid-template-columns:1fr}}
 .measured{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .measured div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .measured b{display:block;font-family:var(--display);font-size:22px;font-weight:400;margin-bottom:2px}
@@ -158,6 +167,18 @@ function cityPage(c){
     (liveEv || '<p style="margin:0;font-size:12.5px;color:var(--muted)">Nothing running.</p>') +
     (pastEv ? '<div class="ev__sep">Earlier</div>' + pastEv : '') + '</div>';
 
+  var planBlock = '';
+  if (c.plan && c.plan.thrusts && c.plan.thrusts.length){
+    planBlock = '<h2>' + esc(c.plan.title || 'Climate action plan') + '</h2>' +
+      '<div class="plan">' + c.plan.thrusts.map(function(t){
+        return '<div class="thrust"><h3>' + esc(t.name) + '</h3>' +
+          t.actions.map(function(a){
+            return '<div class="act"><b>' + esc(a.id) + '</b><span>' + esc(a.text) + '</span></div>';
+          }).join('') + '</div>';
+      }).join('') + '</div>' +
+      (c.plan.source ? '<p class="note">Thrusts and actions from the ' + esc(c.plan.source) + '.</p>' : '');
+  }
+
   var st = c.status || {lines: []};
   var statusRows = (st.lines || []).map(function(l){
     return '<div class="row"><div class="k"><span>' + esc(l.k) + '</span><b>' + esc(l.v) + '</b></div>' +
@@ -175,6 +196,7 @@ function cityPage(c){
           '<div class="card__big">28 sites, 0.64 km&sup2;</div>' +
           '<p>Took water in February 2017 and no longer do. Each one is a place the corporation no longer has to hold rain in.</p></div>' +
       '</div></div>' +
+    planBlock +
     '<h2>What changed</h2><div class="measured">' + measured + '</div>' +
     '<h2>The register</h2>' +
     '<p class="note">The standing reference: what threshold starts a response, who acts, and within what window.</p>' +
