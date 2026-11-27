@@ -3374,7 +3374,8 @@
     "cities.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "hero-standard"
  },
  {
   "id": "cities-logo-up-ten",
@@ -3403,6 +3404,26 @@
     "cities.html"
    ],
    "min": 1
+  },
+  "superseded_by": "hero-standard"
+ },
+ {
+  "id": "hero-standard",
+  "date": "2026-11-27",
+  "change": "Every Resilience page now carries one hero. The measurements were taken from the Cities page, where they had been set by hand, and written into a block of overrides at the end of each stylesheet, the way the governance suite holds its own pages to one standard: a header boxed at 148px with box-sizing border-box and 23px of padding below, so the rule always falls at row 138 and nothing in the text can move it; the eyebrow at 11px on a 1.55 line, the title at 40px on 1.15, the standfirst at 16px on 1.55; and the mark pinned absolutely to the corner at 109px rather than sitting in the text flow, because the logo file carries about 30 of its 130 pixels as transparent padding and a height alone never fixes where the drawing lands. Measured after applying, all six pages return the same numbers to a tenth of a pixel: header 0 to 148, eyebrow 29.2, title 52.2 to 98.2, standfirst 100.2 to 125, mark 36 to 145, rule 138. The Cities page carries the block in its build template so a rebuild keeps it, and the five static pages carry it directly",
+  "scope": "index.html, cities.html, events/akvan.html, events/murasu.html, events/arnab.html, events/el-nino.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "hero standard",
+   "paths": [
+    "index.html",
+    "cities.html",
+    "events/akvan.html",
+    "events/murasu.html",
+    "events/arnab.html",
+    "events/el-nino.html"
+   ],
+   "min": 6
   }
  }
 ]

@@ -107,6 +107,23 @@ h2{font-family:var(--mono);font-size:11.5px;letter-spacing:1.8px;text-transform:
 .lfhist figcaption{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;letter-spacing:1.1px;text-transform:uppercase;color:#6b635a;margin-bottom:6px}
 .lfhist figcaption span{color:#9a9187}
 .lfhist svg{display:block;width:100%;height:auto}
+
+/* hero standard — the same numbers on every Resilience page.
+   Measured from cities.html: header 148px, rule at its foot, mark 109px
+   pinned to the corner, text block ending 23px above the rule. */
+.header{position:relative !important;display:flex !important;align-items:flex-end !important;
+ justify-content:space-between !important;gap:28px !important;height:148px !important;
+ box-sizing:border-box !important;padding:0 0 23px !important;margin:0 0 30px !important}
+.header::after{content:'';position:absolute;left:-24px;right:-24px;bottom:0;height:2px;
+ border-top:4px solid #205800;border-bottom:4px solid #60a000;background:transparent}
+.header>div:first-child{max-width:calc(100% - 160px)}
+.header__eyebrow{font-family:var(--mono) !important;font-size:11px !important;line-height:1.55 !important;
+ letter-spacing:2.5px !important;text-transform:uppercase !important;font-weight:700 !important;margin:0 0 6px !important}
+.header__title{font-family:var(--display) !important;font-size:40px !important;line-height:1.15 !important;
+ font-weight:400 !important;margin:2px 0 !important;letter-spacing:0 !important}
+.header__sub{font-size:16px !important;line-height:1.55 !important;margin:0 !important}
+.header__logo{position:absolute !important;right:-10px !important;bottom:3px !important;
+ height:109px !important;width:auto !important;margin:0 !important;top:auto !important;flex:none !important}
 </style>
 <script>
 /* The landing page is the front door, always. It used to hand itself over to the

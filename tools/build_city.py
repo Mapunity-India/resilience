@@ -29,16 +29,27 @@ TEMPLATE = r"""<!DOCTYPE html>
 *{box-sizing:border-box}
 body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1190px;margin:0 auto;padding:0 24px}
-/* one hero, one height: the box is fixed so no title or standfirst can move the rule,
-   and the mark is pinned to the corner rather than to the text block */
-.header{position:relative;display:flex;align-items:flex-end;height:148px;box-sizing:border-box;
- padding:0 0 23px;margin:0 0 30px}
+/* hero standard — the same numbers on every Resilience page.
+   Measured from cities.html: header 148px, rule at its foot, mark 109px
+   pinned to the corner, text block ending 23px above the rule. */
+.header{position:relative !important;display:flex !important;align-items:flex-end !important;
+ justify-content:space-between !important;gap:28px !important;height:148px !important;
+ box-sizing:border-box !important;padding:0 0 23px !important;margin:0 0 30px !important}
 .header::after{content:'';position:absolute;left:-24px;right:-24px;bottom:0;height:2px;
  border-top:4px solid #205800;border-bottom:4px solid #60a000;background:transparent}
-.header__eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin:0 0 6px}
-.header__title{font-family:var(--display);font-size:40px;font-weight:400;margin:2px 0;color:var(--accent);line-height:1.15}
-.header__sub{font-size:16px;margin:0;max-width:62ch}
-.header__logo{position:absolute;right:-10px;bottom:3px;height:109px;width:auto}
+.header>div:first-child{max-width:calc(100% - 160px)}
+.header__eyebrow{font-family:var(--mono) !important;font-size:11px !important;line-height:1.55 !important;
+ letter-spacing:2.5px !important;text-transform:uppercase !important;font-weight:700 !important;margin:0 0 6px !important}
+.header__title{font-family:var(--display) !important;font-size:40px !important;line-height:1.15 !important;
+ font-weight:400 !important;margin:2px 0 !important;letter-spacing:0 !important}
+.header__sub{font-size:16px !important;line-height:1.55 !important;margin:0 !important}
+.header__logo{position:absolute !important;right:-10px !important;bottom:3px !important;
+ height:109px !important;width:auto !important;margin:0 !important;top:auto !important;flex:none !important}
+
+
+
+
+
 .facts{display:flex;gap:30px;flex-wrap:wrap;margin:0 0 4px}
 .fact{font-size:13px;color:var(--muted)}
 .fact b{display:block;font-family:var(--display);font-size:24px;color:var(--ink);font-weight:400;line-height:1.2}
