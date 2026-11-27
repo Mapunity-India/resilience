@@ -3134,5 +3134,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-standfirst-shortened",
+  "date": "2026-11-27",
+  "change": "The Cities standfirst is cut from a sentence that named every part of the register, at 96 characters and two lines, to What starts a response, who acts, and where, at 46 characters and one line. The long version described the page's sections; the short one says what it is for, and the sections below name themselves",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "What starts a response, who acts, and where.",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]

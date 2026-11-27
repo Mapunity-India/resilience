@@ -88,7 +88,7 @@ footer{margin:38px 0 40px;padding-top:16px;border-top:1px solid var(--line);font
     <div>
       <div class="header__eyebrow">Resilience</div>
       <h1 class="header__title">City resilience</h1>
-      <p class="header__sub">What threshold starts a response, who acts, within what window, and the ground it applies to.</p>
+      <p class="header__sub">What starts a response, who acts, and where.</p>
     </div>
     <img class="header__logo" src="logos/resilience-mark.png" alt="Resilience">
   </header>
