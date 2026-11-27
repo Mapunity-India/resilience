@@ -3389,5 +3389,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-logo-larger-and-higher",
+  "date": "2026-11-27",
+  "change": "The mark on the Cities page grows five per cent and rises two more pixels: the box goes from 104px to 109px and its offset from 1px above the header foot to 3px. Measured after, the box runs rows 36 to 145 against 43 to 147 before, so it is both taller and higher, and the drawing now clears the rule by about twenty-five pixels against twenty-two. The header stays at 148px, so nothing below the hero moves",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "right:-10px;bottom:3px;height:109px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
