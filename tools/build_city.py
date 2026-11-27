@@ -61,6 +61,17 @@ td.h{font-weight:600;white-space:nowrap}
 .card .row .k{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:13px}
 .card .row .k b{font-family:var(--mono);font-size:11px;letter-spacing:.5px;white-space:nowrap}
 .card .row .n{display:block;font-size:11.5px;color:var(--muted);margin-top:1px}
+.ev{padding:8px 0;border-bottom:1px solid #efe9df}
+.ev:last-child{border-bottom:none}
+.ev__h{display:flex;align-items:baseline;gap:8px}
+.ev__t{font-size:13.5px;font-weight:600;flex:1}
+.ev__live{font-family:var(--mono);font-size:8px;letter-spacing:1.2px;text-transform:uppercase;
+ background:#8f2318;color:#fff;padding:2px 5px;border-radius:3px;font-weight:700}
+.ev__d{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.8px;color:var(--muted);
+ text-transform:uppercase;margin:2px 0 3px}
+.ev__n{display:block;font-size:12px;color:var(--muted);line-height:1.4}
+.ev__sep{font-family:var(--mono);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;
+ color:var(--muted);opacity:.75;padding:10px 0 2px;border-top:1px solid #efe9df;margin-top:6px}
 @media (max-width:900px){.top{grid-template-columns:1fr}}
 .mapcard svg{width:100%;max-width:720px;height:auto;display:block;margin:0 auto}
 .maplabel{display:flex;align-items:center;gap:8px;margin:-14px -16px 12px;padding:10px 16px;
@@ -132,6 +143,21 @@ function cityPage(c){
       '</svg></div>';
   }
 
+  var evs = c.events || [];
+  function monthName(iso){ var m=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return m[parseInt(iso.slice(5,7),10)-1] + ' ' + iso.slice(0,4); }
+  function evRow(e){
+    return '<div class="ev"><div class="ev__h"><span class="ev__t">' + esc(e.title) + '</span>' +
+      (e.status === 'live' ? '<span class="ev__live">Live</span>' : '') + '</div>' +
+      '<span class="ev__d">' + monthName(e['from']) + ' &ndash; ' + monthName(e['to']) + '</span>' +
+      '<span class="ev__n">' + esc(e.note || '') + '</span></div>';
+  }
+  var liveEv = evs.filter(function(e){ return e.status === 'live'; }).map(evRow).join('');
+  var pastEv = evs.filter(function(e){ return e.status !== 'live'; }).map(evRow).join('');
+  var eventsCard = '<div class="card"><div class="card__t">Events</div>' +
+    (liveEv || '<p style="margin:0;font-size:12.5px;color:var(--muted)">Nothing running.</p>') +
+    (pastEv ? '<div class="ev__sep">Earlier</div>' + pastEv : '') + '</div>';
+
   var st = c.status || {lines: []};
   var statusRows = (st.lines || []).map(function(l){
     return '<div class="row"><div class="k"><span>' + esc(l.k) + '</span><b>' + esc(l.v) + '</b></div>' +
@@ -147,6 +173,7 @@ function cityPage(c){
         '<div class="card"><div class="card__t">Water</div>' +
           '<div class="card__big">28 sites, 0.64 km&sup2;</div>' +
           '<p>Took water in February 2017 and no longer do. Each one is a place the corporation no longer has to hold rain in.</p></div>' +
+        eventsCard +
       '</div></div>' +
     '<h2>What changed</h2><div class="measured">' + measured + '</div>' +
     '<h2>The register</h2>' +

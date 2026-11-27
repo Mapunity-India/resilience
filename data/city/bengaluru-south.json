@@ -261,5 +261,21 @@
         "n": "The 40 C trigger is a March to May condition"
       }
     ]
-  }
+  },
+  "events": [
+    {
+      "title": "North-east monsoon 2026",
+      "from": "2026-10-15",
+      "to": "2026-12-31",
+      "status": "live",
+      "note": "The season the rain triggers are armed in. Orange and red forecasts both fall inside it."
+    },
+    {
+      "title": "South-west monsoon 2026",
+      "from": "2026-06-01",
+      "to": "2026-09-30",
+      "status": "past",
+      "note": "Closed at the end of September with no drawdown recorded at any tank."
+    }
+  ]
 }

@@ -3218,5 +3218,19 @@
    ],
    "min": 1
   }
+ },
+ {
+  "id": "cities-events-card",
+  "date": "2026-11-27",
+  "change": "The Cities page gets an Events card, the way the national index carries one: what is running now at the top with a Live tag, then a divider and what has closed below it. Two periods are recorded for Bengaluru South, both read from the city file rather than the page: the north-east monsoon of 2026, live, being the season the rain triggers are armed in, and the south-west monsoon that closed at the end of September with no drawdown at any tank. With no live entry the card says Nothing running rather than showing an empty box, and the card is built from whatever the file holds, so a city with three past events and nothing current reads correctly without a code change",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "ev__live",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
  }
 ]
