@@ -3119,7 +3119,8 @@
     "cities.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "cities-responding-rules"
  },
  {
   "id": "cities-page-live-first",
@@ -3303,7 +3304,8 @@
     "cities.html"
    ],
    "min": 1
-  }
+  },
+  "superseded_by": "cities-type-fourth-bump"
  },
  {
   "id": "cities-stack-events-only",
@@ -3424,6 +3426,353 @@
     "events/el-nino.html"
    ],
    "min": 6
+  }
+ },
+ {
+  "id": "cities-plan-works",
+  "date": "2026-11-27",
+  "change": "The works and schemes the corporation has budgeted for come into the Cities page and are tagged to the plan. Fifteen works and two schemes sit under the thrust they belong to, read from the Bengaluru South climate action plan: one under energy and buildings, four under transportation, two under solid waste, three under water and stormwater, seven under urban planning and greening, and none under air quality or disaster management. Each thrust card now carries the count on its heading and a Works and schemes list beneath its actions, with the asset the work sits on and its climate role, so an action and the money against it are read together rather than in two tables. Two sector names in the works file differ from the plan's thrusts, Transport against Transportation and Greening against Urban planning, greening and biodiversity, and those are mapped in the data rather than renamed at the source",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Works and schemes",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  },
+  "superseded_by": "cities-plan-tabs"
+ },
+ {
+  "id": "cities-plan-tabs",
+  "date": "2026-11-27",
+  "change": "Each thrust card on the Cities page now holds two tabs, Actions and Budgeted works, rather than one long column. Actions opens by default; the works tab carries its count in the label so a card with nothing budgeted says so before it is opened, and opening it when empty reads None budgeted under this thrust. The two panes are marked up as a tablist with aria-selected, and the switch is one delegated click handler on the document, so it works for every card without a handler each. Nothing about the tagging changed: an item still belongs to the thrust named in its sector column",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "ttabs",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-plan-tab-counts",
+  "date": "2026-11-27",
+  "change": "The count line under each thrust heading comes off, and both counts move into the tab labels instead: Actions (5) beside Budgeted works (1). The heading is now the thrust name alone, so the card reads heading, tabs, content, and the two numbers sit on the two things they count. Verified in the browser rather than the markup, since the labels are built at run time: the first card returns Actions (5) and Budgeted works (1), and no count element remains in the card",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "class=\"cnt\"",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-type-second-bump",
+  "date": "2026-11-27",
+  "change": "Three groups of type on the Cities page go up by a point each: section headings 13 to 14, card headings 10.5 to 11.5 with the events card label following at 9.5 to 10.5, and card text 13 to 14 for plan actions and 12 to 13 for works items, with the event notes at 13 to 14 and the card paragraphs at 13.5 to 14.5. The small mono labels inside those lines move with them, action codes to 11.5, work assets to 10, climate roles to 9.5, so the hierarchy holds rather than flattening",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "h2{font-family:var(--mono);font-size:14px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  },
+  "superseded_by": "cities-type-third-bump"
+ },
+ {
+  "id": "cities-tab-labels-bumped",
+  "date": "2026-11-27",
+  "change": "The two tab labels on each thrust card go from 9px to 10px, following the rest of the card type up a point. They now sit a little under the action text at 14px rather than looking like a separate, smaller system",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": ".ttab{font-family:var(--mono);font-size:10px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  },
+  "superseded_by": "cities-type-fourth-bump"
+ },
+ {
+  "id": "cities-plan-equal-heights",
+  "date": "2026-11-27",
+  "change": "Every plan card is now the same height, 400px, with the pane scrolling inside it. Until now each card grew to fit its content, so the seven thrusts ended at seven different depths and the row read raggedly. Measured after: all seven return 400px, four of them overflow in their Actions pane and three do not, and the pane carries a thin scrollbar styled to the page. A card whose pane overflows also gets a soft fade at its foot, added by script and re-checked whenever a tab is switched, so the scroll is visible even where the browser hides its scrollbars until the user scrolls",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "height:400px;display:flex;flex-direction:column;overflow:hidden",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-tabs-band",
+  "date": "2026-11-27",
+  "change": "The tab labels on each plan card sit on the same warm band the map label uses, #f2eee6 with a hairline edge and a small radius, rather than being bare words. The open tab keeps that background and is marked the way it was before, accent text over a green rule, so the pair reads as two chips of one set with one of them current. The strip under them stays as a light divider between the tabs and the pane",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "background:#f2eee6;border:1px solid #e6e0d4",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-title-terracotta",
+  "date": "2026-11-27",
+  "change": "The Cities title goes terracotta. The colour had been carried by each page's own title rule, and when the Cities page's rule was replaced by the shared hero block that colour went with it, leaving the title in ink while every other page kept the accent. The colour is now part of the block itself, so it cannot be lost again by a rule being replaced, and all six pages state it rather than inheriting it. Verified by sampling the rendered title: Cities returns a mean of 138 72 46 against the index's 136 69 43, the same accent",
+  "scope": "cities.html, index.html, events/akvan.html, events/murasu.html, events/arnab.html, events/el-nino.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "color:var(--accent) !important;letter-spacing:0 !important",
+   "paths": [
+    "cities.html",
+    "index.html",
+    "events/akvan.html",
+    "events/murasu.html",
+    "events/arnab.html",
+    "events/el-nino.html"
+   ],
+   "min": 6
+  }
+ },
+ {
+  "id": "cities-what-changed-removed",
+  "date": "2026-11-27",
+  "change": "The What changed section comes off the Cities page. It carried three figures, the elevation range, the median slope and the green and blue change from 47.2 to 27.4 per cent, in a two-column grid between the plan and the register. The figures stay in the city file, so restoring them is a redraw rather than a rebuild",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "What changed",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-plan-source-line-removed",
+  "date": "2026-11-27",
+  "change": "The attribution line under the plan comes off: Thrusts and actions from the Bengaluru South climate action plan. It sat alone below the seven cards, describing work already named in each of them, and it read as a footnote to a section that does not need one. The source stays in the city file under plan.source, so it can be shown again without re-entering the data",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "Thrusts and actions from",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-responding-to-events",
+  "date": "2026-11-27",
+  "change": "The register and the assets become one section on the Cities page, called Responding to events, with two tabs: Triggers (4) and Assets (4). They had been two sections one under the other, which separated a threshold from the asset it acts on when the whole point is that a trigger names what it protects. The tab strip is the same one the plan cards use, and the click handler was generalised to work on any tab group rather than assuming a plan card, so the page now has eight groups running one piece of code. Verified in the browser: the section returns tabs Triggers (4) and Assets (4), Triggers open, and switching shows the assets pane and hides the triggers pane",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Responding to events",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  },
+  "superseded_by": "cities-heading-triggers"
+ },
+ {
+  "id": "cities-responding-rules",
+  "date": "2026-11-27",
+  "change": "Responding to events is rewritten as an operating reference rather than a table. Each trigger is now a rule that reads in one direction: the hazard and the threshold that starts it across the top, then who acts, what starts, which assets it acts on, how soon, when it is armed and where it bites. The assets stop being a separate inventory and become the thing a rule acts on: eleven of them are named, each trigger carries the ids it uses, and the Assets tab reverses the link so every asset says which triggers act on it, or None recorded. The assets themselves are only those named in the corporation's own actions, drains, pumps, tanks, the ground below them, flood-prone spots, relief centres, underpasses, water kiosks, parks and lake paths, street lighting and waste, so nothing is invented to fill the list. Verified in the browser: four rule cards render, the Assets tab opens on click with eleven rows and the reverse link reading Rain, or Rain and Lake, as the case may be",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "rule__when",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  },
+  "superseded_by": "cities-triggers-tabbed-first"
+ },
+ {
+  "id": "cities-responding-note-removed",
+  "date": "2026-11-27",
+  "change": "The line under the Responding to events heading comes off. It read A threshold is crossed, and what follows is fixed: who acts, on what, and how soon, which describes the four rule cards below it rather than adding anything to them. The heading now goes straight to the tabs",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "A threshold is crossed, and what follows is fixed",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-rule-labels",
+  "date": "2026-11-27",
+  "change": "The first rule's pill reads Heavy rain rather than Rain, and the second reads Very heavy rain, so the two rain rules can be told apart at a glance instead of both saying Rain. The pill is now its own field in the data, which leaves the hazard name untouched for the asset reverse links: an asset still says it is acted on by Rain, which is the grouping, while the rule says which band of rain it is. The IMD prefix comes off the card label as asked, so the four read Heavy-rain band, orange; Very heavy rain, red; Local operating rule; Heat-wave criterion for the plains. The source field still credits IMD in the data, it is simply no longer printed on the card",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Heavy-rain band, orange",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-pill-centred",
+  "date": "2026-11-27",
+  "change": "The hazard pill in each rule's label row is centred. The row had been set to align on the text baseline, which is right for a line of words and wrong for a filled box: the pill's own baseline sits near its lower edge, so the box hung toward the bottom of the row. The row now centres its contents, and measured, the pill clears the top of the row by 13.1px and the bottom by 14.1px instead of sitting visibly low",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": ".rule__when{display:flex;align-items:center",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-pill-orange",
+  "date": "2026-11-27",
+  "change": "The first rule's pill turns orange, and the label to its right comes off. The pill colour is now a field in the data rather than a fixed style, so a rule can carry the colour of the warning it belongs to while the others stay in the accent; the first is orange at #c25a12 with white type. The scale label that sat at the right of the row, Heavy-rain band, orange and its three siblings, is removed along with its now unused style, since the colour on the pill says what the words were saying",
+  "scope": "cities.html, data/city/bengaluru-south.json, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "#c25a12",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-rule-cells-centred",
+  "date": "2026-11-27",
+  "change": "The label column in each rule centres on its value. The two columns had been left to stretch, so a label sat at the top of its row while the value beside it filled the row, and where a value wrapped to two lines the label looked stranded above it. Both cells now centre their own text inside the row, which keeps the row's dividing lines where they were while putting the label level with the text it names. Measured across the six rows of the first rule, the vertical centres of label and value match exactly, a difference of 0.0px in every row",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": ".rule__k{display:flex;align-items:center",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-assets-tab-removed",
+  "date": "2026-11-27",
+  "change": "The Assets tab comes off Responding to events, which is now the four rule cards and nothing else. Every asset that has to be acted on is named on the rule that acts on it, so the tab was a second list of the same things without the instruction attached. What the tab alone carried was the status line on each asset, under augmentation, partly built over and so on, and the two mitigation assets that no trigger touches, street lighting and waste processing. Both stay in the city file; neither is lost, but neither is on this page now. If status is wanted back, it belongs beside the works in the plan rather than here, since it is a management fact and not part of what an official does when a threshold is crossed",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "rt-assets",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-heading-triggers",
+  "date": "2026-11-27",
+  "change": "The section heading changes from Responding to events to Responding to triggers. The cards below are thresholds rather than events, and the page already uses event for the monsoon periods in the card beside the map, so the same word was doing two jobs on one page",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "Responding to triggers",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-footer-removed",
+  "date": "2026-11-27",
+  "change": "The footer comes off the Cities page. It read One JSON file per city in data/city, tools/build_city.py renders this page from them, followed by a line about thresholds being national scales and owners being municipal roles, which is a note to whoever maintains the build rather than something a reader of the page needs. The page now ends on its last section",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "absent",
+   "pattern": "data/city",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-triggers-tabbed-first",
+  "date": "2026-11-27",
+  "change": "Responding to triggers moves above the plan, and its four rules become four tabs so the section occupies one row at a time instead of four stacked cards. The order had put thirty-three long-term actions between a reader and the rule that tells them to move the pumps; the quick response now comes first and the long-term plan follows it. The tab labels are the pills, Heavy rain, Very heavy rain, Lake and Heat, and each opens its own card. Verified in the browser: the two headings return in the order Responding to triggers then Climate action plan, the tab row returns those four labels, the first pane is open, and clicking the third shows only the Lake card",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "var ruleTabs",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-tabs-coloured",
+  "date": "2026-11-27",
+  "change": "The colour moves from the pill inside the card to the tab that opens it. The open tab wears its hazard's colour with white type, the other three share the warm band, and the pill is gone from the card because the tab above it already names the trigger. The tab colour is set per hazard in the data, so the first is orange and the rest take the accent, and it moves with the selection: measured, Heavy rain opens in orange at 194 90 18, and after clicking Lake the orange leaves the first tab and Lake opens in the accent",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": ".ttabs--trig .ttab.on",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  }
+ },
+ {
+  "id": "cities-type-third-bump",
+  "date": "2026-11-27",
+  "change": "Section headings go from 14px to 15px, and the four trigger tabs from 10px to 11px. Only the trigger row moves: the plan cards keep their 10px tabs, since those sit inside a card rather than heading a section. Measured after: a section heading returns 15px, a trigger tab 11px, a plan card tab 10px",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "h2{font-family:var(--mono);font-size:15px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
+  },
+  "superseded_by": "cities-type-fourth-bump"
+ },
+ {
+  "id": "cities-type-fourth-bump",
+  "date": "2026-11-27",
+  "change": "Type across the Cities page goes up another point, twenty-seven sizes in all, because the page had been reading small throughout. The rule labels WHO ACTS and its siblings go from 9.5 to 10.5, their values from 14 to 15, the threshold line from 19 to 20, the asset chips from 9.5 to 10.5; tables 15.5 for cells and 11.5 for heads, plan actions 15, works 14, event titles 21, notes 15, section heads 16, trigger tabs 12, plan tabs 11. The hero is untouched, since its numbers are the standard the other five pages now share. Measured after: heading 16px, label 10.5, value 15, threshold 20, trigger tab 12, action 15, event title 21",
+  "scope": "cities.html, tools/build_city.py, changelog.json",
+  "check": {
+   "type": "contains",
+   "pattern": "font-size:10.5px;letter-spacing:1.1px",
+   "paths": [
+    "cities.html"
+   ],
+   "min": 1
   }
  }
 ]

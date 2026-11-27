@@ -41,7 +41,7 @@ body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);li
 .header__eyebrow{font-family:var(--mono) !important;font-size:11px !important;line-height:1.55 !important;
  letter-spacing:2.5px !important;text-transform:uppercase !important;font-weight:700 !important;margin:0 0 6px !important}
 .header__title{font-family:var(--display) !important;font-size:40px !important;line-height:1.15 !important;
- font-weight:400 !important;margin:2px 0 !important;letter-spacing:0 !important}
+ font-weight:400 !important;margin:2px 0 !important;color:var(--accent) !important;letter-spacing:0 !important}
 .header__sub{font-size:16px !important;line-height:1.55 !important;margin:0 !important}
 .header__logo{position:absolute !important;right:-10px !important;bottom:3px !important;
  height:109px !important;width:auto !important;margin:0 !important;top:auto !important;flex:none !important}
@@ -53,57 +53,95 @@ body{margin:0;background:var(--warm);color:var(--ink);font-family:var(--body);li
 .facts{display:flex;gap:30px;flex-wrap:wrap;margin:0 0 4px}
 .fact{font-size:13px;color:var(--muted)}
 .fact b{display:block;font-family:var(--display);font-size:24px;color:var(--ink);font-weight:400;line-height:1.2}
-h2{font-family:var(--mono);font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
+h2{font-family:var(--mono);font-size:16px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);
  margin:32px 0 12px;display:flex;align-items:center;gap:10px}
 h2::before{content:'';width:8px;height:8px;border-radius:50%;background:currentColor;flex-shrink:0}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14.5px}
-th{font-family:var(--mono);font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);background:#f7f5f1;font-weight:600}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:15.5px}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--muted);background:#f7f5f1;font-weight:600}
 tr:last-child td{border-bottom:none}
 td.h{font-weight:600;white-space:nowrap}
-.src{font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
-.note{font-size:14px;color:var(--muted);margin:10px 0 0}
+.src{font-family:var(--mono);font-size:11.5px;letter-spacing:.6px;color:var(--muted);text-transform:uppercase}
+.note{font-size:15px;color:var(--muted);margin:10px 0 0}
 .top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:stretch}
 .mapcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px 12px;
  display:flex;flex-direction:column;min-height:0}
 .stack{display:grid;gap:12px}
 .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;
  display:flex;flex-direction:column}
-.card__t{font-family:var(--mono);font-size:9.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+.card__t{font-family:var(--mono);font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
 .card__big{font-family:var(--display);font-size:26px;line-height:1.15;margin:0 0 3px}
-.card p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.45}
+.card p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.45}
 .card .row{padding:6px 0;border-bottom:1px solid #efe9df}
 .card .row:last-child{border-bottom:none}
-.card .row .k{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:14px}
+.card .row .k{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-size:15px}
 .card .row .k b{font-family:var(--mono);font-size:11px;letter-spacing:.5px;white-space:nowrap}
-.card .row .n{display:block;font-size:12.5px;color:var(--muted);margin-top:1px}
+.card .row .n{display:block;font-size:13.5px;color:var(--muted);margin-top:1px}
 .ev{padding:10px 0;border-bottom:1px solid #efe9df}
 .ev:last-child{border-bottom:none}
 .ev--live{background:var(--warm);box-shadow:inset 4px 0 0 #60a000;margin:0 -15px;padding:10px 15px}
 .ev__top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:3px}
-.ev__d{font-family:var(--mono);font-size:9.5px;letter-spacing:.4px;color:#14110e;text-transform:uppercase}
-.ev__live{font-family:var(--mono);font-size:8.5px;letter-spacing:1px;text-transform:uppercase;
+.ev__d{font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;color:#14110e;text-transform:uppercase}
+.ev__live{font-family:var(--mono);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;
  background:#8f2318;color:#fff;padding:2px 5px;border-radius:3px;font-weight:700}
-.ev__t{display:block;font-family:var(--display);font-size:20px;line-height:1.2;color:#0f0d0b;font-weight:400}
-.ev__n{display:block;font-size:13px;color:var(--muted);margin-top:3px;line-height:1.45}
+.ev__t{display:block;font-family:var(--display);font-size:21px;line-height:1.2;color:#0f0d0b;font-weight:400}
+.ev__n{display:block;font-size:15px;color:var(--muted);margin-top:3px;line-height:1.45}
 .ev__sep{font-family:var(--mono);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;
  color:var(--muted);opacity:.75;padding:10px 0 2px;border-top:1px solid #efe9df;margin-top:6px}
 @media (max-width:900px){.top{grid-template-columns:1fr}}
 .mapcard svg{width:100%;max-width:720px;height:100%;min-height:0;display:block;margin:0 auto;flex:1}
 .maplabel{display:flex;align-items:center;gap:8px;margin:-14px -16px 12px;padding:10px 16px;
  background:#f2eee6;border-bottom:1px solid var(--line);border-radius:12px 12px 0 0}
-.maplabel span{font-size:12.5px;letter-spacing:.7px;text-transform:uppercase;font-weight:600;
+.maplabel span{font-size:13.5px;letter-spacing:.7px;text-transform:uppercase;font-weight:600;
  color:var(--ink);padding-bottom:3px}
-.maplabel em{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:1px;
+.maplabel em{font-family:var(--mono);font-style:normal;font-size:12px;letter-spacing:1px;
  text-transform:uppercase;color:var(--muted);margin-left:auto}
 .mapcard .cap{font-size:12.5px;color:var(--muted);margin:8px 0 0}
 .plan{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 6px}
-.thrust{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.thrust h3{font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;
+.thrust{position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;
+ height:400px;display:flex;flex-direction:column;overflow:hidden}
+.thrust.scrolls::after{content:'';position:absolute;left:1px;right:1px;bottom:1px;height:30px;
+ background:linear-gradient(rgba(255,255,255,0),#fff 78%);border-radius:0 0 9px 9px;pointer-events:none}
+.thrust h3{font-family:var(--mono);font-size:12.5px;letter-spacing:1.2px;text-transform:uppercase;
  color:var(--accent);margin:0 0 8px;font-weight:700;line-height:1.35}
-.act{display:flex;gap:8px;font-size:13px;line-height:1.42;padding:5px 0;border-top:1px solid #f1ece3}
+.act{display:flex;gap:8px;font-size:15px;line-height:1.42;padding:5px 0;border-top:1px solid #f1ece3}
 .act:first-of-type{border-top:none;padding-top:0}
-.act b{font-family:var(--mono);font-size:10.5px;letter-spacing:.3px;color:var(--muted);white-space:nowrap;padding-top:2px;flex:none}
+.act b{font-family:var(--mono);font-size:12.5px;letter-spacing:.3px;color:var(--muted);white-space:nowrap;padding-top:2px;flex:none}
+.ttabs{display:flex;gap:6px;margin:2px 0 9px;padding-bottom:8px;border-bottom:1px solid #efe9df}
+.ttab{font-family:var(--mono);font-size:11px;letter-spacing:1.1px;text-transform:uppercase;
+ background:#f2eee6;border:1px solid #e6e0d4;border-radius:5px;padding:4px 8px;cursor:pointer;
+ color:var(--muted);opacity:.85;font-weight:600}
+.ttab:hover{opacity:1;color:#205800;background:#ece7dc}
+.ttab.on{background:#f2eee6;border-color:#d9d2c4;border-bottom:2px solid #60a000;
+ color:var(--accent);opacity:1;font-weight:700;padding-bottom:3px}
+.ttabs--trig .ttab{font-size:12px;letter-spacing:1.2px;padding:5px 9px}
+.ttabs--trig .ttab.on{background:var(--pc,var(--accent));border-color:transparent;border-bottom:1px solid transparent;
+ color:#fff;opacity:1;font-weight:700;padding-bottom:4px}
+.pane{display:none;flex:1;min-height:0;overflow-y:auto;padding-right:6px}
+.tabgroup > .pane{padding-top:2px}
+.rule{border:1px solid var(--line);border-radius:10px;background:#fff;margin:0 0 12px;overflow:hidden}
+.rule__when{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 16px;
+ background:#f2eee6;border-bottom:1px solid var(--line)}
+.rule__th{font-family:var(--display);font-size:20px;line-height:1.25;flex:1;min-width:220px}
+.rule__body{display:grid;grid-template-columns:118px 1fr;gap:0 16px;padding:12px 16px}
+.rule__k{display:flex;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:1.1px;
+ text-transform:uppercase;color:var(--muted);padding:5px 0;border-top:1px solid #f1ece3}
+.rule__v{display:flex;align-items:center;font-size:15px;padding:5px 0;border-top:1px solid #f1ece3}
+.rule__v b{font-weight:600}
+.rule__on{display:flex;flex-wrap:wrap;gap:6px}
+.rule__on span{font-family:var(--mono);font-size:10.5px;letter-spacing:.4px;background:#f2eee6;
+ border:1px solid #e6e0d4;border-radius:4px;padding:2px 6px;color:var(--muted)}
+@media (max-width:700px){.rule__body{grid-template-columns:1fr}.rule__k{padding-top:9px}}
+.pane.on{display:block}
+.pane::-webkit-scrollbar{width:8px}
+.pane::-webkit-scrollbar-thumb{background:rgba(32,88,0,.22);border-radius:4px}
+.pane::-webkit-scrollbar-track{background:transparent}
+.pane{scrollbar-width:thin;scrollbar-color:rgba(32,88,0,.22) transparent}
+.wkh{font-family:var(--mono);font-size:8.5px;letter-spacing:1.1px;text-transform:uppercase;color:#1f4e79;
+ margin:10px 0 4px;padding-top:8px;border-top:1px solid #dfe7ee}
+.wk{display:flex;gap:8px;font-size:14px;line-height:1.4;padding:3px 0}
+.wk b{font-family:var(--mono);font-size:11px;letter-spacing:.3px;color:#1f4e79;white-space:nowrap;flex:none;padding-top:2px}
+.wk em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;color:var(--muted);opacity:.8;margin-left:auto;flex:none;padding-top:2px}
 @media (max-width:1000px){.plan{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:700px){.plan{grid-template-columns:1fr}}
 .measured{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -133,10 +171,6 @@ footer{margin:38px 0 40px;padding-top:16px;border-top:1px solid var(--line);font
 
   <div id="view"></div>
 
-  <footer>
-    One JSON file per city in <b>data/city/</b>; <b>tools/build_city.py</b> renders this page from them.
-    Thresholds are national scales, owners are municipal roles, and the geography is measured per city.
-  </footer>
 </div>
 
 <script>
@@ -152,12 +186,33 @@ function cityPage(c){
       '<td>' + esc(h.owner) + '<div class="src">' + esc(h.window) + '</div></td>' +
       '<td>' + esc(h.where) + '</td></tr>';
   }).join('');
-  var assets = c.assets.map(function(a){
-    return '<tr><td class="h">' + esc(a.item) + '</td><td>' + esc(a.role) + '</td><td>' + esc(a.status) + '</td></tr>';
+  var assetById = {};
+  (c.assets || []).forEach(function(a){ assetById[a.id] = a; });
+  var ruleTabs = (c.hazards || []).map(function(h, i){
+    return '<button class="ttab' + (i === 0 ? ' on' : '') + '" role="tab" aria-selected="' + (i === 0 ? 'true' : 'false') +
+      '" data-pane="rt-' + i + '"' + (h.pillColour ? ' style="--pc:' + esc(h.pillColour) + '"' : '') + '>' +
+      esc(h.pill || h.hazard) + '</button>';
   }).join('');
-  var measured = c.measured.map(function(m){
-    return '<div><b>' + esc(m.value) + '</b><span>' + esc(m.label) + '</span></div>';
-  }).join('');
+  var ruleCards = (c.hazards || []).map(function(h){
+    var on = (h.assets || []).map(function(id){
+      var a = assetById[id];
+      return '<span>' + esc(a ? a.item : id) + '</span>';
+    }).join('');
+    return '<div class="rule">' +
+      '<div class="rule__when"><span class="rule__th">' + esc(h.trigger) + '</span></div>' +
+      '<div class="rule__body">' +
+        '<div class="rule__k">Who acts</div><div class="rule__v"><b>' + esc(h.owner) + '</b></div>' +
+        '<div class="rule__k">What starts</div><div class="rule__v">' + esc(h.starts) + '</div>' +
+        '<div class="rule__k">On</div><div class="rule__v"><div class="rule__on">' + on + '</div></div>' +
+        '<div class="rule__k">Within</div><div class="rule__v">' + esc(h.window) + '</div>' +
+        '<div class="rule__k">Armed</div><div class="rule__v">' + esc(h.armed || '') + '</div>' +
+        '<div class="rule__k">Where</div><div class="rule__v">' + esc(h.where) + '</div>' +
+      '</div></div>';
+  });
+  var rules = '<div class="tabgroup"><div class="ttabs ttabs--trig" role="tablist">' + ruleTabs + '</div>' +
+    (c.hazards || []).map(function(h, i){
+      return '<div class="pane' + (i === 0 ? ' on' : '') + '" id="rt-' + i + '" role="tabpanel">' + ruleCards[i] + '</div>';
+    }).join('') + '</div>';
 
   var map = '';
   if (c.map){
@@ -188,12 +243,28 @@ function cityPage(c){
   if (c.plan && c.plan.thrusts && c.plan.thrusts.length){
     planBlock = '<h2>' + esc(c.plan.title || 'Climate action plan') + '</h2>' +
       '<div class="plan">' + c.plan.thrusts.map(function(t){
+        var items = (c.plan.items || []).filter(function(i){ return i.thrust === t.name; });
+        var wid = 'th' + Math.random().toString(36).slice(2, 8);
+        var worksPane = items.length
+          ? items.map(function(i){
+              return '<div class="wk"><b>' + esc(i.asset || i.kind) + '</b><span>' + esc(i.item) + '</span>' +
+                     '<em>' + esc(i.role) + '</em></div>';
+            }).join('')
+          : '<p class="note" style="margin:2px 0 0">None budgeted under this thrust.</p>';
         return '<div class="thrust"><h3>' + esc(t.name) + '</h3>' +
-          t.actions.map(function(a){
-            return '<div class="act"><b>' + esc(a.id) + '</b><span>' + esc(a.text) + '</span></div>';
-          }).join('') + '</div>';
-      }).join('') + '</div>' +
-      (c.plan.source ? '<p class="note">Thrusts and actions from the ' + esc(c.plan.source) + '.</p>' : '');
+          '<div class="tabgroup"><div class="ttabs" role="tablist">' +
+            '<button class="ttab on" role="tab" aria-selected="true" data-pane="' + wid + '-a">Actions (' + t.actions.length + ')</button>' +
+            '<button class="ttab" role="tab" aria-selected="false" data-pane="' + wid + '-w">Budgeted works' +
+              (items.length ? ' (' + items.length + ')' : '') + '</button>' +
+          '</div>' +
+          '<div class="pane on" id="' + wid + '-a" role="tabpanel">' +
+            t.actions.map(function(a){
+              return '<div class="act"><b>' + esc(a.id) + '</b><span>' + esc(a.text) + '</span></div>';
+            }).join('') +
+          '</div>' +
+          '<div class="pane" id="' + wid + '-w" role="tabpanel">' + worksPane + '</div>' +
+          '</div></div>';
+      }).join('') + '</div>';
   }
 
   var st = c.status || {lines: []};
@@ -204,14 +275,9 @@ function cityPage(c){
 
   return '<div class="top">' + map +
       '<div class="stack">' + eventsCard + '</div></div>' +
-    planBlock +
-    '<h2>What changed</h2><div class="measured">' + measured + '</div>' +
-    '<h2>The register</h2>' +
-    '<p class="note">The standing reference: what threshold starts a response, who acts, and within what window.</p>' +
-    '<table><thead><tr><th>Hazard</th><th>Trigger</th><th>What starts</th><th>Who acts</th><th>Where it bites</th></tr></thead><tbody>' + rows + '</tbody></table>' +
-    '<p class="note">' + esc(c.note) + '</p>' +
-    '<h2>Assets the triggers act on</h2>' +
-    '<table><thead><tr><th>Item</th><th>Climate role</th><th>Status</th></tr></thead><tbody>' + assets + '</tbody></table>';
+    '<h2>Responding to triggers</h2>' +
+    rules +
+    planBlock;
 }
 
 function chooser(){
@@ -224,7 +290,28 @@ function chooser(){
 function render(){
   document.getElementById('view').innerHTML = (CITIES.length === 1) ? cityPage(CITIES[0]) : chooser();
 }
+function markScroll(){
+  document.querySelectorAll('.thrust').forEach(function(c){
+    var pane = c.querySelector('.pane.on');
+    c.classList.toggle('scrolls', !!pane && pane.scrollHeight > pane.clientHeight + 1);
+  });
+}
+document.addEventListener('click', function(ev){
+  var b = ev.target.closest('.ttab');
+  if (!b) return;
+  var card = b.closest('.tabgroup');
+  if (!card) return;
+  card.querySelectorAll('.ttab').forEach(function(x){
+    var on = x === b;
+    x.classList.toggle('on', on);
+    x.setAttribute('aria-selected', on ? 'true' : 'false');
+    var pane = document.getElementById(x.getAttribute('data-pane'));
+    if (pane) pane.classList.toggle('on', on);
+  });
+  markScroll();
+});
 render();
+markScroll();
 </script>
 </body>
 </html>

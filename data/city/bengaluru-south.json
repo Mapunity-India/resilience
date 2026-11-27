@@ -16,23 +16,40 @@
       "id": "rain-heavy",
       "hazard": "Rain",
       "trigger": "Forecast or observation of 64.5 to 115.5 mm in 24 hours",
-      "scale": "IMD heavy-rain band, orange",
+      "scale": "Heavy-rain band, orange",
       "starts": "Desilting crews and pumps moved to the listed flood-prone spots; lake gate watch opened",
       "owner": "Chief Engineer, Stormwater",
       "window": "On forecast, and through the monsoon from 15 May",
       "where": "Flood-prone spots listed by the corporation",
-      "source": "IMD rainfall classification"
+      "source": "IMD rainfall classification",
+      "assets": [
+        "drains",
+        "pumps",
+        "spots",
+        "tanks"
+      ],
+      "armed": "15 May to 30 November",
+      "pill": "Heavy rain",
+      "pillColour": "#c25a12"
     },
     {
       "id": "rain-very-heavy",
       "hazard": "Rain",
       "trigger": "Above 115.5 mm in 24 hours, or a nowcast of the same",
-      "scale": "IMD very heavy rain, red",
+      "scale": "Very heavy rain, red",
       "starts": "Relief centres opened in wards with a flood record; pumps pre-positioned; underpass diversions",
       "owner": "Zonal Commissioner with the district authority",
       "window": "Within six hours of the forecast",
       "where": "Wards with a recorded flood history",
-      "source": "IMD rainfall classification"
+      "source": "IMD rainfall classification",
+      "assets": [
+        "relief",
+        "pumps",
+        "underpasses",
+        "spots"
+      ],
+      "armed": "15 May to 30 November",
+      "pill": "Very heavy rain"
     },
     {
       "id": "lake-spill",
@@ -43,37 +60,95 @@
       "owner": "Lakes division",
       "window": "Same day",
       "where": "Tanks and the ground below them",
-      "source": "Municipal lake operating practice"
+      "source": "Municipal lake operating practice",
+      "assets": [
+        "tanks",
+        "grounds",
+        "parks"
+      ],
+      "armed": "Through the monsoon"
     },
     {
       "id": "heat-wave",
       "hazard": "Heat",
       "trigger": "Maximum at or above 40 C, or 4.5 C above normal",
-      "scale": "IMD heat-wave criterion for the plains",
+      "scale": "Heat-wave criterion for the plains",
       "starts": "Water kiosks opened; park and lake hours extended; outdoor work rescheduled",
       "owner": "Health Officer with the Zonal Commissioner",
       "window": "On declaration, and for the spell",
       "where": "Wards with the least canopy and the most outdoor work",
-      "source": "IMD heat-wave criteria"
+      "source": "IMD heat-wave criteria",
+      "assets": [
+        "kiosks",
+        "parks",
+        "lighting"
+      ],
+      "armed": "1 March to 31 May"
     }
   ],
   "assets": [
     {
+      "id": "drains",
       "item": "Stormwater drain network",
       "role": "Adaptation",
       "status": "Under augmentation"
     },
     {
+      "id": "pumps",
+      "item": "Pumps",
+      "role": "Adaptation",
+      "status": "Held by the stormwater division"
+    },
+    {
+      "id": "tanks",
       "item": "Tanks and lakes",
       "role": "Adaptation",
       "status": "Partly restored, partly built over"
     },
     {
+      "id": "grounds",
+      "item": "Ground below the tanks",
+      "role": "Adaptation",
+      "status": "Settled and built on in places"
+    },
+    {
+      "id": "spots",
+      "item": "Flood-prone spots",
+      "role": "Adaptation",
+      "status": "Listed by the corporation"
+    },
+    {
+      "id": "relief",
+      "item": "Relief centres",
+      "role": "Adaptation",
+      "status": "Opened ward by ward"
+    },
+    {
+      "id": "underpasses",
+      "item": "Underpasses",
+      "role": "Adaptation",
+      "status": "Diversion plans held"
+    },
+    {
+      "id": "kiosks",
+      "item": "Water kiosks",
+      "role": "Adaptation",
+      "status": "Seasonal"
+    },
+    {
+      "id": "parks",
+      "item": "Parks and lake paths",
+      "role": "Adaptation",
+      "status": "304 parks"
+    },
+    {
+      "id": "lighting",
       "item": "Street lighting",
       "role": "Mitigation",
       "status": "LED conversion in progress"
     },
     {
+      "id": "waste",
       "item": "Waste transfer and processing",
       "role": "Mitigation",
       "status": "Ward-level centres proposed"
@@ -456,6 +531,162 @@
           }
         ]
       }
-    ]
+    ],
+    "items": [
+      {
+        "id": "c-14",
+        "kind": "work",
+        "thrust": "Energy and buildings",
+        "sector": "Energy and buildings",
+        "item": "LED conversion of all streetlights — energy conservation",
+        "asset": "Streetlight",
+        "role": "Mitigation"
+      },
+      {
+        "id": "c-10",
+        "kind": "work",
+        "thrust": "Transportation",
+        "sector": "Transport",
+        "item": "Bus stops with passenger shelters; PPP multi-level car parking at metro stations with BMRCL",
+        "asset": "Road",
+        "role": "Mitigation"
+      },
+      {
+        "id": "c-11",
+        "kind": "work",
+        "thrust": "Transportation",
+        "sector": "Transport",
+        "item": "Non-motorised transport corridors — footpaths, cycling lanes, safe crossings",
+        "asset": "Road",
+        "role": "Mitigation"
+      },
+      {
+        "id": "c-12",
+        "kind": "work",
+        "thrust": "Solid waste",
+        "sector": "Solid waste",
+        "item": "Waste Transfer Centres at Koramangala and HSR Layout — “Waste to Wealth” biogas and compost",
+        "asset": "Sanitation",
+        "role": "Mitigation"
+      },
+      {
+        "id": "c-13",
+        "kind": "work",
+        "thrust": "Solid waste",
+        "sector": "Solid waste",
+        "item": "One waste management centre in each ward",
+        "asset": "Sanitation",
+        "role": "Mitigation"
+      },
+      {
+        "id": "c-0",
+        "kind": "work",
+        "thrust": "Water, wastewater and stormwater",
+        "sector": "Water, wastewater and stormwater",
+        "item": "World Bank-funded stormwater drains, 28.50 km — flood prevention",
+        "asset": "Drain",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-4",
+        "kind": "work",
+        "thrust": "Water, wastewater and stormwater",
+        "sector": "Water, wastewater and stormwater",
+        "item": "59 living lakes — 43 developed, 9 partial, 6 to be developed in phases",
+        "asset": "Lake",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-5",
+        "kind": "work",
+        "thrust": "Water, wastewater and stormwater",
+        "sector": "Water, wastewater and stormwater",
+        "item": "Lake protection — surveys, encroachment clearance, fencing",
+        "asset": "Lake",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-1",
+        "kind": "work",
+        "thrust": "Urban planning, greening and biodiversity",
+        "sector": "Greening and biodiversity",
+        "item": "25,000 saplings in 2026-27 with BMRCL and K-RIDE (12,000 planted in 2025-26)",
+        "asset": "Greening",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-2",
+        "kind": "work",
+        "thrust": "Urban planning, greening and biodiversity",
+        "sector": "Greening and biodiversity",
+        "item": "“Smruti Van” — Memorial Forest of medicinal trees",
+        "asset": "Greening",
+        "role": "Mitigation"
+      },
+      {
+        "id": "c-3",
+        "kind": "work",
+        "thrust": "Urban planning, greening and biodiversity",
+        "sector": "Greening and biodiversity",
+        "item": "25,000 bamboo saplings along lake boundaries; 40,000 biodiversity saplings",
+        "asset": "Greening",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-6",
+        "kind": "work",
+        "thrust": "Urban planning, greening and biodiversity",
+        "sector": "Greening and biodiversity",
+        "item": "304 parks over 16.03 lakh sq m; 88 BDA-handed-over parks to be developed",
+        "asset": "Park",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-7",
+        "kind": "work",
+        "thrust": "Urban planning, greening and biodiversity",
+        "sector": "Greening and biodiversity",
+        "item": "New parks under Brand Bengaluru / Green Bengaluru; 8 parks in development",
+        "asset": "Park",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-8",
+        "kind": "work",
+        "thrust": "Urban planning, greening and biodiversity",
+        "sector": "Greening and biodiversity",
+        "item": "Sponge Parks to absorb excess rainwater and reduce urban flooding",
+        "asset": "Park",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-9",
+        "kind": "work",
+        "thrust": "Urban planning, greening and biodiversity",
+        "sector": "Greening and biodiversity",
+        "item": "563 groundwater recharge pits built; 200 more under CSR",
+        "asset": "Park",
+        "role": "Adaptation"
+      },
+      {
+        "id": "c-15",
+        "kind": "scheme",
+        "thrust": "Transportation",
+        "sector": "Transport",
+        "item": "Free electric two-wheelers for eligible working women and SC/ST Pourakarmikas",
+        "asset": "Welfare",
+        "role": "Mitigation"
+      },
+      {
+        "id": "c-16",
+        "kind": "scheme",
+        "thrust": "Transportation",
+        "sector": "Transport",
+        "item": "E-vending vehicles for street vendors",
+        "asset": "Welfare",
+        "role": "Mitigation"
+      }
+    ],
+    "items_source": "Bengaluru South climate action plan, works and schemes"
   }
 }
